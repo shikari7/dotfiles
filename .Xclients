@@ -37,7 +37,7 @@ fi
 # various time pieces...
 #moonclock -moonclock -geometry -510+5 &
 #xdaliclock -cycle -transparent -noseconds -geometry -400-0 &
-xdaliclock -transparent -noseconds -geometry -350-0 &
+xdaliclock -transparent -noseconds -geometry -400-0 &
 #xticktalk -geometry -400-0 -noampm &
 #sunclock iconified geometry is 128xXX
 #sunclock -iconic -icongeometry -310-245 &
@@ -53,7 +53,7 @@ xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
 
 # notify me of new mail...
 #xbiff -geometry 48x48-322-66 -volume 0 &
-tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -200-20 &
+tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
 
 # windows
 nxterm -fn lucidasanstypewriter-14 -geometry 80x56+30+40 &
