@@ -48,10 +48,10 @@ Emacs.bold-italic.attributeFont:-adobe-courier-bold-o-*-*-*-120-*-*-*-*-iso8859-
 ! Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/usr/include/X11/pixmaps/dimple-grey10.xpm
 
 xscreensaver.programs:	\
-	xtacy -root					\n\
+	xtacy -root -perfect				\n\
 	ico -r -faces -sleep 1 -obj ico			\n\
 	xtacy -root					\n\
-	xdaliclock -root -noseconds -transparent -cycle -builtin2	\n\
+	xdaliclock -root -noseconds -transparent -cycle -builtin2 \n\
 	xfishtank -c black -r 1				\n\
 	qix -root					\n\
 	helix -root					\n\
