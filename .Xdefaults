@@ -48,76 +48,81 @@ Emacs.bold-italic.attributeFont:-adobe-courier-bold-o-*-*-*-120-*-*-*-*-iso8859-
 ! Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/usr/include/X11/pixmaps/dimple-grey10.xpm
 
 xscreensaver.programs:	\
-	xtacy -root -perfect				\n\
-	ico -r -faces -sleep 1 -obj ico			\n\
-	xtacy -root					\n\
-	xdaliclock -root -noseconds -transparent -cycle -builtin2 \n\
-	xfishtank -c black -r 1				\n\
-	qix -root					\n\
-	helix -root					\n\
-	pedal -root					\n\
-	rorschach -root					\n\
-	attraction -root				\n\
-	greynetic -root					\n\
-	rocks -root					\n\
-	blitspin -root					\n\
-	imsmap -root					\n\
-	hypercube -root					\n\
-	slidescreen -root				\n\
-	decayscreen -root				\n\
-	halo -root					\n\
-	pyro -root					\n\
-	hopalong -root					\n\
-	flame -root					\n\
-	noseguy -root					\n\
-	maze -root					\n\
-	lmorph -root					\n\
-	bubbles -root					\n\
-	deco -root					\n\
-	moire -root					\n\
-	kaleidescope -root				\n\
-	swirl -root					\n\
-	bouboule -root					\n\
-	braid -root					\n\
-	drift -root					\n\
-	vines -root					\n\
-	galaxy -root					\n\
-	grav -root					\n\
-	ifs -root					\n\
-	julia -root					\n\
-	laser -root					\n\
-	lightning -root					\n\
-	penrose -root					\n\
-	sierpinski -root				\n\
-	slip -root					\n\
-	spiral -root					\n\
-	strange -root					\n\
-	flag -root					\n\
-	sphere -root					\n\
-	forest -root					\n\
-	lisa -root					\n\
-	goop -root					\n\
-	starfish -root					\n\
-	munch -root					\n\
-	fadeplot -root					\n\
-	rd-bomb -root					\n\
-	coral -root					\n\
-	lissie -root					\n\
-	mountain -root					\n\
-	triangle -root					\n\
-	worm -root					\n\
-	rotor -root					\n\
-	ant -root					\n\
-	xjack -root					\n\
-	puzzle -root					\n\
-	xlyap -root					\n\
-	escher -root					\n\
-	gears -root					\n\
-	pipes -root					\n\
-	sproingies -root				\n\
-	superquadrics -root				\n\
-	morph3d -root					\n\
-	rubik -root					\n
+	xtacy -root -perfect						\n\
+	ico -r -faces -sleep 1 -obj ico					\n\
+	xtacy -root							\n\
+	xdaliclock -root -noseconds -transparent -cycle -builtin2	\n\
+	xfishtank -c black -r 1						\n\
+	ant								\n\
+	attraction							\n\
+	blitspin							\n\
+	bouboule							\n\
+	braid								\n\
+	bsod								\n\
+	bubbles								\n\
+	coral								\n\
+	crystal								\n\
+	cynosure							\n\
+	decayscreen							\n\
+	deco								\n\
+	discrete							\n\
+	distort								\n\
+	drift								\n\
+	epicycle							\n\
+	fadeplot							\n\
+	flag								\n\
+	flame								\n\
+	flow								\n\
+	forest								\n\
+	galaxy								\n\
+	goop								\n\
+	grav								\n\
+	greynetic							\n\
+	halo								\n\
+	helix								\n\
+	hopalong							\n\
+	hypercube							\n\
+	ifs								\n\
+	imsmap								\n\
+	interference							\n\
+	jigsaw								\n\
+	julia								\n\
+	kaleidescope							\n\
+	kumppa								\n\
+	laser								\n\
+	lightning							\n\
+	lisa								\n\
+	lissie								\n\
+	lmorph								\n\
+	maze								\n\
+	moire								\n\
+	moire2								\n\
+	mountain							\n\
+	munch								\n\
+	noseguy								\n\
+	pedal								\n\
+	penrose								\n\
+	pyro								\n\
+	qix								\n\
+	rd-bomb								\n\
+	rocks								\n\
+	rorschach							\n\
+	rotor								\n\
+	sierpinski							\n\
+	slidescreen							\n\
+	slip								\n\
+	sphere								\n\
+	spiral								\n\
+	starfish							\n\
+	strange								\n\
+	swirl								\n\
+	triangle							\n\
+	truchet								\n\
+	vines								\n\
+	worm								\n\
+	xjack								\n\
+	xlyap								\n\
+	xroger								\n
 
 Seyon.modems: /dev/modem
 
