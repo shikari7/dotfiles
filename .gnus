@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Wed Apr 29 14:11:51 1998 by edh $
+;;;  $Modified: Thu Apr 30 00:55:51 1998 by edh $
 
 (setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 ;(setq gnus-select-method '(nntp "news"
@@ -65,10 +65,17 @@
        "X-Microsoft: Just say perl -MIO::Socket -e 'IO::Socket::INET->new(PeerAddr=>\"ftp.microsoft.com:139\",Proto=>'tcp')->send(\"Die sucker\", MSG_OOB)'" "\n"
        "X-sPoOk: " "\n"
        ))
-(setq message-signature t)
 
 (defvar spook-phrases-file (concat data-directory "spook.lines")
    "Sensitive verbiage to distract those Spooks listening in on your e-mail.")
+
+;; Thu Apr 30 00:54:18 EDT 1998
+(defun my-signature ()
+  (cond ((string-match "^nnml:" gnus-newsgroup-name)
+         ".signature")
+        (t
+         ".signature")))
+(setq message-signature 'my-signature)
 
 ;; Sat Aug 19 22:47:20 CDT 1995
 (defun message-header-empty (header)
