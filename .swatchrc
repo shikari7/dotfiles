@@ -40,10 +40,15 @@
 /innd\[/&&/connected 17 streaming allowed/	echo
 /innd\[/					ignore
 
-/xntpd/&&/synchroni(zed|sation) (to|lost)/	ignore
+/xntpd\[/&&/synchroni(zed|sation) (to|lost)/	ignore
+/xntpd\[/&&/kernel pll status change/		ignore
+
 /named\[/&&/sendto/&&/Network is unreachable/	ignore
 /named\[/&&/recvfrom:/				ignore
-/named/&&/Malformed response/			ignore
+/named\[/&&/Malformed response/			ignore
+/named\[/&&/Cleaned cache/			ignore	
+/named\[/&&/USAGE/				ignore	
+/named\[/&&/(N|X)STATS/				ignore
 
 /icmpinfo/&&/(started|ICMP_Dest_Unreachable)/	ignore
 /icmpinfo/&&/asked for/&&/got type "CNAME"/	ignore
