@@ -44,6 +44,10 @@
 (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
 (add-hook 'gnus-article-display-hook 'gnus-article-treat-overstrike)
 (add-hook 'gnus-article-display-hook 'gnus-article-add-buttons)
+(add-hook 'gnus-article-mode-hook
+	  '(lambda ()
+	     (setq truncate-partial-width-windows nil)
+	     (setq truncate-lines nil)))
 
 (setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^NNTP-Posting-Host:\\|^X-Mailer:\\|^X-Newsreader:\\|^X-Spook:\\|^X-NSA-Fodder:\\|^Path:\\|^X-Geek\\|^X-URL\\|^Resent-From:")
 (setq gnus-sorted-header-list '("^Path:" "^Newsgroups:" "^From:" "^Subject:" "^To:" "^C[Cc]:" "^Date:" "Keywords:" "Summary:" "Organization:")) ; "^[^X]\-"))
