@@ -39,7 +39,7 @@
 /fetchmail/&&/reading/				ignore
 #/fetchmail/&&/\d+\smessages*\sat/		ignore
 
-#/identd/&&/(Connection from|Successful lookup)/	ignore
+/identd\[/&&/localhost/				ignore
 
 /(rlogind|rshd|telnetd|ftpd)/&&/(deshaw|juno).com/	ignore
 /ftpd/&&/session closed/			ignore
