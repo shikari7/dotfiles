@@ -317,3 +317,8 @@ inserts \" characters."
   (load-options-file "/home/edh/.xemacs-options")))
 ;; ============================
 ;; End of Options Menu Settings
+
+;;; Local Variables:
+;;; eval: (defun byte-compile-this-file () (write-region (point-min) (point-max) buffer-file-name nil 't) (byte-compile-file buffer-file-name t) t)
+;;; write-file-hooks: (byte-compile-this-file)
+;;; End:
