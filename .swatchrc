@@ -49,6 +49,8 @@
 /sendmail/&&/(from|to|message-id)=/		ignore
 /sendmail/					echo
 /fetchmail/&&/reading/				ignore
+/fetchmail/&&/status=2/				ignore
+/fetchmail/&&/name server error/		ignore
 #/fetchmail/&&/\d+\smessages*\sat/		ignore
 
 /identd\[/&&/localhost/				ignore
