@@ -6,7 +6,7 @@
 #Set on when debugging
 VERBOSE=off
  
-# supposedly this is necesary for (t)csh users?  (haven't needed it AFAIK)
+# supposedly this is necessary for (t)csh users?  (haven't needed it AFAIK)
 SHELL=/bin/sh
 
 #Replace `mail' with your mail directory (Pine uses mail, Elm uses Mail)
@@ -28,21 +28,20 @@ PMDIR=$HOME/.procmail
 
 MONTH=`date +%m`
 YEAR=`date +%Y`
-LOGFILE=$PMDIR/log.$YEAR-$MONTH
+
+# logging
+LOGDIR=$PMDIR/log/$YEAR
+DUMMY=`test -d $LOGDIR || mkdir -p $LOGDIR`
+LOGFILE=$LOGDIR/$MONTH
+#LOGFILE=$PMDIR/log.$YEAR-$MONTH
 
 #:0
 #* ^Subject: page me
 #| sendpage -p XXXXXXXXXX -s %s
 
-# handle mailing lists and etc
-
+# mailing list rules and archives
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
-
-#:0 ic
-#* ?test ! -d $LISTSDIR
-#| mkdir $LISTSDIR
-
 INCLUDERC=$PMDIR/rc.maillists
 
 # try to catch spam
