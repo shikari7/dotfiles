@@ -36,21 +36,6 @@ LOGFILE=$LOGDIR/$MONTH
 #* ^Subject: page me
 #| sendpage -p XXXXXXXXXX -s %s
 
-# toggle my PPP connection UP
-:0
-* ^Subject: TOGGLE ISP UP
-| toggle-isp --device ppp0 --up
-
-# toggle my PPP connection DOWN
-:0
-* ^Subject: TOGGLE ISP DOWN
-| toggle-isp --device ppp0 --down
-
-# page me with my current IP address
-:0
-* ^Subject: send ip
-| ifconfig ppp0 | mail -s ip-address $PAGER
-
 # page me with the current forecast (defaults to Boston)
 :0
 * ^Subject: send forecast
