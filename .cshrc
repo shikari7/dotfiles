@@ -94,7 +94,7 @@ if ($?prompt) then		# not a shell script
     source ~/.typos
   endif
   set completetcsh = `locate complete.tcsh | grep /usr/share/doc | head -1`
-  if ( -r $completetcsh ) then
+  if ( -r "$completetcsh" ) then
     source $completetcsh
   endif
   unset completetcsh
