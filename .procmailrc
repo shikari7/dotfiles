@@ -56,4 +56,8 @@ MONTHFOLDER=$ARCHIVEDIR/$MONTH
 :0 c
 $MONTHFOLDER
 
+# send copies of some mail to my pager
+:0 c
+| resend-mbox
+
 # else drop in my mailbox 
