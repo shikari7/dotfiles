@@ -34,6 +34,7 @@
 (global-set-key "\C-cw" 'what-line)
 (global-set-key "\C-xs" 'save-buffer)	; as opposed to save-some-buffers
 (global-set-key "\C-cr" 'replace-string)
+(global-set-key "\C-cb" 'insert-buffer)	; analog to insert-file
 
 ;;; automatic indentation
 
