@@ -41,6 +41,8 @@ alias	_nsn	'echo \!*|awk -F. '\''{print $4"."$3"."$2"."$1".in-addr.arpa"}'\'
 alias	nsn	'(echo server deshaw.com;echo set q=PTR;_nsn \!*)|nslookup|grep host'
 alias	patch	'patch -l -F6'
 #alias	prman	'troff -man -Tpost \!:1 | /usr/lib/lp/postscript/dpost | lpr'
+alias	p	/bin/ps
+alias	psa	'p ax'
 alias	q	'quota -v'
 alias	ra	'rm a.out'
 alias	rc	'rm -f core;rm -f ~/Canc*'
