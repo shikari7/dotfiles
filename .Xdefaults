@@ -11,24 +11,26 @@ xosview*background:	black
 
 TkPostageDetails*geometry:	80x10
 
-Netscape*installColormap: true
+! this is only necessary if you haven't got much RAM
+! Netscape*installColormap: true
 
 ! Emacs*EmacsFrame.Background:	DarkSlateGray
 Emacs*EmacsFrame.Background:	Wheat
 Emacs*EmacsFrame.Foreground:	Black
 Emacs*EmacsFrame.pointerColor:	Orchid
-! Emacs*EmacsFrame.cursorColor:	Orchid
+Emacs*EmacsFrame.cursorColor:	Orchid
 Emacs*EmacsFrame.bitmapIcon:	on
 Emacs*EmacsFrame.geometry: 80x49
 
-XEmacs*default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
-XEmacs*italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
-!XEmacs*menubar*font:		-*-new century schoolbook-bold-r-*-*-*-120-*-*-*-*-*-*
-!XEmacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
+Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
+Emacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
+!Emacs*menubar*font:		-*-new century schoolbook-bold-r-*-*-*-120-*-*-*-*-*-*
+!Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
 
 noseguy.program:	/usr/games/fortune
 
 xscreensaver.programs:	\
+	electricsheep --nick merlinus					\n\
 	xearth -nostars -wait 0 -timewarp 400 -pos sunrel/38/-30	\n\
 	xdaliclock -root -noseconds -transparent -cycle -builtin2 	\n\
 	ico -r -faces -sleep 1 -obj ico					\n\
@@ -58,11 +60,14 @@ xscreensaver.programs:	\
 	attraction -root -mode polygons					\n\
 	attraction -root -mode filled-splines -segments 0		\n\
 	attraction -root -glow -points 10				\n\
+	blaster -root							\n\
 	blitspin -root -grab						\n\
 	bouboule -root							\n\
 	braid -root							\n\
 	bsod -root							\n\
 	bubbles -root							\n\
+	bumps -root							\n\
+	ccurve -root							\n\
 	compass -root							\n\
 	coral -root							\n\
 	critical -root							\n\
@@ -78,6 +83,7 @@ xscreensaver.programs:	\
 	distort -root -reflect						\n\
 	drift -root							\n\
 	epicycle -root							\n\
+	extrusion -root							\n\
 	fadeplot -root							\n\
 	flag -root							\n\
 	flame -root							\n\
@@ -122,13 +128,16 @@ xscreensaver.programs:	\
 	qix -root -solid -delay 0 -segments 100				\n\
 	rd-bomb -root							\n\
 	rd-bomb -root -speed 1 -size 0.1				\n\
+	ripples -root							\n\
 	rocks -root -fg darksalmon					\n\
 	rorschach -root -offset 7					\n\
 	rotor -root							\n\
 	shadebobs -root							\n\
 	sierpinski -root						\n\
+	sierpinski3d -root						\n\
 	slidescreen -root						\n\
 	slip -root							\n\
+	sonar -root -mode ping -ping-source file -ping-file /home/edh/.ssh/known_hosts \n\
 	sphere -root							\n\
 	spiral -root							\n\
 	spotlight -root							\n\
@@ -193,18 +202,18 @@ XTerm*highlightSelection:  true
 nxterm*highlightSelection:  true
 
 ! Uncomment this to use color for the bold attribute
-XTerm*VT100*colorBDMode:  on
-XTerm*VT100*colorBD:  blue
-nxterm*VT100*colorBDMode:  on
-nxterm*VT100*colorBD:  blue
+! XTerm*VT100*colorBDMode:  on
+! XTerm*VT100*colorBD:  blue
+! nxterm*VT100*colorBDMode:  on
+! nxterm*VT100*colorBD:  blue
 
 ! Uncomment this to use color for underline attribute
-XTerm.VT100*colorULMode:  on
-XTerm.VT100*underLine:  off
-XTerm*VT100*colorUL:  magenta
-nxterm.VT100*colorULMode:  on
-nxterm.VT100*underLine:  off
-nxterm*VT100*colorUL:  magenta
+! XTerm.VT100*colorULMode:  on
+! XTerm.VT100*underLine:  off
+! XTerm*VT100*colorUL:  magenta
+! nxterm.VT100*colorULMode:  on
+! nxterm.VT100*underLine:  off
+! nxterm*VT100*colorUL:  magenta
 
 ! Uncomment this to display the scrollbar 
 XTerm*scrollBar:  true
