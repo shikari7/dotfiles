@@ -2,6 +2,7 @@
 alias	archie	'archie -l -t -r'
 alias	beep	'echo -n ""'
 alias	bye	'logout'
+alias	catman	'man \!1:1 | col -b'
 alias	ci	'ci -u'
 alias	cls	'clear'
 alias	co	'co -l'
