@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Sep  6 14:39:03 1997 by edh $
+;;;  $Modified: Tue Sep  9 00:59:31 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -98,7 +98,7 @@
 		      '(lambda (dummy) ; fake a for loop
 			 (cookie spook-phrases-file
 				 "hi" "mom"))
-		      '(1 2 3 4)
+		      '(1 2 3 4 5 6)
 		      " "))))
 ;	     (if (not (message-header-empty "To"))
 ;		 (mail-text))))
