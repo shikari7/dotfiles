@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Wed Dec 10 23:05:46 1997 by edh $
+;;;  $Modified: Sat Dec 27 14:40:43 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -86,6 +86,7 @@
 
 (add-hook 'message-setup-hook
 	  '(lambda ()
+	     (bbdb-define-all-aliases)
 	     (message-position-on-field "X-Spook")
 	     (insert (mapconcat
 		      '(lambda (dummy) ; fake a for loop
@@ -93,8 +94,6 @@
 				 "hi" "mom"))
 		      '(1 2 3 4 5 6)
 		      " "))))
-;	     (if (not (message-header-empty "To"))
-;		 (mail-text))))
 
 (setq gnus-audio-au-player "/usr/bin/play"
       gnus-audio-wav-player "/usr/bin/play"
@@ -206,7 +205,6 @@
 (add-hook 'bbdb-change-hook 'bbdb-timestamp-hook) ; last modified date field
 ;(add-hook 'bbdb-create-hook 'bbdb-creation-date-hook) ; creation date field
 (add-hook 'bbdb-notice-hook 'bbdb-auto-notes-hook) ; see -auto-notes-alist
-(bbdb-define-all-aliases)
 
 (add-hook 'bbdb-load-hook 
 	  (lambda ()
