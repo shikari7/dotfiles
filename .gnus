@@ -226,55 +226,16 @@
 
 (setq bbdb-auto-notes-alist
       '(("To\\|Cc"
-	 ("ange-ftp-lovers" . "ange-ftp")
-	 ("auto-net" . "auto-net")
-	 ("-bbdb" . "BBDB")
-	 ("best-of-security@" . "BoS")
 	 ("bugtraq" . "Bugtraq")
-	 ("firewalls" . "Firewalls")
-	 ("com-priv@" . "com-priv")
-	 ("cypherpunks@" . "cypherpunks")
 	 ("ding@" . "(ding) Gnus")
-	 ("fors-discuss@" . "friend of merlyn")
-	 ("fresco@" . "fresco")
-	 ("fvwm@" . "fvwm window manager")
-	 ("irc@reality" . "#umn")
-	 ("irc@tc" . "UMN IRC admin list")
-	 ("lacc@" . "lacc")
-	 ("mndod@" . "MN DoD")
 	 ("mtg-strategy-l@" . "MtG strategy")
-	 ("nethack-bugs" . "NetHack DevTeam")
-	 ("nethack-patches" . "NetHack DevTeam")
-	 ("news@news" . "news alias")
-	 ("operlist@" . "irc operlist")
-	 ("sanemail" . "sanemail")
-	 ("skunk-works" . "Skunk Works")
-	 ("space-1999" . "Space 1999")
-	 ("ssa@" . "IT Labs")
-	 ("sun-managers" . "Sun Managers")
-	 ("tcoord-l@" . "TCSH development")
-	 ("tcsh" . "TCSH development")
-	 ("tex-" . "TeX implementors")
-	 ("victoria@" . "Victorian Culture"))
-	("Sender"
-	 ("kotf" . "Keepers of the Flame")
-	 ("zeppelin-l" . "Led Zeppelin"))
+	 ("tcsh" . "TCSH development"))
 	("Subject" (".*" last-subj 0 t))
 	("From" ("^\\([a-z]+\\)$" mail-alias 1))
-	("From" ("^\\([a-z]+\\)@[a-z.]+.med.umn.edu" mail-alias 1)) ; locals!
-;;	("Newsgroups" ("[^,]+" newsgroups 0 t))
 	("Newsgroups" (".*" newsgroups 0 t))
 	("X-Digest"
 	 ("mtg-strategy-l" . "MtG strategy")
 	 ("Yucks" . "yucks"))
-;;	("X-Face"
-;;	 (list (concat "[ \t\n]*\\([^ \t\n]*\\)"
-;;		       "\\([ \t\n]+\\([^ \t\n]+\\)\\)?"
-;;		       "\\([ \t\n]+\\([^ \t\n]+\\)\\)?"
-;;		       "\\([ \t\n]+\\([^ \t\n]+\\)\\)?"
-;;		       )
-;;	       'face
-;;	       "\\1\\3\\5\\7"))
 	("X-Face" (".*" face 0 t))
 	("X-Geek\\|X-Geek-3" (".*" geek 0 t))
 	("X-URL\\|X-URI\\|X-www" (".*" url 0 t))
