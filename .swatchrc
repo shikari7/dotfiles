@@ -12,12 +12,13 @@
 # write[=user:user:...]	send matched lines to user(s)
 
 # Alert me of bad login attempts and find out who is on that system
-/INVALID|REPEATED|INCOMPLETE/			echo
+/INVALID|REPEATED|INCOMPLETE/			echo=bold
 
 # Important program errors
 /LOGIN/						echo
 /passwd/					echo
 /ruserok/					echo
+/kernel:/					echo=bold
 
 # personal stuff
 /prayati/					echo=bold
