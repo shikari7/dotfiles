@@ -3,6 +3,9 @@
 #Set on when debugging
 VERBOSE=off
  
+# supposedly this is necesary for (t)csh users?  (haven't needed it AFAIK)
+SHELL=/bin/sh
+
 #Replace `mail' with your mail directory (Pine uses mail, Elm uses Mail)
 MAILDIR=$HOME/Mail
      
