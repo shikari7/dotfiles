@@ -1,4 +1,4 @@
-Eric Hendrickson                             D. E. Shaw & Co., L.P.
-edh@crystalcave.net                                  edh@deshaw.com
-http://www.crystalcave.net/~edh/                       617/623-2170
+Eric Hendrickson                                   FanBuzz.COM, Inc.
+edh@crystalcave.net                                 edh@fanbuzz.com
+http://www.crystalcave.net/~edh/                       952/852-8834
 Don't anthropomorphize computers. They don't like it.
