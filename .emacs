@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Fri Dec  5 01:58:01 1997 by edh $
+;;; $Modified: Wed Dec 10 22:59:47 1997 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -170,6 +170,10 @@
 	  '(lambda () 
 ;	     (setq font-lock-keywords dired-font-lock-keywords)
 	     (font-lock-mode t)))
+;; font-lock
+(add-hook 'text-mode-hook
+	  '(lambda () 
+	     (font-lock-mode t)))
 
 ;; Archie
 (autoload 'archie "archie" "Archie interface" t)
@@ -179,7 +183,8 @@
 (setq efs-generate-anonymous-password t)
 
 ;; efs
-(require 'efs)				; replaces ange-ftp
+;(require 'efs)				; replaces ange-ftp
+(setq efs-use-passive-mode t)
 
 ;; Zen IRC
 (autoload 'zenirc "zenirc" "Zen IRC client" t)
