@@ -22,7 +22,7 @@ xset q
 xset s noblank
 
 if [ -f $HOME/.Xmodmap ]; then
-  xmodmap .Xmodmap
+  xmodmap $HOME/.Xmodmap
 fi
 
 if [ ! -d $HOME/.kde ]; then
