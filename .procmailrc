@@ -9,7 +9,8 @@ MAILDIR=$HOME/Mail
 #Directory for storing procmail log and rc files
 PMDIR=$HOME/.procmail
      
-MONTH=`date +%Y-%m`
+MONTH=`date +%m`
+YEAR=`date +%Y`
 LOGFILE=$PMDIR/log.$MONTH
 
 :0
@@ -17,8 +18,8 @@ LOGFILE=$PMDIR/log.$MONTH
 | sendpage -p XXXXXXXXXX -s %s
 
 :0 ic
-* ?test ! -d $MAILDIR/lists/$MONTH
-| mkdir $MAILDIR/lists/$MONTH
+* ?test ! -d $MAILDIR/lists/$YEAR/$MONTH
+| mkdir $MAILDIR/lists/$YEAR/$MONTH
 
 # handle mailing lists and etc
 INCLUDERC=$PMDIR/rc.maillists
