@@ -45,7 +45,7 @@
 ;; this is a list of IRC servers you use
 ;; it consists of servername, portnumber, password, nickname, username
 (setq zenirc-server-alist 
-      '(("irc.funet.fi")
+      '(("irc.tc.umn.edu")
 	("cs-pub.bu.edu" 6666)
 	("irc.stealth.net" 6667 nil "ben" "oedipus rpc.rexd")))
 
