@@ -17,6 +17,7 @@ set path = ( \
   /usr/local/Acrobat3/bin \
   /usr/bin/mh \
   /usr/X11R6/bin \
+  /opt/X11/bin \
   /usr/bin/mh \
   /usr/sbin \
   /usr/games \
@@ -27,8 +28,6 @@ if ($?prompt) then			# not a shell script
 # limit coredumpsize 0
 
   if ($?tcsh) then
-
-    set host = `hostname | cut -d. -f1`
 
     bindkey -k up history-search-backward
     bindkey -k down history-search-forward
@@ -44,9 +43,8 @@ if ($?prompt) then			# not a shell script
     set prompt=": $ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
     unset ppp
 
-    if ($TERM == "xterm" || $TERM == "dtterm") then
-      set host2 = `hostname | awk -F. '{printf "%s.%s", $1, $2}'`
-      alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$host2}""'
+    if ($?TERM == "xterm" || $?TERM == "dtterm") then
+      alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$HOST}""'
       cwdcmd
     endif
 
@@ -66,7 +64,7 @@ if ($?prompt) then			# not a shell script
 #   sched 4:00 echo "Go to BED, good grief\!"
 
   else					# must be csh
-    set prompt = "$user@$host \!% "
+    set prompt = "$user@$HOST \!% "
   endif
 # end tcsh
 
