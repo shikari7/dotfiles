@@ -9,7 +9,7 @@
  )
 
 ; what is this?
-(setq gnus-extra-headers nil)
+;(setq gnus-extra-headers nil)
 
 ;; use iso8859-1 fonts
 ;(if (string-equal (frame-type) 'x)
@@ -157,32 +157,18 @@
        '("au$\\|snd$\\|wav$" "auplay -volume 100 %s")
        ))
 
-;; picons
-;(add-hook 'gnus-article-display-hook 'gnus-article-display-picons t)
-;(add-hook 'gnus-summary-prepare-hook 'gnus-group-display-picons t)
-;(setq gnus-picons-display-where 'picons)
-;(setq gnus-picons-database "/edh@lenti.med.umn.edu:/net/opt/local/etc/faces")
-	      
 ;; group highlighting
 (add-hook 'gnus-select-group-hook 'gnus-group-set-timestamp)
 (add-hook 'gnus-group-catchup-group-hook 'gnus-group-set-timestamp)
 (gnus-demon-add-scan-timestamps)
 
-;; background stuph
-;(gnus-demon-add-rescan)		; annoying
-;(gnus-demon-cancel)
- 
-;; Faces
+;; XEmacs special stuff (smileys, faces)
 (when (string-match "XEmacs" emacs-version)
   (add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t))
-
-;; smileys
-(when (string-match "XEmacs" emacs-version)
   (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
   (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
 
 ;; for mail reading
-(setq mail-source-delete-incoming t)	; delete Incoming files after splitting
 (setq nnmail-split-methods
       '(("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
 	("mail.mpm" "^To:.*mpm@")
@@ -192,19 +178,11 @@
 	("mail.bugtraq" "^\\(To\\|Cc\\):.*bugtraq@")
 	("mail.gto" "^\\(To\\|Cc\\):.*gto@")
 	("mail.other" "")))
-(setq nnmail-use-long-file-names nil)
-;(setq nnmail-tmp-directory "/tmp/")	; faster than over NFS?
-(setq nnmail-expiry-wait-function
-      (lambda (group)
-	(cond ((string= group "mail.dev-null")
-	       10)
-	      ((string= group "mail.ding")
-	       7)
-	      ((string= group "mail.other")
-	       1)
-	      ((string= group "important")
-	       'never)
-	      (t 6))))
+(setq nnmail-use-procmail t
+      nnmail-procmail-directory "~/Mail/mail-incoming" ; location of procmail folders
+      nnmail-use-long-file-names nil	; break groups up into subdirs
+      nnmail-resplit-incoming t		; resplit procmail filtered folders
+      )
 
 ;; customize forwarded subjects
 (defun message-make-forward-subject ()
@@ -215,7 +193,9 @@
 ;		  "(nowhere)")
 ;	  "] " (or (message-fetch-field "Subject") "")))
 
+;;
 ;; Personalizing BBDB
+;;
 
 (add-hook 'bbdb-change-hook 'bbdb-timestamp-hook) ; last modified date field
 ;(add-hook 'bbdb-create-hook 'bbdb-creation-date-hook) ; creation date field
