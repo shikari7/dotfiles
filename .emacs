@@ -263,7 +263,7 @@ inserts \" characters."
  '(browse-url-browser-function (quote browse-url-netscape))
  '(ps-print-color-p t)
  '(toolbar-visible-p nil)
- '(user-mail-address "edh@visi.com" t)
+ '(user-mail-address "edh@mr.net" t)
  '(query-user-mail-address nil)
  '(font-lock-mode t nil (font-lock)))
 (custom-set-faces
