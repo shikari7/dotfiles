@@ -6,6 +6,12 @@
 exec > $HOME/.Xsessionlog/$DISPLAY 2>&1
 set -x
 
+# good color combinations
+# fg, bg
+# navyblue, mistyrose
+# black, blanchedalmond
+# yellow, darkkhaki
+
 # debugging info
 date
 env
