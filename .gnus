@@ -1,8 +1,9 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Wed Jun  3 13:23:09 1998 by edh $
+;;;  $Modified: Tue Jul 14 21:42:23 1998 by edh $
 
-(setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
+(setq gnus-select-method '(nntp "news.deshaw.com"))
+;(setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 ;(setq gnus-select-method '(nntp "news"	; maybe use "news.tc.umn.edu" instead of "news"
 ;				(nntp-address "birch.math.umn.edu")
 ;				(nntp-rlogin-program "ssh -l eric")
