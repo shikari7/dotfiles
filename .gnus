@@ -188,6 +188,7 @@
 (setq mail-source-delete-incoming t)	; delete Incoming files after splitting
 (setq nnmail-split-methods
       '(("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
+	("mail.mpm" "^To:.*mpm@")
 	("mail.auctions" "^From:.*\\(auction-messages\\|aw-confirm\\)@")
 	("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
 	("mail.other" "")))
