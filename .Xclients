@@ -28,7 +28,7 @@ if [ -f $HOME/.nokde ]; then
   xdaliclock -transparent -noseconds -geometry -375-0 &
   tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
   xosview -geometry +10-10 &
-  rxvt -fn 6x10 -geometry 80x10-25-110 -e swatch -t /var/log/swatch &
+  rxvt -fn 6x10 -geometry 80x10-25-120 -e swatch -t /var/log/swatch &
   perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52+20+40");' &
   perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52-20+40");' &
   nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
