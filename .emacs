@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Fri May 15 23:34:16 1998 by edh $
+;;; $Modified: Mon May 18 17:37:08 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -110,6 +110,7 @@
 
 ;; put help under C-h and make backspace another delete key
 (global-set-key [(control h)] 'help-command)
+(global-set-key "\C-h" 'delete-backward-char)
 (global-set-key [backspace] 'delete-backward-char)
 
 ;; D.E. Shaw fax-cover interface
