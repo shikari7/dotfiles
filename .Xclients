@@ -35,7 +35,7 @@ if [ ! -d $HOME/.kde ]; then
   tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
   xosview -geometry +10-10 &
   rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
-  fvwm2
+  exec fvwm2
 else
-  startkde
+  exec startkde
 fi
