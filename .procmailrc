@@ -41,6 +41,14 @@ LOGFILE=$LOGDIR/$MONTH
 * ^Subject: send forecast
 | forecast | mail -s forecast $PAGER
 
+ROOT=$MAILDIR/root/$YEAR
+DUMMY=`test -d $ROOT || mkdir -p $ROOT`
+
+# archive all root mail
+:0 c
+* ^TOroot@
+$ROOT/$MONTH
+
 # try to catch spam
 INCLUDERC=$PMDIR/rc.spam
 
