@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Fri Apr 10 00:17:16 1998 by edh $
+;;; $Modified: Fri Apr 17 19:42:41 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -152,7 +152,7 @@
 (setq webster-host "128.101.169.103")
 
 ;; Dired
-(setq dired-listing-switches "-Flagt")   ; sort on time, omit ".", ".."
+(setq dired-listing-switches "-Flat")   ; sort on time, omit ".", ".."
 (setq dired-load-hook
       '(lambda ()
 ;	 (load "dired-x")		; shouldn't need this with efs
