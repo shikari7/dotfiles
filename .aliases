@@ -28,20 +28,21 @@ alias	k	'fortune'
 alias	ko	'k -o'
 if (-f /usr/local/bin/ls) then          # GNU ls?
   alias	l	'/usr/local/bin/ls --color=auto'
-elsif ($?OSTYPE && $OSTYPE == "solaris") then
+else if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	l	'/bin/ls'
 else
   alias	l	'/bin/ls --color=auto'
 endif
 alias	la	'l -aF'
-if ($?OSTYPE && $OSTYPE == "solaris") then
+#if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	ll	'l -Flas'
-else
-  alias	ll	'l -Flags'
-endif
+#else
+#  alias	ll	'l -Flags'
+#endif
 alias	ls	'l -sF'
 alias	lr	'l -R'
 alias	lt	'ls -t'
+alias	mailq	'sudo mailq'
 alias	md	'mkdir -p \!:1 && cd \!:1'
 alias	mman	'nroff -man \!:* | less -e'
 alias	more	'less'
