@@ -299,9 +299,6 @@ inserts \" characters."
 ;; for auctex
 (require 'tex-site)			; should be in site-init.el?
 
-;; for w3
-(setq w3-default-homepage (quote "http://www.cbc.umn.edu/~edh"))
-
 (custom-set-variables
  '(user-mail-address "ericdh@tiac.net" t)
  '(query-user-mail-address nil))
