@@ -10,7 +10,8 @@ chdir
 deflogin off
 
 # change command char to ctrl-], I use ctrl-a in Emacs
-escape 
+#escape 
+escape \
 
 # NetHack mode
 nethack on
@@ -153,3 +154,15 @@ bind ^] paste [.]
 # screen -t local 0
 # screen -t mail 1 elm
 # screen -t 40 2 rlogin faui40
+
+screen -t emacs 0 gnuclient -nw
+screen -t swatch 1 tail -f /var/log/swatch
+# cron entry keeps these "current" symlinks up-to-date
+screen -t procmail 2 tail -f .procmail/log/current/current
+screen -t shell 3 tcsh
+screen -t shell 4 tcsh
+screen -t shell 5 tcsh
+screen -t shell 6 tcsh
+screen -t shell 7 tcsh
+screen -t shell 8 tcsh
+screen -t irc 9 BitchX
