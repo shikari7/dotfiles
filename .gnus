@@ -2,29 +2,26 @@
 ;;;
 ;;; $Id$	
 
+(setq nntp-authinfo-user "merlinus")
+(setq nntp-authinfo-password "zxc786ig")
+
 ;; primary methods
 (setq
- gnus-select-method '(nntp "news.mr.net")
+ gnus-select-method '(nntp "news.earthlink.net")
  gnus-secondary-select-methods '((nnml "private") (nntp "localhost" (nntp-port-number 1701)))
  )
 
-; what is this?
-;(setq gnus-extra-headers nil)
-
 ;; use iso8859-1 fonts
-;(if (string-equal (frame-type) 'x)
 (cond ((console-on-window-system-p)
        (standard-display-european t))
       (t (eq (console-type) 'tty))
       (require 'iso-ascii))
 
-;; disable Sender: field
-;(setq message-syntax-checks '((sender . disabled)))
-
 ;; mailcrypt
-(setq gnus-use-mailcrypt t)
-(add-hook 'gnus-summary-mode-hook 'mc-install-read-mode)
-(add-hook 'news-reply-mode-hook 'mc-install-write-mode)
+;(setq gnus-use-mailcrypt t)
+;(add-hook 'gnus-summary-mode-hook 'mc-install-read-mode)
+;(add-hook 'news-reply-mode-hook 'mc-install-write-mode)
+
 (add-hook 'message-mode-hook 'font-lock-mode)
 
 ;; bbdb -- Insidious Big Brother Database; for use with VM and GNUS
@@ -44,16 +41,20 @@
 (add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
 
 ;; customize article buffer
-(add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t)
 (add-hook 'gnus-article-display-hook 'gnus-article-emphasize)
 (add-hook 'gnus-article-display-hook 'gnus-article-highlight)
-(add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
 (add-hook 'gnus-article-display-hook 'gnus-article-treat-overstrike)
 (add-hook 'gnus-article-display-hook 'gnus-article-add-buttons)
 (add-hook 'gnus-article-mode-hook
 	  '(lambda ()
 	     (setq truncate-partial-width-windows nil)
 	     (setq truncate-lines nil)))
+
+;; XEmacs special stuff (smileys, faces)
+(when (string-match "XEmacs" emacs-version)
+  (add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t)
+  (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
+  (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
 
 (setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^NNTP-Posting-Host:\\|^X-Mailer:\\|^X-Newsreader:\\|^X-Spook:\\|^X-NSA-Fodder:\\|^Path:\\|^X-Geek\\|^X-URL\\|^Resent-From:\\|X-Originating-IP:")
 (setq gnus-sorted-header-list '("^Path:" "^Newsgroups:" "^From:" "^Subject:" "^To:" "^C[Cc]:" "^Date:" "Keywords:" "Summary:" "Organization:")) ; "^[^X]\-"))
@@ -77,7 +78,7 @@
 	(t
 	 (progn (setq message-signature-file ".signature2")
 		t))))
-(setq message-signature 'my-signature)
+;(setq message-signature 'my-signature)
 
 ;; Sat Aug 19 22:47:20 CDT 1995
 (defun message-header-empty (header)
@@ -90,7 +91,7 @@
 (defun message-insert-citation-line ()
   "Function that inserts a simple citation line."
   (when message-reply-headers
-    (insert (mail-header-from message-reply-headers) " says: \"I'm going to Phuket and taking Eric.\"\n\n")))
+    (insert "Eric says: \"I'm going to Koh Phangan and taking " (mail-header-from message-reply-headers) "\"\n\n")))
 
 (add-hook 'message-setup-hook
 	  '(lambda ()
@@ -119,36 +120,19 @@
  gnus-subscribe-newsgroup-method 'gnus-subscribe-hierarchically
  gnus-summary-goto-unread nil		; don't skip to next unread
  gnus-thread-ignore-subject t		; don't start a new thread if changes
- gnus-use-demon t			; do stuph when idle
+;gnus-use-demon t			; do stuph when idle
  )
 
-;; scoring
-(setq gnus-decay-scores t)
-(setq gnus-use-adaptive-scoring '(word))
-(setq gnus-score-find-score-files-function
-      '(gnus-score-find-bnews bbdb/gnus-score))
+(setq message-send-mail-partially-limit nil)
 
 (setq gnus-message-archive-group	; archive outgoing mail/news
       '((if (message-news-p)
             "news-outgoing"
-          (concat "mail-outgoing." (format-time-string "%Y-%m")))))
+          (concat "mail-outgoing."
+		  (format-time-string "%Y.")
+		  (format-time-string "%m")))))
 
-(setq
- gnus-use-trees nil
- gnus-generate-tree-function 'gnus-generate-horizontal-tree
- gnus-tree-minimize-window nil
- )
-
-;(gnus-add-configuration
-; '(article
-;   (horizontal 1.0
-;	       (vertical 0.42
-;			 (group 0.25)
-;			 (if gnus-use-trees '(tree 0.15))
-;			 (summary 1.0 point))
-;	       (vertical 1.0
-;;			 (picons 5)
-;			 (article 1.0)))))
+;;        (concat "mail-outgoing." (format-time-string "%Y-%m")))))
 
 (setq gnus-uu-user-view-rules 
       (list
@@ -161,12 +145,6 @@
 (add-hook 'gnus-group-catchup-group-hook 'gnus-group-set-timestamp)
 (gnus-demon-add-scan-timestamps)
 
-;; XEmacs special stuff (smileys, faces)
-(when (string-match "XEmacs" emacs-version)
-  (add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t)
-  (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
-  (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
-
 ;; for mail reading
 (setq nnmail-split-methods
       '(("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
@@ -175,10 +153,6 @@
 	("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
 	("mail.gnus" "^\\(To\\|Cc\\):.*ding@")
 	("mail.bugtraq" "^\\(To\\|Cc\\):.*bugtraq@")
-	("mail.gto" "^\\(To\\|Cc\\):.*gto@")
-	("mail.mn-politics" "^\\(To\\|Cc\\):.*mn-politics-")
-	("mail.mn-politics" "^\\(To\\|Cc\\):.*houseschedule@")
-	("mail.mn-politics" "^\\(To\\|Cc\\):.*sen-schedules@")
 	("mail.other" "")))
 (setq nnmail-use-procmail t
       nnmail-procmail-directory "~/Mail/mail-incoming" ; procmail folders
@@ -250,7 +224,7 @@
       bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook) ; see -ignore-
 (autoload 'bbdb/gnus-lines-and-from "bbdb-gnus")
 
-(setq bbdb-print-elide '(tex-name aka mail-alias face last-subj creation-date timestamp newsgroups notes url))
+;(setq bbdb-print-elide '(tex-name aka mail-alias face last-subj creation-date timestamp newsgroups notes url))
 
 (setq bbdb-ignore-some-messages-alist
       '(("From" . "mailer.daemon\\|root\\|news\\|daemon\\|usenet\\|uucp\\|ssa\\|room33\\|postmaster\\|adm\\|listserv\\|vacation")
