@@ -1,0 +1,20 @@
+# global logout for csh/tcsh users
+# Thu Jan 18 09:23:40 CST 1996 [prototype]
+
+# $Modified: Tue Jul  2 15:16:58 1996 by edh $
+
+#clear
+echo ""
+
+# remove the sudo user's timestamp file
+#sudo -k
+
+echo "See ya later, $user"
+echo ""
+echo -n "Captain's Log, stardate: "
+date
+echo ""
+fortune -a
+echo ""
+#echo ""
+#stty 0
