@@ -77,8 +77,8 @@ $MONTHFOLDER
 # nothing from certain people
 ##* !^FROM_DAEMON
 ##* !^From.*Eric.*Hendrickson
-# nothing bigger than 10000 bytes
-##* < 10000
+# nothing bigger than 10K
+##* < 10240
 # no mail lists
 ##* !^TO.*/dev/null
 # try to weed out other forwards
