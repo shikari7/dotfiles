@@ -41,9 +41,6 @@ LOGFILE=$LOGDIR/$MONTH
 * ^Subject: send forecast
 | forecast | mail 2081398@skymail.com
 
-# try to catch spam
-INCLUDERC=$PMDIR/rc.spam
-
 # mailing list rules and archives
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
