@@ -34,7 +34,7 @@
 /kernel/&&/PPP/					ignore
 
 # misc
-/lp0 at /&&/\(polling\)/			ignore
+/lp0 at 0x03bc, \(polling\)/			ignore
 
 # weirdness
 /innd\[/&&/connected 17 streaming allowed/	echo
