@@ -105,7 +105,6 @@
 	     (bbdb-define-all-aliases)
 	     (message-position-on-field "X-Spook")
 	     (insert (mapconcat
-			 (if gnus-use-trees '(tree 0.15))
 		      '(lambda (dummy) ; fake a for loop
 			 (cookie spook-phrases-file
 				 "hi" "mom"))
@@ -148,6 +147,7 @@
    (horizontal 1.0
 	       (vertical 0.42
 			 (group 0.25)
+			 (if gnus-use-trees '(tree 0.15))
 			 (summary 1.0 point))
 	       (vertical 1.0
 ;			 (picons 5)
