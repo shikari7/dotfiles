@@ -15,7 +15,7 @@ Netscape*installColormap: true
 ! Emacs*Foreground: Wheat
 ! Emacs*pointerColor: Orchid
 
-Emacs.default.attributeFont:	-*-lucidatypewriter-*-*-*-*-18-*-*-*-*-*-*-*
+Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
 Emacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
 Emacs*EmacsFrame.geometry:	80x40
 Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.kde/share/wallpapers/gray2.xpm
