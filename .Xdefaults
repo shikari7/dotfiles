@@ -89,6 +89,7 @@ xscreensaver.programs:	\
 	julia -root							\n\
 	kaleidescope -root						\n\
 	kumppa -root							\n\
+	lament -root							\n\
 	laser -root							\n\
 	lightning -root							\n\
 	lisa -root							\n\
