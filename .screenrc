@@ -66,22 +66,22 @@ defscrollback 4096
 # hardstatus alwaysignore
 # hardstatus alwayslastline "%w"
 
-screen -t emacs 0 gnuclient -nw
-screen -t neomort 1 tcsh
-screen -t neomort 2 tcsh
-screen -t neomort 3 tcsh
-screen -t trantor 4 tcsh
-screen -t trantor 5 tcsh
-screen -t trantor 6 tcsh
-screen -t trantor 7 tcsh
-screen -t irc 8 dnalounge
-screen -t irc 9 BitchX -c \#oit
-screen -t "trantor logs" 10 swatch -t /var/log/syslog
-screen -t "http logs" 11 tail -100f /var/log/httpd/access_log
-screen -t "tantalus logs" 12 tcsh
-#screen -t "tantalus logs" 12 ssh tantalus exec swatch -t /var/log/syslog
-screen -t "incoming mail" 13 tcsh
-#screen -t "incoming mail" 13 ssh tantalus exec tail -100f .procmail/log/current/current
+#screen -t emacs 0 gnuclient -nw
+#screen -t tantalus 1 tcsh
+#screen -t tantalus 2 tcsh
+#screen -t tantalus 3 tcsh
+#screen -t trantor 4 tcsh
+#screen -t trantor 5 tcsh
+#screen -t trantor 6 tcsh
+#screen -t trantor 7 tcsh
+#screen -t irc 8 dnalounge
+#screen -t irc 9 BitchX -c \#oit
+#screen -t "trantor logs" 10 swatch -t /var/log/syslog
+#screen -t "http logs" 11 tail -100f /var/log/httpd/access_log
+#screen -t "tantalus logs" 12 tcsh
+##screen -t "tantalus logs" 12 ssh tantalus exec swatch -t /var/log/syslog
+#screen -t "incoming mail" 13 tcsh
+##screen -t "incoming mail" 13 ssh tantalus exec tail -100f .procmail/log/current/current
 
 # cron entry keeps these "current" symlinks up-to-date
 #screen -t swatch 1 tail -f /var/log/swatch
