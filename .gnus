@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Dec 27 14:40:43 1997 by edh $
+;;;  $Modified: Wed Dec 31 20:38:21 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -106,7 +106,7 @@
       gnus-save-killed-list nil
       gnus-subscribe-hierarchical-interactive t
       gnus-subscribe-newsgroup-method 'gnus-subscribe-hierarchically
-      gnus-suppress-duplicates t	; doesn't seem to work?
+;     gnus-suppress-duplicates t	; doesn't work, now using msgid cache
       gnus-use-demon t			; do stuph when idle
       )
 
