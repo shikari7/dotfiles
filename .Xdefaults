@@ -51,7 +51,7 @@ xscreensaver.programs:	\
 	xtacy -root					\n\
 	ico -r -faces -sleep 1 -obj ico			\n\
 	xtacy -root					\n\
-	xdaliclock -root -transparent -cycle -builtin2	\n\
+	xdaliclock -root -noseconds -transparent -cycle -builtin2	\n\
 	xfishtank -c black -r 1				\n\
 	qix -root					\n\
 	helix -root					\n\
