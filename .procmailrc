@@ -53,3 +53,5 @@ INCLUDERC=$PMDIR/rc.maillists
 MONTHFOLDER=$MAILDIR/archive/mail-incoming/`date +%Y-%m`
 :0 c
 $MONTHFOLDER
+
+# else drop in my mailbox 
