@@ -4,9 +4,11 @@
 
 # Save debugging output by display, its often useful.
 exec > $HOME/.Xsessionlog/$DISPLAY 2>&1
+# the following is the output file created by /etc/X11/Xsession
+rm -f $HOME/.xsession-errors
 set -x
 
-PATH=$PATH:/usr/games
+PATH=$PATH:/usr/games:$HOME/bin
 NETHACKOPTIONS='name:Caractacus,showexp,showscore,male,\!autopickup,standout,time,dogname:Maximus,catname:Isis,fruit:bag of doritos,horsename:Mithras,align:chaotic,color,hilite_pet,windowtype:Qt'
 export PATH NETHACKOPTIONS
 
@@ -18,33 +20,41 @@ xset q
 # initial set-up
 #[ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
 xmodmap $HOME/.Xmodmap
-xset s noblank
-xset m 3 8
-#xset dpms 0 0 86400
 
 # why is this necessary?
 xhost +localhost >/dev/null
 
 # preliminaries
 xscreensaver-command -exit
-blacken-cmap -loop &
+#blacken-cmap -loop &
 
 # monitoring stuff
 tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
+#tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -530-10 &
 xosview -geometry +10-10 &
-rxvt -fg yellow -bg darkblue -fn 6x10 -geometry 80x10-25-120 -e swatch -t /var/log/swatch &
+#xosview -geometry -10-10 &
+rxvt -fg yellow -bg darkblue -fn 6x10 -geometry 80x10-25-120 -name swatch -e swatch -t /var/log/swatch &
+#rxvt -fg yellow -bg darkblue -fn 6x10 -geometry 70x10-230-110 -name swatch -e swatch -t /var/log/swatch &
 
 # nntp forwarding :)
 #sshrun .ssh/cronkey exec rxvt -iconic -iconic -rv -fn fixed -e ssh -C -o \"CompressionLevel 9\" -L 1701:news.visi.com:119 isis.visi.com &
 
 # initial xterms
-perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52+20+40");' &
-perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52-20+40");' &
+perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52+80+50");' &
+perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52-80+50");' &
 
 # fun stuff
 xdaliclock -transparent -noseconds -geometry -375-0 -cycle &
+#xdaliclock -transparent -noseconds -geometry -200-0 -cycle &
 xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
-nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
-xearth -ncolors 12 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos random -nice 10 -fork
+#nice -n 20 xscreensaver -install -cycle 2 -timeout 5 -dpms &
+nice -n 20 xscreensaver &
+(sleep 20; xearth -ncolors 12 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos moon -nice 10 -fork) &
+
+xset s noblank
+xset m 3 8
+#xset -dpms
+xset dpms 0 0 3600
 
 exec fvwm2
+#exec wmaker
