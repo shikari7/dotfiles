@@ -38,8 +38,8 @@
 /innd\[/					ignore
 
 /xntpd/&&/synchroni(zed|sation) (to|lost)/	ignore
+/named\[/&&/sendto/&&/Network is unreachable/	ignore
 /named\[/&&/recvfrom:/				ignore
-/(xntpd|named)/&&/sendto/&&/Network is unreachable/	echo	10:00
 /named/&&/Malformed response/			ignore
 
 /icmpinfo/&&/(started|ICMP_Dest_Unreachable)/	ignore
