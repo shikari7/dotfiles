@@ -21,8 +21,8 @@ PMDIR=$HOME/.procmail
 PAGER=6123250594@mobile.att.net
 
 # catch any duplicates with a Message-ID cache (before logging)
-:0 Wh: $PMDIR/msgid.lock
-| formail -D 65536 $PMDIR/msgid.cache
+#:0 Wh: $PMDIR/msgid.lock
+#| formail -D 65536 $PMDIR/msgid.cache
 
 MONTH=`date +%m`
 YEAR=`date +%Y`
