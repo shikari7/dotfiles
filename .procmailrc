@@ -19,6 +19,10 @@ PMDIR=$HOME/.procmail
 #* ^Subject:.*Digest
 #|formail +1 -d -s procmail
 
+# catch any duplicates with a Message-ID cache (before logging)
+:0 Wh: $PMDIR/msgid.lock
+| formail -D 8192 $PMDIR/msgid.cache
+
 MONTH=`date +%m`
 YEAR=`date +%Y`
 LOGFILE=$PMDIR/log.$YEAR-$MONTH
