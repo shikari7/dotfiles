@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Wed May 13 16:50:32 1998 by edh $
+;;;  $Modified: Tue Jun  2 15:37:36 1998 by edh $
 
 (setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 ;(setq gnus-select-method '(nntp "news"	; maybe use "news.tc.umn.edu" instead of "news"
@@ -270,7 +270,7 @@
 ;;		       )
 ;;	       'face
 ;;	       "\\1\\3\\5\\7"))
-	("X-Face" (".*" x-face 0 t))
+	("X-Face" (".*" face 0 t))
 	("X-Geek\\|X-Geek-3" (".*" geek 0 t))
 	("X-URL\\|X-URI\\|X-www" (".*" url 0 t))
 	("X-Organisation\\|X-Organization\\|Organisation\\|Organization" (".*" company 0 t))))
