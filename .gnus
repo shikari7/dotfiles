@@ -7,44 +7,43 @@
 
 ;; primary methods
 (setq
- gnus-select-method '(nntp "news.earthlink.net")
- gnus-secondary-select-methods '((nnml "private") (nntp "localhost" (nntp-port-number 1701)))
+ gnus-select-method '(nnml "private")
+ gnus-secondary-select-methods nil
  )
 
-;; use iso8859-1 fonts
-(cond ((console-on-window-system-p)
-       (standard-display-european t))
-      (t (eq (console-type) 'tty))
-      (require 'iso-ascii))
+(setq mail-sources
+      '((file)
+	(directory :path "/home/edh/Mail/mail-incoming/")))
 
 ;; mailcrypt
+;(autoload 'mc-install-write-mode "mailcrypt" nil t)
+;(autoload 'mc-install-read-mode "mailcrypt" nil t)
+;(add-hook 'mail-mode-hook 'mc-install-write-mode)
 ;(setq gnus-use-mailcrypt t)
-;(add-hook 'gnus-summary-mode-hook 'mc-install-read-mode)
-;(add-hook 'news-reply-mode-hook 'mc-install-write-mode)
 
+;; misc 
 (add-hook 'message-mode-hook 'font-lock-mode)
+(setq message-max-buffers nil)		; default 10, nil => keep all
 
 ;; bbdb -- Insidious Big Brother Database; for use with VM and GNUS
 (require 'bbdb)
-(bbdb-initialize 'gnus 'message 'sc 'w3)
+(bbdb-initialize 'gnus 'message 'w3)
 (bbdb-insinuate-gnus)
 (bbdb-insinuate-message)
 (setq gnus-use-bbdb t)
 (setq gnus-optional-headers 'bbdb/gnus-lines-and-from)
 
-(define-key gnus-article-mode-map "\C-h" 'gnus-article-prev-page)
-(define-key gnus-summary-mode-map "\C-h" 'gnus-summary-prev-page)
 (define-key message-mode-map "\M-\C-i" 'bbdb-complete-name)
 
 ;; initialize
-(add-hook 'gnus-load-hook 'turn-off-filladapt-mode)
+;(add-hook 'gnus-load-hook 'turn-off-filladapt-mode)
 (add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
 
 ;; customize article buffer
-(add-hook 'gnus-article-display-hook 'gnus-article-emphasize)
-(add-hook 'gnus-article-display-hook 'gnus-article-highlight)
-(add-hook 'gnus-article-display-hook 'gnus-article-treat-overstrike)
-(add-hook 'gnus-article-display-hook 'gnus-article-add-buttons)
+;(add-hook 'gnus-article-display-hook 'gnus-article-emphasize)
+;(add-hook 'gnus-article-display-hook 'gnus-article-highlight)
+;(add-hook 'gnus-article-display-hook 'gnus-article-treat-overstrike)
+;(add-hook 'gnus-article-display-hook 'gnus-article-add-buttons)
 (add-hook 'gnus-article-mode-hook
 	  '(lambda ()
 	     (setq truncate-partial-width-windows nil)
@@ -54,45 +53,22 @@
 (when (string-match "XEmacs" emacs-version)
   (add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t)
   (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
-  (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
+  (setq smiley-regexp-alist 'smiley-nosey-regexp-alist) ; less aggressive
+  )
 
-(setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^NNTP-Posting-Host:\\|^X-Mailer:\\|^X-Newsreader:\\|^X-Spook:\\|^X-NSA-Fodder:\\|^Path:\\|^X-Geek\\|^X-URL\\|^Resent-From:\\|X-Originating-IP:")
-(setq gnus-sorted-header-list '("^Path:" "^Newsgroups:" "^From:" "^Subject:" "^To:" "^C[Cc]:" "^Date:" "Keywords:" "Summary:" "Organization:")) ; "^[^X]\-"))
+(setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^NNTP-Posting-Host:\\|^X-Mailer:\\|^X-Newsreader:\\|^X-Spook:\\|^X-NSA-Fodder:\\|^Path:\\|^X-Geek\\|^X-URL\\|^Resent-From:\\|X-Originating-IP:\\|^User-Agent:")
+(setq gnus-sorted-header-list '("^Path:" "^Newsgroups:" "^From:" "^Subject:" "^To:" "^C[Cc]:" "^Date:" "^Keywords:" "^Summary:" "^Organization:")) ; "^[^X]\-"))
 
-(setq message-default-headers		; add customized mail headers
+(setq message-default-headers		; add custom mail headers b4 editing
       (concat
 ;      "Reply-To: " user-mail-address "\n"
        "Organization: The Weylani-Yutano Corporation" "\n"
-;      "X-URL: <a href=\"http://www.crystalcave.net/~edh/\">The Crystal Cave</a>" "\n"
+       "X-URL: <a href=\"http://www.crystalcave.net/~edh/\">The Crystal Cave</a>" "\n"
        "X-sPoOk: " "\n"
-       ))
+       )
+      )
 
 (load "spook")
-
-;; Thu Apr 30 00:54:18 EDT 1998
-(defun my-signature ()
-  (cond ((and (boundp 'gnus-newsgroup-name)
-	      (string-match "^nnml" gnus-newsgroup-name))
-	 (progn (setq message-signature-file ".signature")
-		t))
-	(t
-	 (progn (setq message-signature-file ".signature2")
-		t))))
-;(setq message-signature 'my-signature)
-
-;; Sat Aug 19 22:47:20 CDT 1995
-(defun message-header-empty (header)
-  "Returns true if the given mail header is empty."
-  (message-position-on-field header)	; puts point at end of header
-  (beginning-of-line)
-  (forward-char (+ (length header) 2))
-  (cond ((eolp) t)))
-
-(defun message-insert-citation-line ()
-  "Function that inserts a simple citation line."
-  (when message-reply-headers
-    (insert "Eric says: \"I'm going to Koh Phangan and taking " (mail-header-from message-reply-headers) "\"\n\n")))
-
 (add-hook 'message-setup-hook
 	  '(lambda ()
 	     (bbdb-define-all-aliases)
@@ -104,26 +80,59 @@
 		      '(1 2 3 4 5 6)
 		      " "))))
 
+;; Thu Apr 30 00:54:18 EDT 1998
+;(defun my-signature ()
+;  (cond ((and (boundp 'gnus-newsgroup-name)
+;	      (string-match "^nnml" gnus-newsgroup-name))
+;	 (progn (setq message-signature-file ".signature")
+;		t))
+;	(t
+;	 (progn (setq message-signature-file ".signature2")
+;		t))))
+;(setq message-signature 'my-signature)
+(setq message-signature nil)
+
+;; Sat Aug 19 22:47:20 CDT 1995
+;(defun message-header-empty (header)
+;  "Returns true if the given mail header is empty."
+;  (message-position-on-field header)	; puts point at end of header
+;  (beginning-of-line)
+;  (forward-char (+ (length header) 2))
+;  (cond ((eolp) t)))
+
+;(defun message-insert-citation-line ()
+;  "Function that inserts a simple citation line."
+;  (when message-reply-headers
+;    (insert "Eric says: \"I'm going to Koh Phangan and taking " (mail-header-from message-reply-headers) "\"\n\n")))
+
 (setq
- gnus-audio-au-player "/usr/bin/play"
- gnus-audio-wav-player "/usr/bin/play"
- gnus-auto-center-summary t
- gnus-auto-select-first nil
- gnus-check-new-newsgroups 'ask-server
- gnus-default-article-saver 'gnus-summary-save-in-mail
- gnus-expert-user t		; *never* ask for confirmation
-;gnus-play-startup-jingle t
- gnus-read-active-file 'some
- gnus-save-killed-list nil
- gnus-single-article-buffer nil		; don't use the same article buffer
+;gnus-audio-au-player "/usr/bin/play"
+;gnus-audio-wav-player "/usr/bin/play"
+ gnus-check-new-newsgroups nil
+;gnus-default-article-saver 'gnus-summary-save-in-mail
+ gnus-expert-user t			; *never* ask for confirmation
+;gnus-read-active-file nil
+;gnus-save-killed-list nil
+;gnus-single-article-buffer nil		; don't use the same article buffer
  gnus-subscribe-hierarchical-interactive t
  gnus-subscribe-newsgroup-method 'gnus-subscribe-hierarchically
- gnus-summary-goto-unread nil		; don't skip to next unread
- gnus-thread-ignore-subject t		; don't start a new thread if changes
-;gnus-use-demon t			; do stuph when idle
+;gnus-summary-goto-unread nil		; don't skip to next unread
+;gnus-thread-ignore-subject t		; don't start a new thread if changes
  )
 
-(setq message-send-mail-partially-limit nil)
+
+;; mime settings
+(setq message-send-mail-partially-limit nil) ; Outlook no grok multi-part msgs
+(setq gnus-ignored-mime-types
+      '("text/x-vcard")
+      )
+(defun my-save-all-jpeg-parts (handle)
+  (when (equal (car (mm-handle-type handle)) "image/jpeg")
+    (with-temp-buffer
+      (insert (mm-get-part handle))
+      (write-region (point-min) (point-max)
+		    (read-file-name "Save jpeg to: ")))))
+;(setq gnus-article-mime-part-function 'my-save-all-jpeg-parts)
 
 (setq gnus-message-archive-group	; archive outgoing mail/news
       '((if (message-news-p)
@@ -132,33 +141,33 @@
 		  (format-time-string "%Y.")
 		  (format-time-string "%m")))))
 
-;;        (concat "mail-outgoing." (format-time-string "%Y-%m")))))
-
-(setq gnus-uu-user-view-rules 
-      (list
-       '("jpg$\\|gif$" "xv -perfect %s") 
-       '("au$\\|snd$\\|wav$" "auplay -volume 100 %s")
-       ))
-
 ;; group highlighting
-(add-hook 'gnus-select-group-hook 'gnus-group-set-timestamp)
-(add-hook 'gnus-group-catchup-group-hook 'gnus-group-set-timestamp)
-(gnus-demon-add-scan-timestamps)
+;(add-hook 'gnus-select-group-hook 'gnus-group-set-timestamp)
+;(add-hook 'gnus-group-catchup-group-hook 'gnus-group-set-timestamp)
+;(gnus-demon-add-scan-timestamps)
 
 ;; for mail reading
-(setq nnmail-split-methods
-      '(("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
-	("mail.mpm" "^To:.*mpm@")
-	("mail.auctions" "^From:.*\\(auction-messages\\|aw-confirm\\)@")
-	("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
-	("mail.gnus" "^\\(To\\|Cc\\):.*ding@")
-	("mail.bugtraq" "^\\(To\\|Cc\\):.*bugtraq@")
-	("mail.other" "")))
-(setq nnmail-use-procmail t
-      nnmail-procmail-directory "~/Mail/mail-incoming" ; procmail folders
-      nnmail-use-long-file-names nil	; break groups up into subdirs
-      nnmail-resplit-incoming t		; resplit procmail filtered folders
-      )
+(setq
+ nnmail-split-methods
+ '(("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
+   ("mail.mpm" "^To:.*mpls@pm.org")
+   ("mail.auctions" "^From:.*\\(auction-messages\\|aw-confirm\\)@")
+   ("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
+   ("mail.mandrake-expert" "^\\(To\\|Cc\\):.*expert@")
+   ("mail.mandrake-newbie" "^\\(To\\|Cc\\):.*newbie@")
+   ("mail.ip" "^\\(To\\|Cc\\):.*ip-sub-1@")
+   ("mail.gnus" "^\\(To\\|Cc\\):.*ding@")
+   ("mail.bugtraq" "^\\(To\\|Cc\\):.*bugtraq@")
+   ("mail.bugtraq" "^Resent-From:.*aleph1@")
+   ("mail.other" "")
+   )
+ )
+(setq
+ nnmail-use-long-file-names nil	; break groups up into subdirs
+ nnmail-procmail-directory "~/Mail/mail-incoming" ; procmail folders
+ nnmail-use-procmail t
+ nnmail-resplit-incoming t		; resplit procmail filtered folders
+ )
 
 ;; customize forwarded subjects
 (defun message-make-forward-subject ()
@@ -182,55 +191,30 @@
 	    (define-key minibuffer-local-map "\M-\t" 'bbdb-complete-name)
 	    ))
 
-(setq bbdb-auto-notes-alist
-      '(("To\\|Cc"
-	 ("bugtraq" . "Bugtraq")
-	 ("ding@" . "(ding) Gnus")
-	 ("mtg-strategy-l@" . "MtG strategy")
-	 ("tcsh" . "TCSH development"))
-	("Subject" (".*" last-subj 0 t))
-	("From" ("^\\([a-z]+\\)$" mail-alias 1))
-	("Newsgroups" (".*" newsgroups 0 t))
-	("X-Digest"
-	 ("mtg-strategy-l" . "MtG strategy")
-	 ("Yucks" . "yucks"))
-	("X-Face" (".*" face 0 t))
-	("X-Geek\\|X-Geek-3" (".*" geek 0 t))
-	("X-URL\\|X-URI\\|X-www" (".*" url 0 t))
-	("X-Organisation\\|X-Organization\\|Organisation\\|Organization" (".*" company 0 t))))
-
-(setq bbdb-canonicalize-net-hook
-      '(lambda (addr)
-	 (cond ((string-match
-		 "\\`\\([^@]+@\\).*\\.\\(cs\\.umn\\.edu\\)\\'" addr)
-		(concat (substring addr (match-beginning 1) (match-end 1))
-			(substring addr (match-beginning 2) (match-end 2))))
-	       (t addr))))
-
-(setq bbdb-always-add-addresses t
-      bbdb-canonicalize-redundant-nets-p t ; filter out redundant addresses
-      bbdb-default-area-code 612
-      bbdb-electric-p t			; what does this do?
-      bbdb-elided-display nil		; or (e.g.) '(address phone net notes)
-;     bbdb-new-nets-always-primary t
-      bbdb-offer-save 'auto		; just go ahead and save .bbdb
-      bbdb-send-mail-style 'gnus-mail
-;     bbdb-use-pop-up (> (screen-height) 24)
-      bbdb-use-pop-up nil)
+(setq
+;bbdb-always-add-addresses t
+;bbdb-canonicalize-redundant-nets-p t	; filter out redundant addresses
+ bbdb-default-area-code 612
+;bbdb-electric-p t			; what does this do?
+;bbdb-elided-display nil		; or (e.g.) '(address phone net notes)
+;;bbdb-new-nets-always-primary t
+ bbdb-offer-save 'auto			; just go ahead and save .bbdb
+;bbdb-send-mail-style 'gnus-mail
+ bbdb-use-pop-up nil
+ )
 
 ;; BBDB specific to certain packages
-(setq bbdb/gnus-header-prefer-real-names t
-;     bbdb/news-auto-create-p t		; way too many BBDB entries!!
-      bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook) ; see -ignore-
-(autoload 'bbdb/gnus-lines-and-from "bbdb-gnus")
+;(setq bbdb/gnus-header-prefer-real-names t
+;      bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook) ; see -ignore-
+;(autoload 'bbdb/gnus-lines-and-from "bbdb-gnus")
 
 ;(setq bbdb-print-elide '(tex-name aka mail-alias face last-subj creation-date timestamp newsgroups notes url))
 
-(setq bbdb-ignore-some-messages-alist
-      '(("From" . "mailer.daemon\\|root\\|news\\|daemon\\|usenet\\|uucp\\|ssa\\|room33\\|postmaster\\|adm\\|listserv\\|vacation")
-	("Newsgroups" . ".*")
-	("To" . "mailing-list-1\\|mailing-list-2") ; sample
-	("CC" . "mailing-list-1\\|mailing-list-2"))) ; sample
+;(setq bbdb-ignore-some-messages-alist
+;      '(("From" . "mailer.daemon\\|root\\|news\\|daemon\\|usenet\\|uucp\\|ssa\\|room33\\|postmaster\\|adm\\|listserv\\|vacation")
+;	("Newsgroups" . ".*")
+;	("To" . "mailing-list-1\\|mailing-list-2") ; sample
+;	("CC" . "mailing-list-1\\|mailing-list-2"))) ; sample
 
 (put 'newsgroups 'field-separator ", ")
 (put 'notes 'field-separator ", ")
