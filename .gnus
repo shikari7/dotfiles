@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Thu Apr 30 12:25:19 1998 by edh $
+;;;  $Modified: Thu Apr 30 12:36:10 1998 by edh $
 
 (setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 ;(setq gnus-select-method '(nntp "news"
@@ -75,7 +75,7 @@
 	 (progn (setq message-signature-file ".signature")
 		t))
         (t
-	 (progn (setq message-signature-file ".sig")
+	 (progn (setq message-signature-file ".signature2")
 	       t))))
 (setq message-signature 'my-signature)
 
