@@ -66,7 +66,7 @@
 
 /(rlogind|rshd|telnetd|ftpd)/&&/(deshaw|juno).com/	ignore
 /ftpd/&&/session closed/			ignore
-/(rlogind|rshd|telnetd|ftpd)/			echo=blink
+/(rlogind\[|rshd\[|telnetd\[|ftpd\[)/		echo=blink
 
 # catch everything else
 /.*/						echo
