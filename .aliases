@@ -96,3 +96,11 @@ Shell:          \7\\\
 Passwd:         \2\\\
 (uid,gid):      (\3,\4)\\\
 /'"
+
+# for audio-tape.ps
+alias	tape_prolog1	awk '/^%.PS/,/^%%BeginDoc/'
+alias	tape_prolog2	awk '/^%%EndDoc/,/^%%EndPro/'
+alias	tape_trailer	awk '/^%%Trailer/,/^--eof--\$/'
+setenv	TAPEPS	~/src/ps/audio-tape.ps
+alias	catapes	'(tape_prolog1 $TAPEPS;tape_prolog2 $TAPEPS;cat \!*; tape_trailer $TAPEPS)'
+alias	printapes	'(catapes \!*) | lpr'
