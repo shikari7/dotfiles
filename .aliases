@@ -67,6 +67,7 @@ alias	vl	'vi ~/.login'
 alias	vm	'vi Makefile'
 alias	vo	'vi ~/.logout'
 alias	vt	'vi ~/.tcshrc'
+alias	whatos	"echo 'GET / HTTP/1.0\n' | nc \!:1 80 | egrep '^Server:'"
 #alias	where	'who | grep \!:1 | awk '"'"\{print \$6\}"'"''
 alias	wai	'who am i'
 #alias	whois	'whois -h rs.internic.net'
