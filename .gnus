@@ -4,7 +4,7 @@
 
 ;; primary methods
 (setq
- gnus-select-method '(nntp "localhost" (nntp-port-number 1701))
+;gnus-select-method '(nntp "localhost" (nntp-port-number 1701))
  gnus-secondary-select-methods '((nnml "private"))
  )
 
