@@ -1,5 +1,7 @@
-# global logout for csh/tcsh users
-# Thu Jan 18 09:23:40 CST 1996 [prototype]
+# -*-shell-script-*-
+
+# eric's .logout file
+# Thu Jan 18 09:23:40 CST 1996
 
 # $Id$	
 
@@ -11,10 +13,13 @@ sudo -k
 
 echo "See ya later, $user"
 echo ""
+
 echo -n "Captain's Log, stardate: "
 date
+
 echo ""
 fortune
-echo ""
-#echo ""
-#stty 0
+#/usr/lib/xemacs-20.3/i386-pc-linux/yow -f /usr/lib/xemacs-20.3/etc/yow.lines
+
+sleep 1
+stty 0
