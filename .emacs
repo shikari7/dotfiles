@@ -1,6 +1,6 @@
 ;;;
 ;;; eric's emacs start-up				18 august, 1991
-;;; edh@staff.juno.com
+;;; edh@crystalcave.net
 
 ;;; history
 ;;;  o heavily revamped summer 1992
@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Tue Oct  6 15:30:11 1998 by edh $
+;;; $Id$	
 
 ;;; Emacs debugging
 ;;;
@@ -21,6 +21,7 @@
 (setq lpr-switches '("-G -CEric"))
 (setq track-eol t)                      ; follow end-of-line with C-n, C-p
 (setq truncate-partial-width-windows t) ; no line wrapping
+(setq frame-background-mode 'dark)
 
 ;;; backups
 
