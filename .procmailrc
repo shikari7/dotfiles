@@ -23,17 +23,18 @@ MONTH=`date +%m`
 YEAR=`date +%Y`
 LOGFILE=$PMDIR/log.$YEAR-$MONTH
 
-:0
-* ^Subject: page me
-| sendpage -p XXXXXXXXXX -s %s
+#:0
+#* ^Subject: page me
+#| sendpage -p XXXXXXXXXX -s %s
 
 # handle mailing lists and etc
 
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
+DUMMY=`test -d $LISTSDIR || mkdir -p $LISTDIR`
 
-:0 ic
-* ?test ! -d $LISTSDIR
-| mkdir $LISTSDIR
+#:0 ic
+#* ?test ! -d $LISTSDIR
+#| mkdir $LISTSDIR
 
 INCLUDERC=$PMDIR/rc.maillists
 
