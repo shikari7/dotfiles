@@ -63,6 +63,7 @@ $MONTHFOLDER
 
 # send copies of some mail to my pager
 :0 c
+* !^FROM_DAEMON
 | resend-mbox -r $PAGER -m -p
 
 # else drop in my mailbox 
