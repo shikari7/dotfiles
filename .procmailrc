@@ -41,7 +41,7 @@ LOGFILE=$LOGDIR/$MONTH
 
 # quick hack to page me with my current IP address
 :0
-* ^Subject: ppp0
+* ^Subject: send ip address
 | ifconfig ppp0 | mail 2081398@skymail.com
 
 # mailing list rules and archives
