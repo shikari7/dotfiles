@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Tue Jul 14 21:42:23 1998 by edh $
+;;;  $Modified: Wed Aug  5 10:57:34 1998 by edh $
 
 (setq gnus-select-method '(nntp "news.deshaw.com"))
 ;(setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
@@ -58,7 +58,7 @@
 ;       " {$o*tv]\\xCB#}~M}0CfCoy8]{97T6m_e[}VMhmQff8.-eT]_,oP<C=bBH&uv\"ncEAw34D)wK2*$Se3" "\n"
 ;       " P-]ty:Mu!w'Ep[zx-6^2H!y>lG{`G#=s*dU6Qaum5cYq[GH;\"!3fp<..E+)yM2Jd:wUOZ@+_2D|3An" "\n"
 ;       " Nz*3Xu\\Il/dDJ.]iWVXDn\\#2c*QfanIas.[m]5!}" "\n"
-       "X-URL: <a href=\"http://www.math.umn.edu/~eric/\">The Crystal Cave</a>\n"
+       "X-URL: <a href=\"http://www.tiac.net/users/ericdh/\">The Crystal Cave</a>\n"
        "X-Geek: GAT d-() s++: a- C++$ US++++$ P++(---)$"
        " L E+(---) W+++$ N+$>++ o+ K !w--- !O M+(-) !V-- PS+ PE"
        " Y+>++ PGP>+++ t+(++)@ !5 X+ R tv+ b+>+++ DI++++"
