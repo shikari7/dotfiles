@@ -54,7 +54,7 @@ tkpostage -detailFont 8x16 -numberFont 10x20 &
 nxterm -fn lucidasanstypewriter-14 -geometry 80x64+30+40 &
 nxterm -fn lucidasanstypewriter-14 -geometry 80x64+810+40 &
 
-nxterm -fn 6x10 -geometry 80x10 -e swatch -t /var/log/swatch &
+rxvt -fn 6x10 -geometry 80x10 -e swatch -t /var/log/swatch &
 
 #enlightenment
 fvwm2
