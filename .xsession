@@ -45,8 +45,8 @@ fi
 #
 # If there is no standard session, run only an xterm.
 #
-if [ -x $HOME/.Xinitrc ]
-then	$EXEC $HOME/.Xinitrc
+if [ -x $HOME/.Xclients ]
+then	$EXEC $HOME/.Xclients
 else	if [ -x $HOME/.xsession-add ]
 	then	. $HOME/.xsession-add
 	fi
