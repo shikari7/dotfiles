@@ -17,8 +17,15 @@ endif
 
 clear
 
+# Set up the terminal
+#eval `tset -s -Q -m ':?hp' `
+#stty erase "^H" kill "^U" intr "^C" eof "^D" susp "^Z" hupcl ixon ixoff tostop tabs	
 #set term = `qterm +real +usrtab`
 #set term = `qterm`
+
+# Set up shell environment:
+set noclobber
+set history=20
 
 #fetchmail
 
@@ -26,7 +33,7 @@ clear
 #msgs -fpq
 #echo ""
 
-screen -ls
-#messages
-countmail
+#screen -ls
+messages
+#countmail
 uptime
