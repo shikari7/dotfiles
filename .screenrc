@@ -1,7 +1,5 @@
 # Eric's iScreenRC
 # Tue Jul 28 09:37:41 CDT 1992
-# updated from Red Hat 4.1 default screenrc
-# Thu Apr 17 12:12:55 EDT 1997
 
 # $Id$	
 
@@ -17,6 +15,7 @@ escape 
 # NetHack mode
 nethack on
 
+# something is happening somewhere!
 activity "window % summons you!~"
 
 # Woof Woof
@@ -50,7 +49,7 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 # set every new windows hardstatus line to somenthing descriptive
 # defhstatus "screen: ^E (^Et)"
 
-# I must have big buffers
+# I have the biggest.. buffers of them all!
 defscrollback 4096
 #defscrollback 1000
 
