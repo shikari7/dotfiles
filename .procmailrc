@@ -27,6 +27,8 @@ LOGDIR=$PMDIR/log/$YEAR
 DUMMY=`test -d $LOGDIR || mkdir -p $LOGDIR`
 LOGFILE=$LOGDIR/$MONTH
 
+PAGER=6123250594@mobile.att.net
+
 #:0
 #* ^Subject: page me
 #| sendpage -p XXXXXXXXXX -s %s
@@ -34,12 +36,12 @@ LOGFILE=$LOGDIR/$MONTH
 # page me with my current IP address
 :0
 * ^Subject: send ip
-| ifconfig ppp0 | mail 2081398@skymail.com
+| ifconfig ppp0 | mail -s ip-address $PAGER
 
 # page me with the current forecast (defaults to Boston)
 :0
 * ^Subject: send forecast
-| forecast | mail 2081398@skymail.com
+| forecast | mail -s forecast $PAGER
 
 # mailing list rules and archives
 SPOOLDIR=$MAILDIR/mail-incoming
