@@ -24,12 +24,14 @@ if ($?TERM && $TERM == "dtterm") then
   setenv TERM	vt100
 endif
 
+$HOME/bin/sigsetup --pipe
+
 # mail and news stuff
-#fetchmail
 #trn -c
 #msgs -fpq
 #echo ""
 #countmail
+fetchmail
 messages
 uptime
 
