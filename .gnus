@@ -1,8 +1,8 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Thu Mar 26 14:08:54 1998 by edh $
+;;;  $Modified: Sun Mar 29 16:30:39 1998 by edh $
 
-(setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
+(setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 
 ;; iso8859-1
 ;(if (string-equal (frame-type) 'x)
