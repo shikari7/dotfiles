@@ -39,12 +39,12 @@ LOGFILE=$LOGDIR/$MONTH
 # toggle my PPP connection UP
 :0
 * ^Subject: TOGGLE ISP UP
-| toggle-isp --device ppp1 --up
+| toggle-isp --device ppp0 --up
 
 # toggle my PPP connection DOWN
 :0
 * ^Subject: TOGGLE ISP DOWN
-| toggle-isp --device ppp1 --down
+| toggle-isp --device ppp0 --down
 
 # page me with my current IP address
 :0
