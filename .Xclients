@@ -7,7 +7,8 @@ exec > $HOME/.Xsessionlog/$DISPLAY 2>&1
 set -x
 
 PATH=$PATH:/usr/games
-export PATH
+NETHACKOPTIONS='name:Caractacus,showexp,showscore,male,\!autopickup,standout,time,dogname:Maximus,catname:Isis,fruit:bag of doritos,horsename:Mithras,align:chaotic,color,hilite_pet,windowtype:Qt'
+export PATH NETHACKOPTIONS
 
 # debugging info
 date
@@ -15,7 +16,8 @@ env
 xset q
 
 # initial set-up
-[ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
+#[ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
+xmodmap $HOME/.Xmodmap
 xset s noblank
 xset m 3 8
 #xset dpms 0 0 86400
