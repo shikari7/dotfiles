@@ -94,12 +94,6 @@
   (when message-reply-headers
     (insert (mail-header-from message-reply-headers) " says: \"I'm going to Paris and taking Eric\"\n\n")))
 
-(setq
- gnus-use-trees t
- gnus-generate-tree-function 'gnus-generate-horizontal-tree
- gnus-tree-minimize-window nil
- )
-
 (add-hook 'message-setup-hook
 	  '(lambda ()
 	     (bbdb-define-all-aliases)
@@ -141,6 +135,12 @@
             "news-outgoing"
           (concat "mail-outgoing."
 		  (format-time-string "%Y-%m" (current-time))))))
+
+(setq
+ gnus-use-trees t
+ gnus-generate-tree-function 'gnus-generate-horizontal-tree
+ gnus-tree-minimize-window nil
+ )
 
 (gnus-add-configuration
  '(article
