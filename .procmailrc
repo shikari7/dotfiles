@@ -1,5 +1,8 @@
 #	$Id$	
 
+# To Do:
+# o Subject: get pgp key
+
 #Set on when debugging
 VERBOSE=off
  
