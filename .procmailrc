@@ -39,10 +39,15 @@ LOGFILE=$LOGDIR/$MONTH
 #* ^Subject: page me
 #| sendpage -p XXXXXXXXXX -s %s
 
-# quick hack to page me with my current IP address
+# page me with my current IP address
 :0
 * ^Subject: send ip address
 | ifconfig ppp0 | mail 2081398@skymail.com
+
+# page me with the current forecast (defaults to Boston)
+:0
+* ^Subject: send forecast
+| forecast | mail 2081398@skymail.com
 
 # mailing list rules and archives
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
