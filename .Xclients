@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 	$Id$	
+
 # Save debugging output by display, its often useful.
 exec > $HOME/.Xsessionlog/$DISPLAY 2>&1
 set -x
