@@ -21,53 +21,20 @@ xset q
 # disable the screensaver
 xset s noblank
 
-# slow the mouse down
-xset m 3 8
-
-if [ -f $HOME/.Xmodmap ]; then
+if [ ! -d $HOME/.kde ]; then
+  xset m 3 8
+  if [ -f $HOME/.Xmodmap ]; then
     xmodmap .Xmodmap
+  fi
+  xdaliclock -transparent -noseconds -geometry -375-0 &
+  blacken-cmap -loop &
+  xearth -ncolors 16 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos random -nice 10 -fork
+  nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
+  xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
+  tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
+  xosview -geometry +10-10 &
+  rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
+  fvwm2
+else
+  startkde
 fi
-
-# additional fonts
-#for i in /usr/openwin/lib/X11/fonts/*
-#do    
-#   xset fp+ $i >/dev/null 2>&1
-#done
-
-# various time pieces...
-#moonclock -moonclock -geometry -510+5 &
-#xdaliclock -cycle -transparent -noseconds -geometry -400-0 &
-xdaliclock -transparent -noseconds -geometry -375-0 &
-#xticktalk -geometry -400-0 -noampm &
-#sunclock iconified geometry is 128xXX
-#sunclock -iconic -icongeometry -310-245 &
-#sunclock -iconic &
-
-# keep my color map clean
-blacken-cmap -loop &
-
-# toys
-#xsnow -nowind &
-#xearth -ncolors 16 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos random -nice 10 -fork
-nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
-xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
-
-# notify me of new mail...
-#xbiff -geometry 48x48-322-66 -volume 0 &
-tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
-
-# windows
-#nxterm -fn lucidasanstypewriter-14 -geometry 80x56+30+40 &
-#nxterm -fn lucidasanstypewriter-14 -geometry 80x52+810+40 &
-
-# news IP forwarding :)
-#sshrun $HOME/.ssh/cronkey nxterm -fn 8x16 -geometry 80x24+810+40 -iconic -e ssh -C -o "CompressionLevel 9" -L 1701:news.tc.umn.edu:119 peca.cs.umn.edu &
-
-# system monitoring
-#xosview -geometry +10-10 &
-#rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
-#xload -geometry 160x80-240-0 -fg white -bg skyblue &
-
-#enlightenment
-#fvwm2
-startkde
