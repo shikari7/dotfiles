@@ -29,9 +29,6 @@ fi
 #   xset fp+ $i >/dev/null 2>&1
 #done
 
-# system monitoring
-#xload -geometry 160x80-240-0 -fg white -bg skyblue &
-
 # various time pieces...
 #moonclock -moonclock -geometry -510+5 &
 #xdaliclock -cycle -transparent -noseconds -geometry -400-0 &
@@ -50,13 +47,16 @@ xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
 
 # notify me of new mail...
 #xbiff -geometry 48x48-322-66 -volume 0 &
-tkpostage -detailFont 8x16 -numberFont 10x20 &
+tkpostage -detailFont 8x16 -numberFont 10x20 -geometry +1200+1080 &
 
 # windows
-nxterm -fn lucidasanstypewriter-14 -geometry 80x64+30+40 &
-nxterm -fn lucidasanstypewriter-14 -geometry 80x64+810+40 &
+nxterm -fn lucidasanstypewriter-14 -geometry 80x56+30+40 &
+nxterm -fn lucidasanstypewriter-14 -geometry 80x52+810+40 &
 
-rxvt -fn 6x10 -geometry 80x10 -e swatch -t /var/log/swatch &
+# system monitoring
+xosview -geometry +1360+870 &
+rxvt -fn 6x10 -geometry 80x10+830+940 -e swatch -t /var/log/swatch &
+#xload -geometry 160x80-240-0 -fg white -bg skyblue &
 
 #enlightenment
 fvwm2
