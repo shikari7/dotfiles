@@ -43,7 +43,8 @@ xdaliclock -transparent -noseconds -geometry -375-0 &
 #sunclock -iconic -icongeometry -310-245 &
 #sunclock -iconic &
 
-blacken-cmap &
+# keep my color map clean
+blacken-cmap -loop &
 
 # toys
 #xsnow -nowind &
