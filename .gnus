@@ -4,8 +4,8 @@
 
 ;; primary methods
 (setq
- gnus-select-method '(nntp "news.tiac.net" (nntp-port-number 1701))
- gnus-secondary-select-methods '(nnml "private")
+ gnus-select-method '(nntp "news.tiac.net")
+ gnus-secondary-select-methods '((nnml "private"))
  )
 
 ; what is this?
