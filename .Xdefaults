@@ -140,7 +140,6 @@ xscreensaver.programs:	\
 	t3d -root							\n\
 	triangle -root							\n\
 	truchet -root -randomize					\n\
-	vidwhacker -root						\n\
 	vines -root							\n\
 	wander -root							\n\
 	wander -root -advance 0 -size 10 -circles True			\n\
@@ -151,6 +150,7 @@ xscreensaver.programs:	\
 	xlyap -root							\n\
 	xmatrix -root							\n\
 	xroger -root							\n
+! 	vidwhacker -root						\n\
 
 ! xterm (and friends)
 
