@@ -9,7 +9,7 @@ xosview*background:	black
 ! this is to shrink the StatusLabel for swallowing Xquote
 *StatusLabel*fontList:	-*-helvetica-bold-r-*-*-2-100-*-*-*-*-iso8859-*
 
-TkPostageDetails.geometry:	80x10
+TkPostageDetails*geometry:	80x10
 
 Netscape*installColormap: true
 
@@ -30,7 +30,7 @@ xscreensaver.programs:	\
 	xearth -nostars -wait 0 -timewarp 400 -pos sunrel/38/-30	\n\
 	xdaliclock -root -noseconds -transparent -cycle -builtin2 	\n\
 	ico -r -faces -sleep 1 -obj ico					\n\
-	-xfishtank -c black -d -r 2					\n\
+	xfishtank -c black -d -r 2					\n\
 	xtacy -root -delay 100 -funky -number 3				\n\
 	xtacy -root -delay 100 -gravity					\n\
 	xtacy -root -delay 100 -mixer					\n\
@@ -142,14 +142,14 @@ XTerm*cursorColor:	firebrick1
 ! nxterm*cursorColor:	blue
 nxterm*cursorColor:	firebrick1
 
-xterm*fullCursor:	true
-nxterm*fullCursor:	true
+XTerm*geometry:		80x52
+nxterm*geometry:	80x52
+rxvt*geometry:		80x52
 
-xterm*reverseWrap:	true
-nxterm*reverseWrap:	true
-
-xterm*titleBar:		false
-nxterm*titleBar:	false
+! 8x16
+nxterm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
+XTerm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
+rxvt*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
 
 XTerm*loginShell:	true
 nxterm*loginShell:	true
@@ -159,20 +159,11 @@ XTerm*utmpInhibit:	true
 nxterm*utmpInhibit:	true
 rxvt*utmpInhibit:	true
 
-*visualBell:		true
-*scrollTtyOutput:	False
-*scrollKey:		True
-Scrollbar.JumpCursor:	True
-*numeric:		C
-*displayLang:		C
-*basicLocale:		C
-*timeFormat:		C
-*inputLang:		C
+xterm*fullCursor:	true
+nxterm*fullCursor:	true
 
-! 8x16
-nxterm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
-XTerm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
-rxvt*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
+xterm*reverseWrap:	true
+nxterm*reverseWrap:	true
 
 xmeter*lErrorBack:	DarkOrange2
 xmeter*errorBd:		DarkOrange2
@@ -200,4 +191,4 @@ xmeter*warnHl:		gold
 xmeter*warnIbd:		Blue
 xmeter*shortname:	short
 xmeter*font:		5x8
-xmeter*fatalBitmap:	/u/edh/.icons/skull.xbm
+xmeter*fatalBitmap:	/home/edh/.icons/skull.xbm
