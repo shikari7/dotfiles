@@ -144,9 +144,9 @@
 ;;; use the following to make ZenIRC fill incoming messages for you
 
 ;; if ZenIRC should fill incoming lines
-;(setq zenirc-fill-mode t)
+(setq zenirc-fill-mode t)
 ;; if ZenIRC should fill outgoing lines
-;(setq zenirc-fill-outgoing-mode t)
+(setq zenirc-fill-outgoing-mode t)
 ;; how ZenIRC should fill things
 ;; (zenirc-wrap-region) adds zenirc-fill-prefix on each line
 ;(setq zenirc-fill-region-function 'zenirc-wrap-region)
@@ -166,7 +166,7 @@
 ;;; `nick!user@host'... after the first time it's just shown as `nick'
 ;;; until the `user@host' part changes.
 
-;(load-library "zenirc-format")
+(load-library "zenirc-format")
 
 ;;; use the following to get history functions on C-cC-p and C-cC-n
 
@@ -178,7 +178,7 @@
 
 ;;; use the following to make ZenIRC output netsplits/netjoins nicer
 
-;(load-library "zenirc-netsplit")
+(load-library "zenirc-netsplit")
 
 ;;; use the following to get an ircII like /notify command
 
