@@ -30,7 +30,7 @@ LOGFILE=$PMDIR/log.$YEAR-$MONTH
 # handle mailing lists and etc
 
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
-DUMMY=`test -d $LISTSDIR || mkdir -p $LISTDIR`
+DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 
 #:0 ic
 #* ?test ! -d $LISTSDIR
