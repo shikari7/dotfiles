@@ -33,7 +33,6 @@ YEAR=`date +%Y`
 LOGDIR=$PMDIR/log/$YEAR
 DUMMY=`test -d $LOGDIR || mkdir -p $LOGDIR`
 LOGFILE=$LOGDIR/$MONTH
-#LOGFILE=$PMDIR/log.$YEAR-$MONTH
 
 #:0
 #* ^Subject: page me
@@ -49,13 +48,13 @@ LOGFILE=$LOGDIR/$MONTH
 * ^Subject: send forecast
 | forecast | mail 2081398@skymail.com
 
+# try to catch spam
+INCLUDERC=$PMDIR/rc.spam
+
 # mailing list rules and archives
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 INCLUDERC=$PMDIR/rc.maillists
-
-# try to catch spam
-INCLUDERC=$PMDIR/rc.spam
 
 # global copy of all mail that hasn't already been sent to the bitbucket
 MONTHFOLDER=$MAILDIR/archive/mail-incoming/`date +%Y-%m`
