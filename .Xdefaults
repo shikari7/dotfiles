@@ -32,20 +32,20 @@
 
 Netscape*installColormap: true
 
-emacs*Background: DarkSlateGray
-emacs*Foreground: Wheat
-emacs*pointerColor: Orchid
-emacs*cursorColor: Orchid
-emacs*bitmapIcon: on
-emacs*font: fixed
-emacs.geometry: 80x25
+! emacs*Background: DarkSlateGray
+! emacs*Foreground: Wheat
+! emacs*pointerColor: Orchid
+! emacs*cursorColor: Orchid
+! emacs*bitmapIcon: on
+! emacs*font: fixed
+! emacs.geometry: 80x25
 
-Emacs.default.attributeFont:	-b&h-lucidatypewriter-medium-r-normal-*-*-120-*-*-m-70-iso8859-1
-Emacs*Font:			-b&h-lucidatypewriter-bold-r-normal-*-*-120-*-*-m-70-iso8859-1
-Emacs.bold.attributeFont:	-b&h-lucidatypewriter-bold-r-normal-*-*-120-*-*-m-70-iso8859-1
-Emacs.italic.attributeFont:	-adobe-courier-medium-o-*-*-*-120-*-*-*-*-iso8859-1
-Emacs.bold-italic.attributeFont:-adobe-courier-bold-o-*-*-*-120-*-*-*-*-iso8859-1
-! Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/usr/include/X11/pixmaps/dimple-grey10.xpm
+! Emacs.default.attributeFont:	-b&h-lucidatypewriter-medium-r-normal-*-*-120-*-*-m-70-iso8859-1
+! Emacs*Font:			-b&h-lucidatypewriter-bold-r-normal-*-*-120-*-*-m-70-iso8859-1
+! Emacs.bold.attributeFont:	-b&h-lucidatypewriter-bold-r-normal-*-*-120-*-*-m-70-iso8859-1
+! Emacs.italic.attributeFont:	-adobe-courier-medium-o-*-*-*-120-*-*-*-*-iso8859-1
+! Emacs.bold-italic.attributeFont:-adobe-courier-bold-o-*-*-*-120-*-*-*-*-iso8859-1
+! ! Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/usr/include/X11/pixmaps/dimple-grey10.xpm
 
 xscreensaver.programs:	\
 	xtacy -root -perfect						\n\
