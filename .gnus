@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Sep 27 03:20:41 1997 by edh $
+;;;  $Modified: Sat Sep 27 21:57:49 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -48,18 +48,10 @@
 (add-hook 'gnus-article-display-hook 'gnus-article-add-buttons)
 
 (setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|NNTP-Posting-Host:\\|X-Mailer:\\|X-Newsreader:\\|X-Spook:\\|X-NSA-Fodder:\\|Path:\\|X-Geek\\|X-URL")
-;(remove-hook 'gnus-article-display-hook
-;	  '(lambda ()
-;	     (setq gnus-visible-headers	; customize headers
-;		   (append gnus-visible-headers
-;			   '("NNTP-Posting-Host:" "X-Mailer:" "X-Newsreader:" "X-Spook:" "X-NSA-Fodder:" "Path:" "X-Geek" "X-URL:")))))
 (setq gnus-sorted-header-list '("^Path:" "^Newsgroups:" "^From:" "^Subject:" "^To:" "^C[Cc]:" "^Date:" "Keywords:" "Summary:" "Organization:")) ; "^[^X]\-"))
-;;(add-hook 'gnus-article-display-hook 'gnus-article-hide-boring-headers)
 
 (setq message-default-headers		; add customized mail headers
       (concat
-;      "Organization: Computational Biology Centers, University of"
-;      " Minnesota, Twin Cities" "\n"
 ;      "Organization: Olympus Spaceport Authority, Mars" "\n"
        "Reply-To: ericdh@tiac.net" "\n"
        "Organization: D.E. Shaw & Co., L.P." "\n"
@@ -107,7 +99,7 @@
       gnus-check-new-newsgroups 'ask-server
       gnus-default-article-saver 'gnus-summary-save-in-mail
       gnus-expert-user t		; *never* ask for confirmation
-;     gnus-play-startup-jingle t
+      gnus-play-startup-jingle t
       gnus-read-active-file 'some
       gnus-save-killed-list nil
       gnus-subscribe-hierarchical-interactive t
@@ -157,7 +149,6 @@
 ;(gnus-demon-add-rescan)		; annoying
 ;(gnus-demon-cancel)
  
-
 ;; Faces
 (when (string-match "XEmacs" emacs-version)
   (add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t))
