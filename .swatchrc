@@ -58,11 +58,11 @@ ignore = /innd\[/
 
 ignore = /PAM_pwdb\[/&&/session opened for user news/
 
-ignore = /xntpd\[/&&/synchroni(zed|sation) (to|lost)/
-ignore = /xntpd\[/&&/kernel pll status change/
-ignore = /xntpd\[/&&/sendto\(/
-ignore = /xntpd\[/&&/Connection re-established/
-ignore = /xntpd\[/&&/Connection refused/
+ignore = /ntpd\[/&&/synchroni(zed|sation) (to|lost)/
+ignore = /ntpd\[/&&/kernel pll status change/
+ignore = /ntpd\[/&&/sendto\(/
+ignore = /ntpd\[/&&/Connection re-established/
+ignore = /ntpd\[/&&/Connection refused/
 
 ignore = /named\[/&&/sendto/&&/Network is unreachable/
 ignore = /named\[/&&/recvfrom:/
@@ -80,10 +80,13 @@ ignore = /sendmail/&&/Authentication-Warning/&&/set sender to/
 watchfor = /sendmail/
 	echo
 ignore = /fetchmail/&&/flushed/
+ignore = /fetchmail/&&/starting/&&/daemon/
 ignore = /fetchmail/&&/reading/
 ignore = /fetchmail/&&/status=2/
 ignore = /fetchmail/&&/name server error/
-#/fetchmail/&&/\d+\smessages*\sat/		ignore
+ignore = /fetchmail/&&/sleeping at/
+ignore = /fetchmail/&&/awakened by User defined signal 1/
+ignore = /fetchmail/&&/\d+\smessages*\sfor/
 
 ignore = /in.identd\[/&&/started/
 
@@ -95,13 +98,20 @@ watchfor = /(rlogind\[|rshd\[|telnetd\[|ftpd\[)/
 ignore = /sshd\[/&&/Generating new/
 ignore = /sshd\[/&&/generation complete/
 
+ignore = /automount\[/&&/expired /
+ignore = /automount\[/&&/attempting to mount entry /
+
+ignore = /ipop3d/&&/connect from 10.10.10.10/
+ignore = /ipop3d/&&/(Autologout|Log(in|out)) user=punkin host=punkin/
+ignore = /ipop3d/&&/connect from 10.10.10.2/
+ignore = /ipop3d/&&/(Autologout|Log(in|out)) user=neomort host=neomort/
+
 # catch everything else
 watchfor = /.*/
 	echo
 
 # Ignore this stuff
 #/sendmail/&&/locked$/				ignore
-#/ipop3d/&&/(Autologout|Log(in|out))/		ignore
 #/imapd/&&/(Preauthenticated|Autologout|Log(out|in))/	ignore
 
 # Report unusual tftp info
