@@ -51,6 +51,7 @@
 
 /sendmail/&&/(from|to|message-id)=/		ignore
 /sendmail/					echo
+/fetchmail/&&/flushed/				ignore
 /fetchmail/&&/reading/				ignore
 /fetchmail/&&/status=2/				ignore
 /fetchmail/&&/name server error/		ignore
