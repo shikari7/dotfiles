@@ -164,7 +164,7 @@
 
 ;; XEmacs special stuff (smileys, faces)
 (when (string-match "XEmacs" emacs-version)
-  (add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t))
+  (add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t)
   (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
   (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
 
