@@ -90,6 +90,7 @@ xscreensaver.programs:	\
 	flow -root							\n\
 	forest -root							\n\
 	galaxy -root							\n\
+	gflux -root							\n\
 	goop -root							\n\
 	grav -root							\n\
 	grav -root -trail -decay					\n\
@@ -97,6 +98,7 @@ xscreensaver.programs:	\
 	halo -root							\n\
 	helix -root							\n\
 	hopalong -root							\n\
+	hyperball -root							\n\
 	hypercube -root							\n\
 	ifs -root							\n\
 	imsmap -root							\n\
@@ -116,6 +118,7 @@ xscreensaver.programs:	\
 	moire2 -root							\n\
 	mountain -root							\n\
 	munch -root							\n\
+	nerverot -root							\n\
 	noseguy -root							\n\
 	pedal -root							\n\
 	penetrate -root							\n\
@@ -158,8 +161,11 @@ xscreensaver.programs:	\
 	xjack -root							\n\
 	xlyap -root							\n\
 	xmatrix -root							\n\
-	xroger -root							\n
-! 	vidwhacker -root						\n\
+	xrayswarm -root							\n\
+	xroger -root							\n\
+	xspirograph -root						\n\
+	xteevee -root							\n\
+ 	vidwhacker -root						\n
 
 ! xterm (and friends)
 
