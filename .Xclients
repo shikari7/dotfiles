@@ -24,10 +24,10 @@ if [ -f $HOME/.Xmodmap ]; then
 fi
 
 # additional fonts
-for i in /usr/openwin/lib/X11/fonts/*
-do    
+#for i in /usr/openwin/lib/X11/fonts/*
+#do    
 #   xset fp+ $i >/dev/null 2>&1
-done
+#done
 
 # system monitoring
 #xload -geometry 160x80-240-0 -fg white -bg skyblue &
