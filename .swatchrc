@@ -27,6 +27,7 @@
 /pppd\[/&&/: (Serial|Using|Connect)/		ignore
 /chat\[/					ignore
 /ifup-ppp:/					ignore
+/kernel/&&/PPP/					ignore
 
 /xntpd/&&/synchroni(zed|sation) (to|lost)/	ignore
 /named\[/&&/recvfrom:/				ignore
