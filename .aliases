@@ -1,4 +1,5 @@
-# -*-sh-*-
+# -*-shell-script-*-
+# $Id$
 alias	archie	'archie -l -t -r'
 alias	beep	'echo -n ""'
 alias	bye	'logout'
@@ -90,7 +91,7 @@ alias	vt	'vi ~/.tcshrc'
 alias	whatos	"echo 'GET / HTTP/1.0\n' | nc \!:1 80 | egrep '^Server:'"
 #alias	where	'who | grep \!:1 | awk '"'"\{print \$6\}"'"''
 alias	wai	'who am i'
-alias	whois	'fwhois \!:1@whois.networksolutions.com'
+#alias	whois	'fwhois \!:1@whois.networksolutions.com'
 #alias	xlock	'xlock +allowroot -nolock -mode qix'
 #alias	xterm	'xterm -cu +ls -nb 8 -rw -sb -si -sk -sl 256 -tn xterm -ut -vb -wf -T "`whoami`@`hostname | awk -F\'.\' \' { print $1 } \'`" -geometry 80x24+2+2'
 #alias	xterm	'xterm +ls -ut -sb -sl 1024 -tn xterms -n edh'
