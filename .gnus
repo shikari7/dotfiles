@@ -90,7 +90,7 @@
 (defun message-insert-citation-line ()
   "Function that inserts a simple citation line."
   (when message-reply-headers
-    (insert (mail-header-from message-reply-headers) " says: \"I'm going to Ibiza and taking Eric.\"\n\n")))
+    (insert (mail-header-from message-reply-headers) " says: \"I'm going to Phuket and taking Eric.\"\n\n")))
 
 (add-hook 'message-setup-hook
 	  '(lambda ()
@@ -134,21 +134,21 @@
           (concat "mail-outgoing." (format-time-string "%Y-%m")))))
 
 (setq
- gnus-use-trees t
+ gnus-use-trees nil
  gnus-generate-tree-function 'gnus-generate-horizontal-tree
  gnus-tree-minimize-window nil
  )
 
-(gnus-add-configuration
- '(article
-   (horizontal 1.0
-	       (vertical 0.42
-			 (group 0.25)
-			 (if gnus-use-trees '(tree 0.15))
-			 (summary 1.0 point))
-	       (vertical 1.0
-;			 (picons 5)
-			 (article 1.0)))))
+;(gnus-add-configuration
+; '(article
+;   (horizontal 1.0
+;	       (vertical 0.42
+;			 (group 0.25)
+;			 (if gnus-use-trees '(tree 0.15))
+;			 (summary 1.0 point))
+;	       (vertical 1.0
+;;			 (picons 5)
+;			 (article 1.0)))))
 
 (setq gnus-uu-user-view-rules 
       (list
