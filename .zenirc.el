@@ -209,6 +209,7 @@
 
 (defvar zenirc-startup-channels-alist '(("debian" . "#debian")
 					("uoknor.edu" . nil)
+					(".*" . "#ta")
 					(".*" . "#perl"))
   "*Pairs of server and channels.
 server is a regexp
