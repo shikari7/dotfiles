@@ -8,6 +8,9 @@ alias	cls	'clear'
 alias	co	'co -l'
 #alias	cpdir	'(find \!:1 -print| cpio -pdmv \!:2)'
 alias   cpdir   '(tar cf - \!:1 | (cd \!:2; tar xpf -))'
+if ($?OSTYPE && $OSTYPE == "solaris") then
+  alias	df	'df -k'
+endif
 alias	findstr	'find . -type f -exec grep \!:1 {} \; -print'
 alias	findstrs	'find . -type f -exec grep \!:1 {} \; -print \!:2-$'
 alias	findname	'find . -name '\!:1' -print'
@@ -22,7 +25,7 @@ alias	hid	'ls -adCF .[^.]*'
 alias	j	'jobs -l'
 alias	k	'fortune'
 alias	ko	'k -o'
-if ($?COLORTERM) then
+if ($?OSTYPE && $OSTYPE != "solaris") then
   alias	l	'/bin/ls --color=auto'
 else
   alias	l	'/bin/ls'
@@ -44,8 +47,13 @@ alias	nsn	'(echo server deshaw.com;echo set q=PTR;_nsn \!*)|nslookup|grep host'
 alias	patch	'patch -l -F6'
 #alias	prman	'troff -man -Tpost \!:1 | /usr/lib/lp/postscript/dpost | lpr'
 alias	p	/bin/ps
-alias	psa	'p ax'
-alias	psg	'p alxww | grep \!:1 | grep -v grep'
+if ($?OSTYPE && $OSTYPE == "solaris") then
+  alias	psa	'p -fe'
+  alias	psg	'psa | grep \!:1 | grep -v grep'
+else
+  alias	psa	'p ax'
+  alias	psg	'p alxww | grep \!:1 | grep -v grep'
+endif
 alias	q	'quota -v'
 alias	ra	'rm a.out'
 alias	rc	'rm -f core;rm -f ~/Canc*'
