@@ -6,11 +6,6 @@
 exec > $HOME/.Xsessionlog/$DISPLAY 2>&1
 set -x
 
-# good color combinations
-# fg, bg
-# navyblue, mistyrose
-# yellow, darkkhaki
-
 # debugging info
 date
 env
@@ -21,11 +16,14 @@ xset q
 # disable the screensaver
 xset s noblank
 
+# swap the ctrl-capslock keys
 if [ -f $HOME/.Xmodmap ]; then
   xmodmap $HOME/.Xmodmap
 fi
 
-if [ ! -d $HOME/.kde ]; then
+if [ -d $HOME/.kde ]; then
+  exec startkde
+else
   xset m 3 8
   xdaliclock -transparent -noseconds -geometry -375-0 &
   blacken-cmap -loop &
@@ -36,6 +34,4 @@ if [ ! -d $HOME/.kde ]; then
   xosview -geometry +10-10 &
   rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
   exec fvwm2
-else
-  exec startkde
 fi
