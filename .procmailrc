@@ -47,7 +47,7 @@ LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 INCLUDERC=$PMDIR/rc.maillists
 
-# global copy of all mail that hasn't already been sent to the bitbucket
+# global copies of everything not already sent somewhere (e.g. bitbucket)
 ARCHIVEDIR=$MAILDIR/archive/mail-incoming/$YEAR
 DUMMY=`test -d $ARCHIVEDIR || mkdir -p $ARCHIVEDIR`
 MONTHFOLDER=$ARCHIVEDIR/$MONTH
