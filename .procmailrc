@@ -1,4 +1,4 @@
-# $Modified: Tue Jun 10 02:46:13 1997 by edh $
+#	$Id$	
 
 #Set on when debugging
 VERBOSE=off
@@ -22,6 +22,9 @@ LOGFILE=$PMDIR/log.$MONTH
 
 # handle mailing lists and etc
 INCLUDERC=$PMDIR/rc.maillists
+
+# try to catch spam
+INCLUDERC=$PMDIR/rc.spam
 
 # global copy of all mail that hasn't already been sent to the bitbucket
 MONTHFOLDER=$MAILDIR/archive/mail-incoming/`date +%Y-%m`
