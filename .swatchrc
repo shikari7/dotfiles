@@ -34,6 +34,7 @@
 /named/&&/Malformed response/			ignore
 
 /icmpinfo/&&/(started|ICMP_Dest_Unreachable)/	ignore
+/icmpinfo/&&/asked for/&&/got type "CNAME"/	ignore
 /icmpinfo/&&/asked for/&&/danfarmer/		ignore
 
 /sendmail/&&/(from|to|message-id)=/		ignore
