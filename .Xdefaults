@@ -61,11 +61,15 @@ xscreensaver.programs:	\
 	braid -root							\n\
 	bsod -root							\n\
 	bubbles -root							\n\
+	compass -root							\n\
 	coral -root							\n\
+	critical -root							\n\
 	crystal -root							\n\
 	cynosure -root							\n\
 	decayscreen -root						\n\
 	deco -root							\n\
+	deluxe -root							\n\
+	demon -root							\n\
 	discrete -root							\n\
 	distort -root							\n\
 	distort -root -reflect						\n\
@@ -97,6 +101,7 @@ xscreensaver.programs:	\
 	lisa -root							\n\
 	lissie -root							\n\
 	lmorph -root							\n\
+	loop -root							\n\
 	maze -root							\n\
 	moire -root							\n\
 	moire2 -root							\n\
@@ -104,7 +109,11 @@ xscreensaver.programs:	\
 	munch -root							\n\
 	noseguy -root							\n\
 	pedal -root							\n\
+	penetrate -root							\n\
 	penrose -root							\n\
+	phosphor -root							\n\
+	pulsar -root							\n\
+	pulsar -root -texture -mipmap -texture_quality			\n\
 	pyro -root							\n\
 	qix -root -solid -delay 0 -segments 100				\n\
 	rd-bomb -root							\n\
@@ -117,16 +126,23 @@ xscreensaver.programs:	\
 	slip -root							\n\
 	sphere -root							\n\
 	spiral -root							\n\
+	spotlight -root							\n\
+	squiral -root							\n\
 	starfish -root							\n\
 	starfish -root -blob						\n\
 	strange -root							\n\
 	swirl -root							\n\
+	t3d -root							\n\
 	triangle -root							\n\
 	truchet -root -randomize					\n\
 	vines -root							\n\
+	wander -root							\n\
+	wander -root -advance 0 -size 10 -circles True			\n\
 	worm -root							\n\
+	xflame -root							\n\
 	xjack -root							\n\
 	xlyap -root							\n\
+	xmatrix -root							\n\
 	xroger -root							\n
 
 ! xterm (and friends)
