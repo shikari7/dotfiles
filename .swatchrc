@@ -33,6 +33,9 @@
 /ifup-ppp:/					ignore
 /kernel/&&/PPP/					ignore
 
+# misc
+/lp0 at /&&/\(polling\)/			ignore
+
 # weirdness
 /innd\[/&&/connected 17 streaming allowed/	echo
 /innd\[/					ignore
