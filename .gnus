@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Thu Apr 23 22:07:23 1998 by edh $
+;;;  $Modified: Tue Apr 28 17:33:24 1998 by edh $
 
 (setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 ;(setq gnus-select-method '(nntp "news"
@@ -280,7 +280,7 @@
       bbdb-default-area-code 617
       bbdb-electric-p t			; what does this do?
       bbdb-elided-display nil		; or (e.g.) '(address phone net notes)
-      bbdb-new-nets-always-primary t
+;     bbdb-new-nets-always-primary t
       bbdb-offer-save 'auto		; just go ahead and save .bbdb
       bbdb-send-mail-style 'gnus-mail
 ;     bbdb-use-pop-up (> (screen-height) 24)
