@@ -76,7 +76,7 @@ $PORTMAP/$MONTH
 # roll our own FROM macro (from Procmail FAQ)
 FROM="(From[	]|(Old-|X-)?(Resent-)?(From|Reply-To|Sender):)(.*\<)?"
 
-# try to catch spam (commented out now that I am using ASK)
+# try to catch spam (commented out now)
 #INCLUDERC=$PMDIR/rc.spam
 
 # mailing list rules and archives
@@ -87,11 +87,11 @@ DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 INCLUDERC=$PMDIR/rc.maillists
 
 # filter mail from myself (but from Outlook) into my outgoing folders
-:0
-* ^From:.*edh@mr.net
-* !^TO.*edh@mr.net
-* ^X-MSMail-Priority:
-| tee -a $MAILDIR/archive/mail-outgoing/$YEAR/$MONTH /var/mail/edh
+#:0
+#* ^From:.*edh@mr.net
+#* !^TO.*edh@mr.net
+#* ^X-MSMail-Priority:
+#| tee -a $MAILDIR/archive/mail-outgoing/$YEAR/$MONTH /var/mail/edh
 
 MINDSPRING=$MAILDIR/mindspring/$YEAR
 DUMMY=`test -d $MINDSPRING || mkdir -p $MINDSPRING`
@@ -128,11 +128,10 @@ backup
 :0 ic
 | cd backup && rm -f dummy `ls -t msg.* | sed -e 1,32d`
 
-# ok, now pass to ASK
-:0 fW 
-* !TO.*@.*crystalcave.net
-|/usr/bin/ask.py --procmail --loglevel=5 --logfile=$HOME/.ask.log 
+# Spam Assassin
+:0fw
+| /usr/bin/spamassassin -P -c /usr/share/spamassassin
 
-:0 e
-
-/dev/null
+:0:
+* ^X-Spam-Status: Yes
+SPAM
