@@ -114,7 +114,7 @@
  gnus-check-new-newsgroups 'ask-server
  gnus-default-article-saver 'gnus-summary-save-in-mail
  gnus-expert-user t		; *never* ask for confirmation
-;gnus-play-startup-jingle t
+ gnus-play-startup-jingle t
  gnus-read-active-file 'some
  gnus-save-killed-list nil
  gnus-single-article-buffer nil		; don't use the same article buffer
