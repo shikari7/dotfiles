@@ -15,157 +15,189 @@ TkPostageDetails*geometry:	80x10
 ! Netscape*installColormap: true
 
 ! Emacs*EmacsFrame.Background:	DarkSlateGray
-Emacs*EmacsFrame.Background:	Wheat
-Emacs*EmacsFrame.Foreground:	Black
-Emacs*EmacsFrame.pointerColor:	Orchid
-Emacs*EmacsFrame.cursorColor:	Orchid
-Emacs*EmacsFrame.bitmapIcon:	on
-Emacs*EmacsFrame.geometry: 80x49
+!Emacs*EmacsFrame.Background:	Wheat
+!Emacs*EmacsFrame.Foreground:	Black
+!Emacs*EmacsFrame.pointerColor:	Orchid
+!Emacs*EmacsFrame.cursorColor:	Orchid
+!Emacs*EmacsFrame.bitmapIcon:	on
+Emacs*EmacsFrame.geometry: 80x48
 
-Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
-Emacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
+!Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
+!Emacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
 !Emacs*menubar*font:		-*-new century schoolbook-bold-r-*-*-*-120-*-*-*-*-*-*
 !Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
 
-noseguy.program:	/usr/games/fortune
+noseguy.program:	/usr/local/bin/yow
+phosphor.program:	/usr/local/bin/ljlatest --cols 40
+starwars.program:	/usr/local/bin/ljlatest
 
-xscreensaver.programs:	\
-	electricsheep --nick merlinus					\n\
-	xearth -nostars -wait 0 -timewarp 400 -pos sunrel/38/-30	\n\
-	xdaliclock -root -noseconds -transparent -cycle -builtin2 	\n\
-	ico -r -faces -sleep 1 -obj ico					\n\
-	xfishtank -c black -d -r 2					\n\
-	xtacy -root -delay 100 -funky -number 3				\n\
-	xtacy -root -delay 100 -gravity					\n\
-	xtacy -root -delay 100 -mixer					\n\
-	xtacy -root -delay 100 -taffy -pal 4				\n\
-	gears -root							\n\
-	superquadrics -root						\n\
-	morph3d -root							\n\
-	cage -root							\n\
-	moebius -root							\n\
-	stairs -root							\n\
-	pipes -root							\n\
-	sproingies -root						\n\
-	rubik -root							\n\
-	atlantis -root							\n\
-	lament -root							\n\
- 	bubble3d -root							\n\
- 	glplanet -root							\n\
-	ant -root							\n\
-	attraction -root -mode balls					\n\
-	attraction -root -mode lines -points 3 -segments 200		\n\
-	attraction -root -mode splines -segments 300			\n\
-	attraction -root -mode lines -radius 300 -orbit -vmult 0.5	\n\
-	attraction -root -mode polygons					\n\
-	attraction -root -mode filled-splines -segments 0		\n\
-	attraction -root -glow -points 10				\n\
-	blaster -root							\n\
-	blitspin -root -grab						\n\
-	bouboule -root							\n\
-	braid -root							\n\
-	bsod -root							\n\
-	bubbles -root							\n\
-	bumps -root							\n\
-	ccurve -root							\n\
-	compass -root							\n\
-	coral -root							\n\
-	critical -root							\n\
-	crystal -root							\n\
-	cynosure -root							\n\
-	decayscreen -root						\n\
-	deco -root							\n\
-	deluxe -root							\n\
-	deluxe -root -transparent					\n\
-	demon -root							\n\
-	discrete -root							\n\
-	distort -root							\n\
-	distort -root -reflect						\n\
-	drift -root							\n\
-	epicycle -root							\n\
-	extrusion -root							\n\
-	fadeplot -root							\n\
-	flag -root							\n\
-	flame -root							\n\
-	flow -root							\n\
-	forest -root							\n\
-	galaxy -root							\n\
-	gflux -root							\n\
-	goop -root							\n\
-	grav -root							\n\
-	grav -root -trail -decay					\n\
-	greynetic -root -delay 18					\n\
-	halo -root							\n\
-	helix -root							\n\
-	hopalong -root							\n\
-	hyperball -root							\n\
-	hypercube -root							\n\
-	ifs -root							\n\
-	imsmap -root							\n\
-	interference -root						\n\
-	jigsaw -root							\n\
-	julia -root							\n\
-	kaleidescope -root						\n\
-	kumppa -root							\n\
-	laser -root							\n\
-	lightning -root							\n\
-	lisa -root							\n\
-	lissie -root							\n\
-	lmorph -root							\n\
-	loop -root							\n\
-	maze -root							\n\
-	moire -root							\n\
-	moire2 -root							\n\
-	mountain -root							\n\
-	munch -root							\n\
-	nerverot -root							\n\
-	noseguy -root							\n\
-	pedal -root							\n\
-	penetrate -root							\n\
-	penrose -root							\n\
-	petri -root							\n\
-	phosphor -root							\n\
-	pulsar -root							\n\
-	pulsar -root -texture -mipmap -texture_quality			\n\
-	pyro -root							\n\
-	qix -root -solid -delay 0 -segments 100				\n\
-	rd-bomb -root							\n\
-	rd-bomb -root -speed 1 -size 0.1				\n\
-	ripples -root							\n\
-	rocks -root -fg darksalmon					\n\
-	rorschach -root -offset 7					\n\
-	rotor -root							\n\
-	shadebobs -root							\n\
-	sierpinski -root						\n\
-	sierpinski3d -root						\n\
-	slidescreen -root						\n\
-	slip -root							\n\
-	sonar -root -mode ping -ping-source file -ping-file /home/edh/.ssh/known_hosts \n\
-	sphere -root							\n\
-	spiral -root							\n\
-	spotlight -root							\n\
-	squiral -root							\n\
-	starfish -root							\n\
-	starfish -root -blob						\n\
-	strange -root							\n\
-	swirl -root							\n\
-	t3d -root							\n\
-	triangle -root							\n\
-	truchet -root -randomize					\n\
-	vines -root							\n\
-	wander -root							\n\
-	wander -root -advance 0 -size 10 -circles True			\n\
-	webcollage -root						\n\
-	worm -root							\n\
-	xflame -root							\n\
-	xjack -root							\n\
-	xlyap -root							\n\
-	xmatrix -root							\n\
-	xrayswarm -root							\n\
-	xroger -root							\n\
-	xspirograph -root						\n\
-	xteevee -root							\n\
- 	vidwhacker -root						\n
+!xscreensaver.installColormap: true
+!xscreensaver.cycle: 2
+!xscreensaver.timeout: 5
+!xscreensaver.dpmsEnabled: true
+!xscreensaver.dpmsStandby: 20
+!xscreensaver.dpmsSuspend: 40
+!xscreensaver.dpmsOff: 60
+
+! To display a randomized slideshow of images, you can do something like this:
+! (see the default XScreenSaver app-defaults file for more info)
+!
+! default-n:  "Slideshow"    xv -root -rmode 5 -random -viewonly           \
+!                              -wloop -wait 30 $HOME/bitmaps/*.jpg       \n\
+
+!xscreensaver.programs:	\
+!	xearth -nostars -wait 0 -timewarp 400 -pos sunrel/38/-30	\n\
+!	xdaliclock -root -noseconds -transparent -cycle -builtin2 	\n\
+!	ico -r -faces -sleep 1 -obj ico					\n\
+!	xfishtank -c black -d -r 2					\n\
+!	gears -root							\n\
+!	superquadrics -root						\n\
+!	morph3d -root							\n\
+!	cage -root							\n\
+!	moebius -root							\n\
+!	stairs -root							\n\
+!	pipes -root							\n\
+!	sproingies -root						\n\
+!	rubik -root							\n\
+!	atlantis -root							\n\
+!	lament -root							\n\
+! 	bubble3d -root							\n\
+! 	glplanet -root							\n\
+!	ant -root							\n\
+!	attraction -root -mode balls					\n\
+!	attraction -root -mode lines -points 3 -segments 200		\n\
+!	attraction -root -mode splines -segments 300			\n\
+!	attraction -root -mode lines -radius 300 -orbit -vmult 0.5	\n\
+!	attraction -root -mode polygons					\n\
+!	attraction -root -mode filled-splines -segments 0		\n\
+!	attraction -root -glow -points 10				\n\
+!	blaster -root							\n\
+!	blitspin -root -grab						\n\
+!	bouboule -root							\n\
+!	braid -root							\n\
+!	bsod -root							\n\
+!	bubbles -root							\n\
+!	bumps -root							\n\
+!	ccurve -root							\n\
+!	circuit -root							\n\
+!	compass -root							\n\
+!	coral -root							\n\
+!	critical -root							\n\
+!	crystal -root							\n\
+!	cynosure -root							\n\
+!	dangerball -root						\n\
+!	decayscreen -root						\n\
+!	decayscreen -fuzz -root						\n\
+!	deco -root							\n\
+!	deluxe -root							\n\
+!	deluxe -root -transparent					\n\
+!	demon -root							\n\
+!	discrete -root							\n\
+!	distort -root							\n\
+!	distort -root -reflect						\n\
+!	drift -root							\n\
+!	engine -root							\n\
+!	epicycle -root							\n\
+!	extrusion -root							\n\
+!	fadeplot -root							\n\
+!	flag -root							\n\
+!	flame -root							\n\
+!	flipscreen3d -root						\n\
+!	flow -root							\n\
+!	forest -root							\n\
+!	galaxy -root							\n\
+!	gflux -root							\n\
+!	gltext -root							\n\
+!	goop -root							\n\
+!	grav -root							\n\
+!	grav -root -trail -decay					\n\
+!	greynetic -root -delay 18					\n\
+!	halo -root							\n\
+!	helix -root							\n\
+!	hopalong -root							\n\
+!	hyperball -root							\n\
+!	hypercube -root							\n\
+!	ifs -root							\n\
+!	imsmap -root							\n\
+!	interference -root						\n\
+!	jigsaw -root							\n\
+!	julia -root							\n\
+!	kaleidescope -root						\n\
+!	kumppa -root							\n\
+!	laser -root							\n\
+!	lightning -root							\n\
+!	lisa -root							\n\
+!	lissie -root							\n\
+!	lmorph -root							\n\
+!	loop -root							\n\
+!	maze -root							\n\
+!	menger -root							\n\
+!	moire -root							\n\
+!	moire2 -root							\n\
+!	molecule -root							\n\
+!	mountain -root							\n\
+!	munch -root							\n\
+!	nerverot -root							\n\
+!	noseguy -root							\n\
+!	pedal -root							\n\
+!	penetrate -root							\n\
+!	penrose -root							\n\
+!	petri -root							\n\
+!	phosphor -root -program /usr/lib/xemacs-21.4.6/i386-mandrake-linux/yow \n\
+!	phosphor -root -program 'wget -qO- http://webcrawler.com/cgi-bin/SearchTicker' \n\
+!	pulsar -root							\n\
+!	pulsar -root -texture -mipmap -texture_quality			\n\
+!	pyro -root							\n\
+!	qix -root -solid -delay 0 -segments 100				\n\
+!	rd-bomb -root							\n\
+!	rd-bomb -root -speed 1 -size 0.1				\n\
+!	ripples -root							\n\
+!	rocks -root -fg darksalmon					\n\
+!	rorschach -root -offset 7					\n\
+!	rotor -root							\n\
+!	rotzoomer -root							\n\
+!	shadebobs -root							\n\
+!	sierpinski -root						\n\
+!	sierpinski3d -root						\n\
+!	slidescreen -root						\n\
+!	slip -root							\n\
+!	sonar -root -mode ping -ping-source file -ping-file /home/edh/.ssh/known_hosts \n\
+!	speedmine -root							\n\
+!	sphere -root							\n\
+!	spiral -root							\n\
+!	spotlight -root							\n\
+!	squiral -root							\n\
+!	starfish -root							\n\
+!	starfish -root -blob						\n\
+!	starwars -root							\n\
+!	stonerview -root						\n\
+!	strange -root							\n\
+!	swirl -root							\n\
+!	t3d -root							\n\
+!	triangle -root							\n\
+!	truchet -root -randomize					\n\
+!	vines -root							\n\
+!	wander -root							\n\
+!	wander -root -advance 0 -size 10 -circles True			\n\
+!	webcollage -root						\n\
+!	whirlygig -root							\n\
+!	whirlwindwarp -root						\n\
+!	worm -root							\n\
+!	xflame -root							\n\
+!	xjack -root							\n\
+!	xlyap -root							\n\
+!	xmatrix -root							\n\
+!	xrayswarm -root							\n\
+!	xroger -root							\n\
+!	xspirograph -root						\n\
+!	xteevee -root							\n\
+!	zoom -root							\n\
+!	-electricsheep --nick merlinus					\n\
+! 	-vidwhacker -root						\n\
+!	-xtacy -root -delay 100 -funky -number 3			\n\
+!	-xtacy -root -delay 100 -gravity				\n\
+!	-xtacy -root -delay 100 -mixer					\n\
+!	-xtacy -root -delay 100 -taffy -pal 4				\n
 
 ! xterm (and friends)
 
