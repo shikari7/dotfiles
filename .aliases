@@ -25,13 +25,19 @@ alias	hid	'ls -adCF .[^.]*'
 alias	j	'jobs -l'
 alias	k	'fortune'
 alias	ko	'k -o'
-if ($?OSTYPE && $OSTYPE != "solaris") then
-  alias	l	'/bin/ls --color=auto'
-else
+if (-f /usr/local/bin/ls) then          # GNU ls?
+  alias	l	'/usr/local/bin/ls --color=auto'
+elsif ($?OSTYPE && $OSTYPE == "solaris") then
   alias	l	'/bin/ls'
+else
+  alias	l	'/bin/ls --color=auto'
 endif
 alias	la	'l -aF'
-alias	ll	'l -Flags'
+if ($?OSTYPE && $OSTYPE == "solaris") then
+  alias	ll	'l -Flas'
+else
+  alias	ll	'l -Flags'
+endif
 alias	ls	'l -sF'
 alias	lr	'l -R'
 alias	lt	'ls -t'
@@ -58,6 +64,9 @@ alias	q	'quota -v'
 alias	ra	'rm a.out'
 alias	rc	'rm -f core;rm -f ~/Canc*'
 alias	rd	'rm ~/dead.*'
+if ($?LOGNAME && $LOGNAME == "root") then
+ alias	rm	'rm -i'
+endif
 alias	rs	'set noglob; eval `resize`'
 alias	running	"p ax | grep \!* |& grep -v 'grep \!*' "
 alias	sa	'source ~/.aliases'
@@ -106,9 +115,12 @@ Passwd:         \2\\\
 /'"
 
 # for audio-tape.ps
+alias	tape_prolog	awk '/^%.PS/,/^%%BeginDoc//^%%EndDoc/,/^%%EndPro/'
+alias	tape_trailer	awk '/^%%Trailer/,/^--eof--\$/'
+setenv	TAPEPS	~/lib/ps/audio-tape.ps
+#alias	catapes	'(tape_prolog $TAPEPS;cat \!*; tape_trailer $TAPEPS)'
+alias	printapes	'(catapes \!*) | lpr'
+
 alias	tape_prolog1	awk '/^%.PS/,/^%%BeginDoc/'
 alias	tape_prolog2	awk '/^%%EndDoc/,/^%%EndPro/'
-alias	tape_trailer	awk '/^%%Trailer/,/^--eof--\$/'
-setenv	TAPEPS	~/src/ps/audio-tape.ps
 alias	catapes	'(tape_prolog1 $TAPEPS;tape_prolog2 $TAPEPS;cat \!*; tape_trailer $TAPEPS)'
-alias	printapes	'(catapes \!*) | lpr'
