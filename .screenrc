@@ -47,7 +47,7 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 # shellaka '$ |sh'
 
 # set every new windows hardstatus line to somenthing descriptive
-# defhstatus "screen: ^E (^Et)"
+# defhstatus "screen: ^En (^Et)"
 
 # I have the biggest.. buffers of them all!
 defscrollback 4096
