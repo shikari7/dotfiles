@@ -13,16 +13,16 @@ TkPostageDetails*geometry:	80x10
 
 Netscape*installColormap: true
 
-! Emacs*Background: DarkSlateGray
-Emacs*Background: Wheat
-Emacs*Foreground: Black
-! Emacs*pointerColor: Orchid
+! XEmacs*Background: DarkSlateGray
+XEmacs*Background: Wheat
+XEmacs*Foreground: Black
+! XEmacs*pointerColor: Orchid
 
-Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
-Emacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
-Emacs*menubar*font:		-*-new century schoolbook-bold-r-*-*-*-120-*-*-*-*-*-*
-Emacs*EmacsFrame.geometry:	80x44
-! Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
+XEmacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
+XEmacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
+XEmacs*menubar*font:		-*-new century schoolbook-bold-r-*-*-*-120-*-*-*-*-*-*
+XEmacs*EmacsFrame.geometry:	80x44
+! XEmacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
 
 noseguy.program:	/usr/games/fortune
 
