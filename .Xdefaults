@@ -18,7 +18,7 @@ Netscape*installColormap: true
 Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
 Emacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
 Emacs*EmacsFrame.geometry:	80x40
-Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.kde/share/wallpapers/gray2.xpm
+Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
 
 noseguy.program:	/usr/games/fortune
 
@@ -35,6 +35,7 @@ xscreensaver.programs:	\
 	braid -root							\n\
 	bsod -root							\n\
 	bubbles -root							\n\
+	bubbles3d -root							\n\
 	coral -root							\n\
 	crystal -root							\n\
 	cynosure -root							\n\
