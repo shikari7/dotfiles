@@ -44,19 +44,10 @@ LOGDIR=$PMDIR/log/$YEAR
 DUMMY=`test -d $LOGDIR || mkdir -p $LOGDIR`
 LOGFILE=$LOGDIR/$MONTH
 
-#:0
-#* ^Subject: page me
-#| sendpage -p XXXXXXXXXX -s %s
-
 # page me with the current forecast (defaults to Boston)
 :0
 * ^Subject: send forecast
 | forecast | mail -s forecast $PAGER
-
-# txt me
-#:0
-#* < 1000
-#! 
 
 # archive all root mail
 ROOT=$MAILDIR/root/$YEAR
@@ -76,30 +67,12 @@ $PORTMAP/$MONTH
 # roll our own FROM macro (from Procmail FAQ)
 FROM="(From[	]|(Old-|X-)?(Resent-)?(From|Reply-To|Sender):)(.*\<)?"
 
-# try to catch spam (commented out now)
-#INCLUDERC=$PMDIR/rc.spam
-
 # mailing list rules and archives
 SPOOLDIR=$MAILDIR/mail-incoming
 DUMMY=`test -d $SPOOLDIR || mkdir -p $SPOOLDIR`
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 INCLUDERC=$PMDIR/rc.maillists
-
-# filter mail from myself (but from Outlook) into my outgoing folders
-#:0
-#* ^From:.*edh@mr.net
-#* !^TO.*edh@mr.net
-#* ^X-MSMail-Priority:
-#| tee -a $MAILDIR/archive/mail-outgoing/$YEAR/$MONTH /var/mail/edh
-
-MINDSPRING=$MAILDIR/mindspring/$YEAR
-DUMMY=`test -d $MINDSPRING || mkdir -p $MINDSPRING`
-# filter out my Earthlink mail (which seems to be entirely SPAM)
-:0
-* ^TOmerlinus@mindspring.com
-* !^From:.*@earthlink.net
-$MINDSPRING/$MONTH
 
 # global copies of everything not already sent somewhere (e.g. bitbucket)
 ARCHIVEDIR=$MAILDIR/archive/mail-incoming/$YEAR
@@ -109,34 +82,11 @@ MONTHFOLDER=$ARCHIVEDIR/$MONTH
 * < 204800
 $MONTHFOLDER
 
-# send copies of some mail to my pager
-##:0 c
-# nothing from certain people
-##* !^FROM_DAEMON
-##* !^From.*Eric.*Hendrickson
-# nothing bigger than 10K
-##* < 10240
-# no mail lists
-##* !^TO.*/dev/null
-# try to weed out other forwards
-##* !^Subject: F(W|w):
-##| resend-mbox -r $PAGER -m -p
-
 # safety net - keep backups of my last 64 messages
 :0 c
 backup
 :0 ic
 | cd backup && rm -f dummy `ls -t msg.* | sed -e 1,64d`
-
-# Spam Assassin
-#* !TO.*@crystalcave.net
-#:0fw
-#* < 256000
-#| /usr/bin/spamassassin -a
-
-#:0:
-#* ^X-Spam-Status: Yes
-#SPAM
 
 :0
 * ^From:.*alerts-personals@
