@@ -1,0 +1,35 @@
+color.white:            white
+color.black:            black
+color.red:              hot pink
+color.green:            green
+color.yellow:           yellow
+color.cyan:             cyan
+color.light grey:       light grey
+
+name:                   Merlinus
+
+# New Improved Keymap.	Left hand deals with:
+# q = warp 3,	  w = warp 5,	  e = max warp, r = pressor, t = tractor
+# a = det my own, s = shield tog, d = torps,	f = phaser,  g = plasma 
+# z = beam up,	  x = beam down,  c = cloak
+#		  SPACE == det enemy torps
+#
+# In other words, a Moving row, a Combat row, and a Planets row.
+# Mnemonics	: "Repulse", "Die", "Faser", "Go gettim"
+# Justification : "r" is easy to reach for pressors, "d" is nice and
+# handy for the torp key, SPACE is an easy thing to hit in emergencies.
+# Other stuff	: "A" == information (i), "D" == lockon, "W" == war
+# window, "/" == docking permission, "n" == new ship.
+
+# paradise
+#keymap:		aTq3w)e%Ww ffyuenrdDrd
+
+# old netrek settings
+keymap:		A`aTq3w#e%Ww ffyuenrdDrd
+
+#keymap:		q3w#e%rytTaDssdtfpgf dAiDlWw/enrRR
+#               ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ 
+
+# Default Keymap
+#keymap:aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzzAABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ11223344556677889900--==__++{{}}[[]]::;;""''<<,,..>>//??!!@@##$$%%^^&&**((  ))
+#keymap:aabbccrd/e fgghhiijjkkllmmnnooppqqnrssttuuvvWwxxfyzzAABBCCdDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSaTUUVVwWXXYYZZ1122q344556677889900--==__++{{}}[[]]::;;""''<<,,..>>//??!!@@w#$$e%^^&&**((  ))
