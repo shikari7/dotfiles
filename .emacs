@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Sat Aug 23 19:36:43 1997 by edh $
+;;; $Modified: Sat Sep 27 02:02:09 1997 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -136,6 +136,9 @@
 ;(add-hook 'lisp-interaction-mode-hook 'turn-off-filladapt-mode)
 ;(add-hook 'lisp-mode-hook 'turn-off-filladapt-mode)
 (add-hook 'text-mode-hook 'turn-on-filladapt-mode)
+
+;; tools for mime
+(load "mime-setup")
 
 ;; webster
 (autoload 'webster "webster" "look up a word in Webster's 7th edition" t)
