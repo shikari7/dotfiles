@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Sep 27 03:04:04 1997 by edh $
+;;;  $Modified: Sat Sep 27 03:06:24 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -120,7 +120,7 @@
 (setq gnus-decay-scores t)
 (setq gnus-use-adaptive-scoring '(word))
 
-(setq gnus-message-archive-group
+(setq gnus-message-archive-group	; archive outgoing mail/news
       '((if (message-news-p)
             "news-outgoing"
           (concat "mail-outgoing."
