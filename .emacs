@@ -51,7 +51,6 @@
 (gnuserv-start)
 
 ;; time and load average in the modeline
-(display-time-stop)
 (display-time)
 (setq display-time-24hr-format t)
 
