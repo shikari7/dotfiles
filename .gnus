@@ -23,7 +23,7 @@
 
 ;; misc 
 (add-hook 'message-mode-hook 'font-lock-mode)
-(setq message-max-buffers nil)		; default 10, nil => keep all
+(setq message-max-buffers 5)		; default 10, nil => keep all
 
 ;; bbdb -- Insidious Big Brother Database; for use with VM and GNUS
 (require 'bbdb)
@@ -116,7 +116,7 @@
 ;gnus-single-article-buffer nil		; don't use the same article buffer
  gnus-subscribe-hierarchical-interactive t
  gnus-subscribe-newsgroup-method 'gnus-subscribe-hierarchically
-;gnus-summary-goto-unread nil		; don't skip to next unread
+ gnus-summary-goto-unread nil		; don't skip to next unread
 ;gnus-thread-ignore-subject t		; don't start a new thread if changes
  )
 
@@ -149,9 +149,7 @@
 ;; for mail reading
 (setq
  nnmail-split-methods
- '(("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
-   ("mail.mpm" "^To:.*mpls@pm.org")
-   ("mail.auctions" "^From:.*\\(auction-messages\\|aw-confirm\\)@")
+ '(("mail.mpm" "^To:.*mpls@pm.org")
    ("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
    ("mail.mandrake-expert" "^\\(To\\|Cc\\):.*expert@")
    ("mail.mandrake-newbie" "^\\(To\\|Cc\\):.*newbie@")
@@ -192,14 +190,9 @@
 	    ))
 
 (setq
-;bbdb-always-add-addresses t
 ;bbdb-canonicalize-redundant-nets-p t	; filter out redundant addresses
  bbdb-default-area-code 612
-;bbdb-electric-p t			; what does this do?
-;bbdb-elided-display nil		; or (e.g.) '(address phone net notes)
-;;bbdb-new-nets-always-primary t
  bbdb-offer-save 'auto			; just go ahead and save .bbdb
-;bbdb-send-mail-style 'gnus-mail
  bbdb-use-pop-up nil
  )
 
