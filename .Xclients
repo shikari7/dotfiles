@@ -37,7 +37,7 @@ fi
 # various time pieces...
 #moonclock -moonclock -geometry -510+5 &
 #xdaliclock -cycle -transparent -noseconds -geometry -400-0 &
-xdaliclock -transparent -noseconds -geometry -400-0 &
+xdaliclock -transparent -noseconds -geometry -375-0 &
 #xticktalk -geometry -400-0 -noampm &
 #sunclock iconified geometry is 128xXX
 #sunclock -iconic -icongeometry -310-245 &
