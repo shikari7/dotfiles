@@ -43,6 +43,7 @@
 /xntpd\[/&&/synchroni(zed|sation) (to|lost)/	ignore
 /xntpd\[/&&/kernel pll status change/		ignore
 /xntpd\[/&&/sendto\(/				ignore
+/xntpd\[/&&/Connection re-established/		ignore
 
 /named\[/&&/sendto/&&/Network is unreachable/	ignore
 /named\[/&&/recvfrom:/				ignore
