@@ -293,6 +293,7 @@ inserts \" characters."
 
 ;; for auctex
 (require 'tex-site)			; should be in site-init.el?
+(custom-set-variables
 
 ;; Options Menu Settings
 ;; =====================
