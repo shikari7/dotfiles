@@ -18,6 +18,8 @@ set path = ( \
   /opt/X11/bin \
   /usr/bin/mh \
   /usr/sbin \
+  /usr/ccs/bin \
+  /usr/ucb \
   /usr/games \
   /usr/local/bin \
 )
