@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Wed Jan 28 19:40:07 1998 by edh $
+;;; $Modified: Tue Mar 24 15:38:33 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -76,11 +76,11 @@
 	       'reindent-then-newline-and-indent)
 	     (define-key scheme-mode-map "\C-j" 'newline)))
 
-(add-hook 'perl-mode-hook
+(add-hook 'cperl-mode-hook
 	  '(lambda ()
-	     (define-key perl-mode-map "\C-m"
+	     (define-key cperl-mode-map "\C-m"
 	       'reindent-then-newline-and-indent)
-	     (define-key perl-mode-map "\C-j" 'newline)))
+	     (define-key cperl-mode-map "\C-j" 'newline)))
 
 (add-hook 'tcl-mode-hook
 	  '(lambda ()
