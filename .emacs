@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Sat Sep 27 02:02:09 1997 by edh $
+;;; $Modified: Tue Sep 30 23:22:27 1997 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -116,7 +116,7 @@
 ;; mailcrypt
 (autoload 'mc-install-write-mode "mailcrypt" nil t)
 (autoload 'mc-install-read-mode "mailcrypt" nil t)
-(add-hook 'message-mode-hook 'mc-install-write-mode)
+(add-hook 'mail-mode-hook 'mc-install-write-mode)
 
 ;; crypto
 (setq crypt-encryption-type 'pgp	; default encryption mechanism
