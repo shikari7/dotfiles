@@ -15,24 +15,18 @@ if (`tty` == "/dev/console") then
   echo '[q'
 endif
 
-# ok, tell me all about it
-
-clear
-
 # set up terminal
 if ($?TERM && $TERM == "dtterm") then
   setenv TERM	vt100
 endif
 
-$HOME/bin/sigsetup --pipe
+set t=`perl -e 'print int rand(10) + 1, "\n";'`
+( sleep $t; sigsetup --pipe; fetchmail )  >> /dev/null &
+unset t
+
+# ok, tell me all about it
+clear
 
 # mail and news stuff
-#trn -c
-#msgs -fpq
-#echo ""
-#countmail
-fetchmail
 messages
 uptime
-
-#screen -ls
