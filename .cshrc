@@ -41,7 +41,7 @@ if ($?prompt) then			# not a shell script
       set ppp = ""
     endif
 
-    set prompt=": $ppp%S%n@%m%s <%B%l%b> %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
+    set prompt=": $ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
     unset ppp
 
     if ($TERM == "xterm" || $TERM == "dtterm") then
