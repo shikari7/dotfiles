@@ -20,9 +20,10 @@ if ($?TERM && $TERM == "dtterm") then
   setenv TERM	vt100
 endif
 
-set t=`perl -e 'print int rand(25) + 1;'`
-( sleep $t; sigsetup --pipe $HOME/lib/quotes /usr/share/games/fortunes; fetchmail >>& /dev/null ) &
-unset t
+#set t=`perl -e 'print int rand(25) + 1;'`
+#( sleep $t; sigsetup --pipe $HOME/lib/quotes /usr/share/games/fortunes; fetchmail >>& /dev/null ) &
+fetchmail >>& /dev/null
+#unset t
 
 # ok, tell me all about it
 clear
