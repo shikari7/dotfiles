@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Mon May 18 22:48:14 1998 by edh $
+;;; $Modified: Mon Jul 20 13:54:26 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -301,7 +301,7 @@ inserts \" characters."
 (setq w3-default-homepage (quote "http://www.cbc.umn.edu/~edh"))
 
 (custom-set-variables
-; '(user-mail-address "ericdh@tiac.net" t)
+ '(user-mail-address "ericdh@tiac.net" t)
  '(query-user-mail-address nil))
 (custom-set-faces)
 
