@@ -63,10 +63,10 @@
 ;      "Reply-To: " user-mail-address "\n"
        "Organization: The Weylani-Yutano Corporation" "\n"
        "X-URL: <a href=\"http://www.crystalcave.net/~edh/\">The Crystal Cave</a>" "\n"
+       "X-sPoOk: " "\n"
        ))
 
-(defvar spook-phrases-file (concat data-directory "spook.lines")
-   "Sensitive verbiage to distract those Spooks listening in on your e-mail.")
+(load "spook")
 
 ;; Thu Apr 30 00:54:18 EDT 1998
 (defun my-signature ()
@@ -95,14 +95,13 @@
 (add-hook 'message-setup-hook
 	  '(lambda ()
 	     (bbdb-define-all-aliases)
-;	     (message-position-on-field "X-Spook")
-;	     (insert (mapconcat
-;		      '(lambda (dummy) ; fake a for loop
-;			 (cookie spook-phrases-file
-;				 "hi" "mom"))
-;		      '(1 2 3 4 5 6)
-;		      " "))
-	     ))
+	     (message-position-on-field "X-Spook")
+	     (insert (mapconcat
+		      '(lambda (dummy) ; fake a for loop
+			 (cookie spook-phrases-file
+				 "hi" "mom"))
+		      '(1 2 3 4 5 6)
+		      " "))))
 
 (setq
  gnus-audio-au-player "/usr/bin/play"
@@ -189,6 +188,9 @@
 	("mail.mpm" "^To:.*mpm@")
 	("mail.auctions" "^From:.*\\(auction-messages\\|aw-confirm\\)@")
 	("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
+	("mail.gnus" "^\\(To\\|Cc\\):.*ding@")
+	("mail.bugtraq" "^\\(To\\|Cc\\):.*bugtraq@")
+	("mail.gto" "^\\(To\\|Cc\\):.*gto@")
 	("mail.other" "")))
 (setq nnmail-use-long-file-names nil)
 ;(setq nnmail-tmp-directory "/tmp/")	; faster than over NFS?
