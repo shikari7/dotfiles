@@ -186,6 +186,7 @@ nxterm*foreground:	white
 ! 8x16
 ! nxterm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
 ! XTerm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
+rxvt*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
 
 nxterm*SimpleMenu.background:	WINBACK_COLOR
 nxterm*SimpleMenu.foreground:	black
