@@ -120,8 +120,8 @@
   "Prepare a D. E. Shaw & Co. fax cover sheet" t)
 
 ;; modify.el
-(require 'modify)
-(setq-default update-last-edit-date t)
+;(require 'modify)
+;(setq-default update-last-edit-date t)
 
 ;; mailcrypt
 (autoload 'mc-install-write-mode "mailcrypt" nil t)
