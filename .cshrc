@@ -116,5 +116,3 @@ else
   # NOTE: Never have noclobber set for shell scripts.
   unset noclobber
 endif		# not a shell script
-
-umask 022
