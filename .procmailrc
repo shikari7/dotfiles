@@ -41,7 +41,9 @@ LOGFILE=$LOGDIR/$MONTH
 * ^Subject: send forecast
 | forecast | mail 2081398@skymail.com
 
+
 # mailing list rules and archives
+SPOOLDIR=$MAILDIR/mail-incoming
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 INCLUDERC=$PMDIR/rc.maillists
