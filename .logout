@@ -14,7 +14,7 @@ echo ""
 echo -n "Captain's Log, stardate: "
 date
 echo ""
-fortune -a
+fortune
 echo ""
 #echo ""
 #stty 0
