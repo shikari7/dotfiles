@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Mon Aug 31 15:10:30 1998 by edh $
+;;;  $Modified: Tue Sep  1 15:04:36 1998 by edh $
 
 (setq gnus-select-method '(nntp "news.deshaw.com"))
 ;(setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
@@ -182,7 +182,7 @@
 	("mail.net-people" "^\\(To\\|Cc\\):.*net-people@")
 	("mail.gnus" "^\\(To\\|Cc\\):.*ding@")
 	("mail.gto" "^\\(To\\|Cc\\):.*gto@")
-	("mail.kde-user" "^\\(To\\|Cc\\):.*kde-user@")
+	("mail.kde-user" "^\\(To\\|Cc\\):.*kde-user")
 	("mail.auto-net" "^\\(To\\|Cc\\):.*auto-net@")
 	("mail.bugtraq" "^To:.*bugtraq@\\|^Cc:.*bugtraq@")
 	("mail.cypherpunks" "^\\(To\\|Cc\\):.*cypherpunks@")
