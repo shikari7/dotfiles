@@ -14,8 +14,8 @@ TkPostageDetails*geometry:	80x10
 Netscape*installColormap: true
 
 ! Emacs*Background: DarkSlateGray
-Emacs*Background: Black
-Emacs*Foreground: Wheat
+Emacs*Background: Wheat
+Emacs*Foreground: Black
 ! Emacs*pointerColor: Orchid
 
 Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
