@@ -90,7 +90,7 @@
 (defun message-insert-citation-line ()
   "Function that inserts a simple citation line."
   (when message-reply-headers
-    (insert (mail-header-from message-reply-headers) " says: \"I love the smell of napalm in the morning.\"\n\n")))
+    (insert (mail-header-from message-reply-headers) " says: \"I'm going to Ibiza and taking Eric.\"\n\n")))
 
 (add-hook 'message-setup-hook
 	  '(lambda ()
