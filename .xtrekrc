@@ -7,6 +7,7 @@ color.cyan:             cyan
 color.light grey:       light grey
 
 name:                   Merlinus
+metaDefault:		on
 
 # New Improved Keymap.	Left hand deals with:
 # q = warp 3,	  w = warp 5,	  e = max warp, r = pressor, t = tractor
