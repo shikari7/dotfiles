@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Sep 27 03:09:02 1997 by edh $
+;;;  $Modified: Sat Sep 27 03:20:41 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -164,8 +164,9 @@
 
 ;; smileys
 (when (string-match "XEmacs" emacs-version)
-  (require 'smiley)
-  (add-hook 'gnus-article-display-hook 'gnus-smiley-display t))
+; (require 'smiley)
+  (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
+  (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
 
 ;; for mail reading
 (setq gnus-secondary-select-methods '((nnml "private")))
