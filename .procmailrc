@@ -1,0 +1,29 @@
+# $Modified: Tue Jun 10 02:46:13 1997 by edh $
+
+#Set on when debugging
+VERBOSE=off
+ 
+#Replace `mail' with your mail directory (Pine uses mail, Elm uses Mail)
+MAILDIR=$HOME/Mail
+     
+#Directory for storing procmail log and rc files
+PMDIR=$HOME/.procmail
+     
+MONTH=`date +%Y-%m`
+LOGFILE=$PMDIR/log.$MONTH
+
+:0
+* ^Subject: page me
+| sendpage -p XXXXXXXXXX -s %s
+
+:0 ic
+* ?test ! -d $MAILDIR/lists/$MONTH
+| mkdir $MAILDIR/lists/$MONTH
+
+# handle mailing lists and etc
+INCLUDERC=$PMDIR/rc.maillists
+
+# global copy of all mail that hasn't already been sent to the bitbucket
+MONTHFOLDER=$MAILDIR/archive/mail-incoming/`date +%Y-%m`
+:0 c
+$MONTHFOLDER
