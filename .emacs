@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Fri May 15 00:05:53 1998 by edh $
+;;; $Modified: Fri May 15 23:31:14 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -107,10 +107,9 @@
 (global-set-key "\e[C" 'forward-char)   ; forward arrow
 (global-set-key "\e[D" 'backward-char)  ; backward arrow
 
-;; put help under ESC-h and make backspace another delete key
-(global-set-key "\ep" 'mark-paragraph)
-(global-set-key "\eh" 'help-for-help)
-(global-set-key "\C-h" 'delete-backward-char)
+;; put help under C-h and make backspace another delete key
+(global-set-key [(control h)] 'help-command)
+(global-set-key [backspace] 'delete-backward-char)
 
 ;; D.E. Shaw fax-cover interface
 (autoload 'fax-cover "fax-cover"
