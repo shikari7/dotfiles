@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Thu May 14 22:39:24 1998 by edh $
+;;; $Modified: Fri May 15 00:05:53 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -181,9 +181,6 @@
 ;(require 'efs)				; replaces ange-ftp
 (setq efs-use-passive-mode t)
 
-;; Zen IRC
-(autoload 'zenirc "zenirc" "Zen IRC client" t)
-
 ;; VM
 ;(autoload 'vm "vm" "Start VM on your primary inbox." t)
 ;(autoload 'vm-other-frame "vm" "Like `vm' but starts in another frame." t)
@@ -194,7 +191,9 @@
 ;(autoload 'vm-submit-bug-report "vm" "Send a bug report about VM." t)
 
 ;; ZenIRC
-(autoload 'zenirc "/u/edh/.zenirc" "Major mode to waste time" t)
+(require 'zenirc)
+(load "/home/edh/.zenirc")
+;(autoload 'zenirc "/home/edh/.zenirc" "Major mode to waste time" t)
 
 ;(load "add-status")
 
