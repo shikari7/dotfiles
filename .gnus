@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Mon Sep 29 23:58:48 1997 by edh $
+;;;  $Modified: Tue Sep 30 23:22:08 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -15,7 +15,7 @@
 (setq gnus-use-mailcrypt t)
 (add-hook 'gnus-summary-mode-hook 'mc-install-read-mode)
 (add-hook 'news-reply-mode-hook 'mc-install-write-mode)
-(add-hook 'message-mode-hook 'mc-install-write-mode)
+;(add-hook 'message-mode-hook 'mc-install-write-mode)
 
 ;; bbdb -- Insidious Big Brother Database; for use with VM and GNUS
 ;; see below for more customizations
