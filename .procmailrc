@@ -74,7 +74,15 @@ $MONTHFOLDER
 
 # send copies of some mail to my pager
 :0 c
+# nothing from daemons
 * !^FROM_DAEMON
+* !^From.*Eric.*Hendrickson
+# nothing bigger than 1000 bytes
+* < 10000
+# no mail lists
+* !^TO.*/dev/null
+# try to weed out other forwards
+* !^Subject: F(W|w):
 | resend-mbox -r $PAGER -m -p
 
 # else drop in my mailbox 
