@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Mar 21 12:18:33 1998 by edh $
+;;;  $Modified: Thu Mar 26 14:08:54 1998 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -19,8 +19,9 @@
 
 ;; bbdb -- Insidious Big Brother Database; for use with VM and GNUS
 (require 'bbdb)
-(bbdb-initialize)
+(bbdb-initialize 'gnus 'message 'sc 'w3)
 (bbdb-insinuate-gnus)
+(bbdb-insinuate-message)
 (setq gnus-use-bbdb t)
 (setq gnus-optional-headers 'bbdb/gnus-lines-and-from)
 
@@ -107,6 +108,8 @@
 ;; scoring
 (setq gnus-decay-scores t)
 (setq gnus-use-adaptive-scoring '(word))
+(setq gnus-score-find-score-files-function
+      '(gnus-score-find-bnews bbdb/gnus-score))
 
 (setq gnus-message-archive-group	; archive outgoing mail/news
       '((if (message-news-p)
