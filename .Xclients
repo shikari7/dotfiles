@@ -40,6 +40,8 @@ xdaliclock -transparent -noseconds -geometry -400-0 &
 #sunclock -iconic -icongeometry -310-245 &
 #sunclock -iconic &
 
+blacken-cmap &
+
 # toys
 #xsnow -nowind &
 xearth -ncolors 16 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 &
