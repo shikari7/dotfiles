@@ -21,7 +21,7 @@
 (setq lpr-switches '("-G -CEric"))
 (setq track-eol t)                      ; follow end-of-line with C-n, C-p
 (setq truncate-partial-width-windows t) ; no line wrapping
-(setq frame-background-mode 'dark)
+(setq frame-background-mode 'light)
 
 ;;; backups
 
