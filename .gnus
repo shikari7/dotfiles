@@ -1,8 +1,8 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Apr 11 03:10:21 1998 by edh $
+;;;  $Modified: Sat Apr 11 03:13:20 1998 by edh $
 
-(setq gnus-select-method '(nntp "birch.math.umn.edu" (nntp-port-number 1701)))
+(setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
 ;; iso8859-1
 ;(if (string-equal (frame-type) 'x)
