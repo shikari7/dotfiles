@@ -13,15 +13,17 @@ TkPostageDetails*geometry:	80x10
 
 Netscape*installColormap: true
 
-! XEmacs*Background: DarkSlateGray
-XEmacs*Background: Wheat
-XEmacs*Foreground: Black
-! XEmacs*pointerColor: Orchid
+! XEmacs*Background:	DarkSlateGray
+XEmacs*Background:	Wheat
+XEmacs*Foreground:	Black
+XEmacs*pointerColor:	Orchid
+! XEmacs*cursorColor:	Orchid
+XEmacs*bitmapIcon:	on
+XEmacs.geometry:	80x48
 
-!XEmacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
-!XEmacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
+XEmacs*default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
+XEmacs*italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
 !XEmacs*menubar*font:		-*-new century schoolbook-bold-r-*-*-*-120-*-*-*-*-*-*
-XEmacs*EmacsFrame.geometry:	80x48
 !XEmacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
 
 noseguy.program:	/usr/games/fortune
@@ -154,6 +156,7 @@ xscreensaver.programs:	\
 
 ! rxvt*backgroundPixmap:	/home/edh/web-docs/images/chinese-weave.xpm
 
+! Number of lines of scrollback to save
 XTerm*saveLines:	2048
 nxterm*saveLines:	2048
 rxvt*saveLines:	        2048
@@ -185,6 +188,39 @@ nxterm*fullCursor:	true
 
 xterm*reverseWrap:	true
 nxterm*reverseWrap:	true
+
+XTerm*highlightSelection:  true
+nxterm*highlightSelection:  true
+
+! Uncomment this to use color for the bold attribute
+XTerm*VT100*colorBDMode:  on
+XTerm*VT100*colorBD:  blue
+nxterm*VT100*colorBDMode:  on
+nxterm*VT100*colorBD:  blue
+
+! Uncomment this to use color for underline attribute
+XTerm.VT100*colorULMode:  on
+XTerm.VT100*underLine:  off
+XTerm*VT100*colorUL:  magenta
+nxterm.VT100*colorULMode:  on
+nxterm.VT100*underLine:  off
+nxterm*VT100*colorUL:  magenta
+
+! Uncomment this to display the scrollbar 
+XTerm*scrollBar:  true
+nxterm*scrollBar:  true
+
+! This resource specifies whether or not to ignore the 'alternate screen'
+! of applications such as vi.  When it is on, these applications will restore
+! the contents of the screen when they are exited to what they were before
+! they were started.  When it is off, the contents of vi will remain on the
+! screen after the program is quit.
+XTerm.VT100.titeInhibit:  true
+
+*visualBell:		true
+*scrollTtyOutput:	False
+*scrollKey:		True
+Scrollbar.JumpCursor:	True
 
 xmeter*lErrorBack:	DarkOrange2
 xmeter*errorBd:		DarkOrange2
