@@ -42,7 +42,7 @@ if ($?prompt) then			# not a shell script
     set prompt=": $ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
     unset ppp
 
-    if ($?TERM && ($TERM == "xterm" || $TERM == "dtterm")) then
+    if ($?TERM && ($TERM == "xterm" || $TERM == "rxvt")) then
       alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$HOST}""'
       cwdcmd
     endif
@@ -69,7 +69,7 @@ if ($?prompt) then			# not a shell script
 
 # begin keep these here (not .login)
   set mail = "10 $MAIL"			# modify this and the path
-  set history = 500
+  set history = (500 '%h\t%P\t%R\n')
   set savehist = 500
   set notify filec noclobber
 # end keep here not .login
