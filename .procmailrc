@@ -1,7 +1,7 @@
 #	$Id$	
 
 #Set on when debugging
-VERBOSE=on
+VERBOSE=off
  
 #Replace `mail' with your mail directory (Pine uses mail, Elm uses Mail)
 MAILDIR=$HOME/Mail
@@ -9,9 +9,16 @@ MAILDIR=$HOME/Mail
 #Directory for storing procmail log and rc files
 PMDIR=$HOME/.procmail
      
+# split up Digests into their individual messages.
+# Don't do this if you use a global lockfile before this recipe (deadlock)
+# do before setting logfile so as not to log this
+#:0
+#* ^Subject:.*Digest
+#|formail +1 -d -s procmail
+
 MONTH=`date +%m`
 YEAR=`date +%Y`
-LOGFILE=$PMDIR/log.$MONTH
+LOGFILE=$PMDIR/log.$YEAR-$MONTH
 
 :0
 * ^Subject: page me
