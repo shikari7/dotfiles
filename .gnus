@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Wed Feb 25 00:10:06 1998 by edh $
+;;;  $Modified: Sat Mar 21 11:59:48 1998 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -19,20 +19,22 @@
 
 ;; bbdb -- Insidious Big Brother Database; for use with VM and GNUS
 ;; see below for more customizations
-(autoload 'bbdb         "bbdb-com" "Insidious Big Brother Database" t)
-(autoload 'bbdb-name    "bbdb-com" "Insidious Big Brother Database" t)
-(autoload 'bbdb-company "bbdb-com" "Insidious Big Brother Database" t)
-(autoload 'bbdb-net     "bbdb-com" "Insidious Big Brother Database" t)
-(autoload 'bbdb-notes   "bbdb-com" "Insidious Big Brother Database" t)
-(autoload 'bbdb-insinuate-vm       "bbdb-vm"    "Hook BBDB into VM")
-(autoload 'bbdb-insinuate-rmail    "bbdb-rmail" "Hook BBDB into VM")
-(autoload 'bbdb-insinuate-mh       "bbdb-mhe"   "Hook BBDB into MH-E")
-(autoload 'bbdb-insinuate-gnus     "bbdb-gnus"  "Hook BBDB into GNUS")
-(autoload 'bbdb-insinuate-sendmail "bbdb"       "Hook BBDB into VM")
+;(autoload 'bbdb         "bbdb-com" "Insidious Big Brother Database" t)
+;(autoload 'bbdb-name    "bbdb-com" "Insidious Big Brother Database" t)
+;(autoload 'bbdb-company "bbdb-com" "Insidious Big Brother Database" t)
+;(autoload 'bbdb-net     "bbdb-com" "Insidious Big Brother Database" t)
+;(autoload 'bbdb-notes   "bbdb-com" "Insidious Big Brother Database" t)
+;(autoload 'bbdb-insinuate-vm       "bbdb-vm"    "Hook BBDB into VM")
+;(autoload 'bbdb-insinuate-rmail    "bbdb-rmail" "Hook BBDB into VM")
+;(autoload 'bbdb-insinuate-mh       "bbdb-mhe"   "Hook BBDB into MH-E")
+;(autoload 'bbdb-insinuate-gnus     "bbdb-gnus"  "Hook BBDB into GNUS")
+;(autoload 'bbdb-insinuate-sendmail "bbdb"       "Hook BBDB into VM")
+(require 'bbdb)
+(bbdb-initialize)
 (bbdb-insinuate-gnus)
 (setq gnus-use-bbdb t)
 (setq gnus-optional-headers 'bbdb/gnus-lines-and-from)
-(require 'gnus-bbdb)			; from Brian Edmond
+;(require 'gnus-bbdb)			; from Brian Edmond
 (gnus-bbdb-insinuate-summary-buffer)
 
 (define-key gnus-article-mode-map "\C-h" 'gnus-article-prev-page)
