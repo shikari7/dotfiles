@@ -44,7 +44,7 @@ if ($?prompt) then			# not a shell script
     set prompt=": $ppp%S%n@%m%s <%B%l%b> %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
     unset ppp
 
-    if ($TERM == "xterm") then
+    if ($TERM == "xterm" || $TERM == "dtterm") then
       set host2 = `hostname | awk -F. '{printf "%s.%s", $1, $2}'`
       alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$host2}""'
       cwdcmd
