@@ -1,0 +1,72 @@
+#
+# Personal Swatch configuration file
+#
+
+# valid actions:
+# echo[=mode]		bold, underscore, blink, inverse, normal (default)
+# bell[=N]		N bells (default 1)
+# exec=command		command with $N (Nth field) or $0 or $* for whole line
+# ignore
+# mail[=address:address:...]	mail matched lines to address (default owner)
+# pipe=command		pipe matched lines into command
+# write[=user:user:...]	send matched lines to user(s)
+
+# Alert me of bad login attempts and find out who is on that system
+/INVALID|REPEATED|INCOMPLETE/			echo
+
+# Important program errors
+/LOGIN/						echo
+/passwd/					echo
+/ruserok/					echo
+
+# personal stuff
+/prayati/					echo=bold
+
+/pppd\[/&&/IP address/				echo=bold
+/pppd\[/&&/: (Serial|Using|Connect)/		ignore
+/chat\[/					ignore
+/ifup-ppp:/					ignore
+
+/xntpd/&&/synchroni(zed|sation) (to|lost)/	ignore
+/(xntpd|named)/&&/sendto/&&/Network is unreachable/	echo	10:00
+/named/&&/Malformed response/			ignore
+
+/icmpinfo/&&/(started|ICMP_Dest_Unreachable)/	ignore
+
+/sendmail/&&/(from|to|message-id)=/		ignore
+/sendmail/					echo
+/fetchmail/&&/reading/				ignore
+#/fetchmail/&&/\d+\smessages*\sat/		ignore
+
+#/identd/&&/(Connection from|Successful lookup)/	ignore
+
+/(rlogind|rshd|telnetd|ftpd)/&&/(deshaw|juno).com/	ignore
+/ftpd/&&/session closed/			ignore
+/(rlogind|rshd|telnetd|ftpd)/			echo=blink
+
+# catch everything else
+/.*/						echo
+
+# Ignore this stuff
+#/sendmail/&&/locked$/				ignore
+#/ipop3d/&&/(Autologout|Log(in|out))/		ignore
+#/imapd/&&/(Preauthenticated|Autologout|Log(out|in))/	ignore
+
+# Report unusual tftp info
+#/tftpd\[/&&/connect from/&&/.med.umn.edu/	ignore
+#/tftpd/						echo
+
+# Kernel problems
+#/(panic|halt|SunOS Release)/			echo
+#/file system full/				echo
+#/vmunix.*(at|on)/				ignore
+#/vmunix/					echo
+
+#/su:/						echo
+#/sudo:/						echo
+
+# tcp-wrappers are, ah, verbose.  (note the "\[" -- this lets the daemons
+# report their own errors; i.e. ftpd:  connection broken
+#/(fingerd|comsat|rlogind|rshd|telnetd|ftpd|rcp)\[.*: connect/	ignore
+#/(talkd|imapd|popper|mailchk|rexecd)\[.*connect from/	ignore
+#/ftpd\[/&&/login ok/				ignore
