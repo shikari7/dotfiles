@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Mar 21 12:17:48 1998 by edh $
+;;;  $Modified: Sat Mar 21 12:18:33 1998 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -18,17 +18,6 @@
 (add-hook 'message-mode-hook 'font-lock-mode)
 
 ;; bbdb -- Insidious Big Brother Database; for use with VM and GNUS
-;; see below for more customizations
-;(autoload 'bbdb         "bbdb-com" "Insidious Big Brother Database" t)
-;(autoload 'bbdb-name    "bbdb-com" "Insidious Big Brother Database" t)
-;(autoload 'bbdb-company "bbdb-com" "Insidious Big Brother Database" t)
-;(autoload 'bbdb-net     "bbdb-com" "Insidious Big Brother Database" t)
-;(autoload 'bbdb-notes   "bbdb-com" "Insidious Big Brother Database" t)
-;(autoload 'bbdb-insinuate-vm       "bbdb-vm"    "Hook BBDB into VM")
-;(autoload 'bbdb-insinuate-rmail    "bbdb-rmail" "Hook BBDB into VM")
-;(autoload 'bbdb-insinuate-mh       "bbdb-mhe"   "Hook BBDB into MH-E")
-;(autoload 'bbdb-insinuate-gnus     "bbdb-gnus"  "Hook BBDB into GNUS")
-;(autoload 'bbdb-insinuate-sendmail "bbdb"       "Hook BBDB into VM")
 (require 'bbdb)
 (bbdb-initialize)
 (bbdb-insinuate-gnus)
@@ -164,8 +153,6 @@
 (when (string-match "XEmacs" emacs-version)
   (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
   (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
-
-
 
 ;; for mail reading
 (setq gnus-secondary-select-methods '((nnml "private")))
