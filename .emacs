@@ -55,6 +55,9 @@
 (display-time)
 (setq display-time-24hr-format t)
 
+;; save minibuffer history
+(savehist-load)
+
 ;; these need to be wrapped in add-hooks as they are not loaded automatically
 (add-hook 'html-mode-hook
 	  (lambda ()
