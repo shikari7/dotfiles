@@ -12,30 +12,53 @@ xosview*background:	black
 ! Netscape*installColormap: true
 
 ! Emacs*Background: DarkSlateGray
-! Emacs*Foreground: Wheat
+Emacs*Background: Black
+Emacs*Foreground: Wheat
 ! Emacs*pointerColor: Orchid
 
 Emacs.default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
 Emacs.italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
+Emacs*menubar*font:		-*-new century schoolbook-bold-r-*-*-*-120-*-*-*-*-*-*
 Emacs*EmacsFrame.geometry:	80x40
 Emacs*EmacsFrame.default.attributeBackgroundPixmap:	/home/edh/.icons/gray2.xpm
 
 noseguy.program:	/usr/games/fortune
 
 xscreensaver.programs:	\
-	xtacy -root -perfect						\n\
+	xearth -nostars -wait 0 -timewarp 400 -pos sunrel/38/-30	\n\
+	xdaliclock -root -noseconds -transparent -cycle -builtin2 	\n\
 	ico -r -faces -sleep 1 -obj ico					\n\
-	xtacy -root							\n\
-	xdaliclock -root -noseconds -transparent -cycle -builtin2	\n\
-	xfishtank -c black -r 1						\n\
+	-xfishtank -c black -d -r 2					\n\
+	xtacy -root -delay 100 -funky -number 3				\n\
+	xtacy -root -delay 100 -gravity					\n\
+	xtacy -root -delay 100 -mixer					\n\
+	xtacy -root -delay 100 -taffy -pal 4				\n\
+	gears -root							\n\
+	superquadrics -root						\n\
+	morph3d -root							\n\
+	cage -root							\n\
+	moebius -root							\n\
+	stairs -root							\n\
+	pipes -root							\n\
+	sproingies -root						\n\
+	rubik -root							\n\
+	atlantis -root							\n\
+	lament -root							\n\
+ 	bubble3d -root							\n\
+ 	glplanet -root							\n\
 	ant -root							\n\
-	attraction -root						\n\
-	blitspin -root							\n\
+	attraction -root -mode balls					\n\
+	attraction -root -mode lines -points 3 -segments 200		\n\
+	attraction -root -mode splines -segments 300			\n\
+	attraction -root -mode lines -radius 300 -orbit -vmult 0.5	\n\
+	attraction -root -mode polygons					\n\
+	attraction -root -mode filled-splines -segments 0		\n\
+	attraction -root -glow -points 10				\n\
+	blitspin -root -grab						\n\
 	bouboule -root							\n\
 	braid -root							\n\
 	bsod -root							\n\
 	bubbles -root							\n\
-	bubbles3d -root							\n\
 	coral -root							\n\
 	crystal -root							\n\
 	cynosure -root							\n\
@@ -43,6 +66,7 @@ xscreensaver.programs:	\
 	deco -root							\n\
 	discrete -root							\n\
 	distort -root							\n\
+	distort -root -reflect						\n\
 	drift -root							\n\
 	epicycle -root							\n\
 	fadeplot -root							\n\
@@ -53,7 +77,8 @@ xscreensaver.programs:	\
 	galaxy -root							\n\
 	goop -root							\n\
 	grav -root							\n\
-	greynetic -root							\n\
+	grav -root -trail -decay					\n\
+	greynetic -root -delay 18					\n\
 	halo -root							\n\
 	helix -root							\n\
 	hopalong -root							\n\
@@ -65,7 +90,6 @@ xscreensaver.programs:	\
 	julia -root							\n\
 	kaleidescope -root						\n\
 	kumppa -root							\n\
-	lament -root							\n\
 	laser -root							\n\
 	lightning -root							\n\
 	lisa -root							\n\
@@ -80,10 +104,11 @@ xscreensaver.programs:	\
 	pedal -root							\n\
 	penrose -root							\n\
 	pyro -root							\n\
-	qix -root							\n\
+	qix -root -solid -delay 0 -segments 100				\n\
 	rd-bomb -root							\n\
-	rocks -root							\n\
-	rorschach -root							\n\
+	rd-bomb -root -speed 1 -size 0.1				\n\
+	rocks -root -fg darksalmon					\n\
+	rorschach -root -offset 7					\n\
 	rotor -root							\n\
 	sierpinski -root						\n\
 	slidescreen -root						\n\
@@ -91,10 +116,11 @@ xscreensaver.programs:	\
 	sphere -root							\n\
 	spiral -root							\n\
 	starfish -root							\n\
+	starfish -root -blob						\n\
 	strange -root							\n\
 	swirl -root							\n\
 	triangle -root							\n\
-	truchet -root							\n\
+	truchet -root -randomize					\n\
 	vines -root							\n\
 	worm -root							\n\
 	xjack -root							\n\
@@ -105,31 +131,31 @@ xscreensaver.programs:	\
 
 ! rxvt*backgroundPixmap:	/home/edh/web-docs/images/chinese-weave.xpm
 
-XTerm*saveLines:	1500
-nxterm*saveLines:	1500
-rxvt*saveLines:	        1500
+XTerm*saveLines:	2048
+nxterm*saveLines:	2048
+rxvt*saveLines:	        2048
 
 ! XTerm*cursorColor:	blue
 XTerm*cursorColor:	firebrick1
-XTerm*scrollBar:	true
 ! nxterm*cursorColor:	blue
 nxterm*cursorColor:	firebrick1
-nxterm*scrollBar:	true
 
 xterm*fullCursor:	true
-xterm*reverseWrap:	true
-xterm*titleBar:		false
 nxterm*fullCursor:	true
+
+xterm*reverseWrap:	true
 nxterm*reverseWrap:	true
+
+xterm*titleBar:		false
 nxterm*titleBar:	false
 
-XTerm*loginShell:	false
-nxterm*loginShell:	false
-rxvt*loginShell:	false
+XTerm*loginShell:	true
+nxterm*loginShell:	true
+rxvt*loginShell:	true
 
-XTerm*utmpInhibit:	false
-nxterm*utmpInhibit:	false
-rxvt*utmpInhibit:	false
+XTerm*utmpInhibit:	true
+nxterm*utmpInhibit:	true
+rxvt*utmpInhibit:	true
 
 *visualBell:		true
 *scrollTtyOutput:	False
@@ -142,6 +168,34 @@ Scrollbar.JumpCursor:	True
 *inputLang:		C
 
 ! 8x16
-! nxterm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
-! XTerm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
+nxterm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
+XTerm*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
 rxvt*font:		-sony-fixed-medium-*-normal-*-*-*-*-*-*-*-*-*
+
+xmeter*lErrorBack:	DarkOrange2
+xmeter*errorBd:		DarkOrange2
+xmeter*errorBack:	khaki4
+xmeter*errorFore:	khaki
+xmeter*errorHl:		DarkOrange2
+xmeter*errorIbd:	Blue
+xmeter*lFatalBack:	maroon
+xmeter*fatalBd:	 	maroon
+xmeter*fatalBack:	khaki4
+xmeter*fatalFore:	khaki
+xmeter*fatalHl:		maroon
+xmeter*fatalIbd:	Blue
+xmeter*lOkBack:		LawnGreen
+xmeter*okBd:		LawnGreen
+xmeter*okBack:		khaki4
+xmeter*okFore:		khaki
+xmeter*okHl:		LawnGreen
+xmeter*okIbd:		Blue
+xmeter*lWarnBack:	gold
+xmeter*warnBd:		gold
+xmeter*warnBack:	khaki4
+xmeter*warnFore:	khaki
+xmeter*warnHl:		gold
+xmeter*warnIbd:		Blue
+xmeter*shortname:	short
+xmeter*font:		5x8
+xmeter*fatalBitmap:	/u/edh/.icons/skull.xbm
