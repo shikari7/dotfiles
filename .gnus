@@ -184,15 +184,8 @@
 ;; for mail reading
 (setq mail-source-delete-incoming t)	; delete Incoming files after splitting
 (setq nnmail-split-methods
-      '(("mail.mndod" "^\\(To\\|Cc\\):.*mndod@")
-	("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
-	("mail.sun-managers" "^To:.*sun-managers@")
+      '(("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
 	("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
-	("mail.net-people" "^\\(To\\|Cc\\):.*net-people@")
-	("mail.kde-user" "^\\(To\\|Cc\\):.*kde-user")
-	("mail.auto-net" "^\\(To\\|Cc\\):.*auto-net@")
-	("mail.cypherpunks" "^\\(To\\|Cc\\):.*cypherpunks@")
-	("mail.netatalk" "^\\(To\\|Cc\\):.*netatalk-admins@")
 	("mail.other" "")))
 (setq nnmail-use-long-file-names nil)
 ;(setq nnmail-tmp-directory "/tmp/")	; faster than over NFS?
