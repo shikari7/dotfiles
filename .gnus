@@ -18,6 +18,9 @@
       (t (eq (console-type) 'tty))
       (require 'iso-ascii))
 
+;; disable Sender: field
+;(setq message-syntax-checks '((sender . disabled)))
+
 ;; mailcrypt
 (setq gnus-use-mailcrypt t)
 (add-hook 'gnus-summary-mode-hook 'mc-install-read-mode)
