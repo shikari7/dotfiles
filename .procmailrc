@@ -58,6 +58,6 @@ $MONTHFOLDER
 
 # send copies of some mail to my pager
 :0 c
-| resend-mbox
+| resend-mbox -r $PAGER -m
 
 # else drop in my mailbox 
