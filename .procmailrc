@@ -39,6 +39,11 @@ LOGFILE=$LOGDIR/$MONTH
 #* ^Subject: page me
 #| sendpage -p XXXXXXXXXX -s %s
 
+# quick hack to page me with my current IP address
+:0
+* ^Subject: ppp0
+| ifconfig ppp0 | mail 2081398@skymail.com
+
 # mailing list rules and archives
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
