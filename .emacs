@@ -23,13 +23,6 @@
 (setq truncate-partial-width-windows t) ; no line wrapping
 (setq frame-background-mode 'light)
 
-;;; backups
-
-(setq kept-new-versions 1)		; default 2
-(setq kept-old-versions 1)		; default 2
-(setq delete-old-versions t)
-(setq version-control t)
-
 (global-set-key "\C-cg" 'goto-line)
 (global-set-key "\C-cw" 'what-line)
 (global-set-key "\C-xs" 'save-buffer)	; as opposed to save-some-buffers
@@ -52,6 +45,9 @@
 
 ;; gnuserv for gnuattach
 (gnuserv-start)
+
+;; version control
+(require 'vc-hooks)
 
 ;; time and load average in the modeline
 (display-time)
@@ -148,7 +144,8 @@
 (add-hook 'text-mode-hook 'turn-on-filladapt-mode)
 
 ;; tools for mime
-(load "mime-setup")
+;(load "mime-setup")
+;(setq mime-coding-system-alist '())
 
 ;; webster
 (autoload 'webster "webster" "look up a word in Webster's 7th edition" t)
@@ -304,9 +301,17 @@ inserts \" characters."
 (require 'tex-site)			; should be in site-init.el?
 
 (custom-set-variables
+ '(require-final-newline (quote ask))
+ '(version-control t)
+ '(delete-old-versions t)
+ '(browse-url-browser-function (quote browse-url-netscape))
+ '(ps-print-color-p t)
+ '(toolbar-visible-p nil)
  '(user-mail-address "edh@visi.com" t)
- '(query-user-mail-address nil))
-(custom-set-faces)
+ '(query-user-mail-address nil)
+ '(font-lock-mode t nil (font-lock)))
+(custom-set-faces
+ '(default ((t (:size "18pt"))) t))
 
 ;; Options Menu Settings
 ;; =====================
