@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Tue Sep 30 23:22:27 1997 by edh $
+;;; $Modified: Wed Dec  3 20:52:55 1997 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -49,6 +49,11 @@
 
 ;; gnuserv for gnuattach
 (gnuserv-start)
+
+;; time and load average in the modeline
+(display-time-stop)
+(display-time)
+(setq display-time-24hr-format t)
 
 ;; these need to be wrapped in add-hooks as they are not loaded automatically
 (add-hook 'html-mode-hook
