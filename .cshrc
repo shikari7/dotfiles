@@ -3,10 +3,6 @@
 #
 # this file should work with tcsh or csh
 
-if ($?prompt) then			# not a shell script
-
-# limit coredumpsize 0
-
 set path = ( \
   /usr/local/bin \
   /bin \
@@ -22,6 +18,10 @@ set path = ( \
   /usr/sbin \
   /usr/games \
 )
+
+if ($?prompt) then			# not a shell script
+
+# limit coredumpsize 0
 
   if ($?tcsh) then
 
