@@ -70,4 +70,4 @@ rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
 
 #enlightenment
 #fvwm2
-kdestart
+startkde
