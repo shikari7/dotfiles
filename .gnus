@@ -57,14 +57,8 @@
 
 (setq message-default-headers		; add customized mail headers
       (concat
-;      "Organization: Olympus Spaceport Authority, Mars" "\n"
-;      "Reply-To: ericdh@tiac.net" "\n"
-       "Organization: D.E. Shaw & Co., L.P." "\n"
+       "Organization: Olympus Spaceport Authority, Mars" "\n"
        "X-Face: )qt4L0.NCL#1U|Vlwo`YjAM):N>!I\\b(w`1:[E5xo]dRz0\\m*5ofHq7A'fopR;J5Ey11dFh{$o*tv]\\xCB#}~M}0CfCoy8]{97T6m_e[}VMhmQff8.-eT]_,oP<C=bBH&uv\"ncEAw34D)wK2*$Se3P-]ty:Mu!w'Ep[zx-6^2H!y>lG{`G#=s*dU6Qaum5cYq[GH;\"!3fp<..E+)yM2Jd:wUOZ@+_2D|3AnNz*3Xu\\Il/dDJ.]iWVXDn\\#2c*QfanIas.[m]5!}" "\n"
-;       "X-Face: )qt4L0.NCL#1U|Vlwo`YjAM):N>!I\\b(w`1:[E5xo]dRz0\\m*5ofHq7A'fopR;J5Ey11dFh" "\n"
-;       " {$o*tv]\\xCB#}~M}0CfCoy8]{97T6m_e[}VMhmQff8.-eT]_,oP<C=bBH&uv\"ncEAw34D)wK2*$Se3" "\n"
-;       " P-]ty:Mu!w'Ep[zx-6^2H!y>lG{`G#=s*dU6Qaum5cYq[GH;\"!3fp<..E+)yM2Jd:wUOZ@+_2D|3An" "\n"
-;       " Nz*3Xu\\Il/dDJ.]iWVXDn\\#2c*QfanIas.[m]5!}" "\n"
        "X-URL: <a href=\"http://www.crystalcave.net/~edh/\">The Crystal Cave</a>\n"
        "X-Geek: GAT d-() s++: a- C++$ US++++$ P++(---)$"
        " L E+(---) W+++$ N+$>++ o+ K !w--- !O M+(-) !V-- PS+ PE"
