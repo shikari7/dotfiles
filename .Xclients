@@ -47,7 +47,7 @@ blacken-cmap &
 
 # toys
 #xsnow -nowind &
-xearth -ncolors 16 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos random &
+xearth -ncolors 16 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos random -nice 10 -fork
 nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
 xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
 
