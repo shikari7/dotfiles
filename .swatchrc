@@ -14,64 +14,86 @@
 # write[=user:user:...]	send matched lines to user(s)
 
 # Alert me of bad login attempts and find out who is on that system
-/INVALID|REPEATED|INCOMPLETE/			echo=bold
+watchfor = /INVALID|REPEATED|INCOMPLETE/
+	echo=bold
 
-# Important program errors
-/LOGIN/						echo
-/passwd/					echo
-/ruserok/					echo
+# Alert me of good logins too
+watchfor = /LOGIN ON/
+	echo=bold
+
+watchfor = /connect from/
+	echo=bold
+watchfor = /nnrpd\[/
+	echo=bold
+
+# cron
+ignore = /CROND\[/
 
 # kernel messages
-/kernel:/&&/Swansea University Computer/	ignore
-/kernel:/&&/IPX Portions Copyright/		ignore
-/kernel:/&&/Appletalk/				ignore
-/kernel:/					echo=bold
+ignore = /kernel:/&&/Swansea University Computer/
+ignore = /kernel:/&&/IPX Portions Copyright/
+ignore = /kernel:/&&/Appletalk/
+watchfor = /kernel:/
+	echo=bold
 
-/pppd\[/&&/IP address/				echo=bold
-/pppd\[/&&/: (Serial|Using|Connect)/		ignore
-/chat\[/					ignore
-/ifup-ppp:/					ignore
-/kernel/&&/PPP/					ignore
+watchfor = /pppd\[/&&/IP address/
+	echo=bold
+ignore = /pppd\[/&&/: (Serial|Using|Connect)/
+ignore = /chat\[/
+ignore = /ifup-ppp:/
+ignore = /kernel/&&/PPP/
 
 # misc
 #/lp0 at 0x03bc, \(polling\)$/			ignore
 
+ignore = /nscd: /
+
 # weirdness
-/innd\[/&&/connected 17 streaming allowed/	echo
-/innd\[/					ignore
+watchfor = /innd\[/&&/connected 17 streaming allowed/
+	echo
+ignore = /innd\[/
 
-/xntpd\[/&&/synchroni(zed|sation) (to|lost)/	ignore
-/xntpd\[/&&/kernel pll status change/		ignore
-/xntpd\[/&&/sendto\(/				ignore
-/xntpd\[/&&/Connection re-established/		ignore
+ignore = /PAM_pwdb\[/&&/session opened for user news/
 
-/named\[/&&/sendto/&&/Network is unreachable/	ignore
-/named\[/&&/recvfrom:/				ignore
-/named\[/&&/Malformed response/			ignore
-/named\[/&&/Cleaned cache/			ignore	
-/named\[/&&/USAGE/				ignore	
-/named\[/&&/(N|X)STATS/				ignore
+ignore = /xntpd\[/&&/synchroni(zed|sation) (to|lost)/
+ignore = /xntpd\[/&&/kernel pll status change/
+ignore = /xntpd\[/&&/sendto\(/
+ignore = /xntpd\[/&&/Connection re-established/
+ignore = /xntpd\[/&&/Connection refused/
 
-/icmpinfo/&&/(started|ICMP_Dest_Unreachable)/	ignore
-/icmpinfo/&&/asked for/&&/got type "CNAME"/	ignore
-/icmpinfo/&&/asked for/&&/danfarmer/		ignore
+ignore = /named\[/&&/sendto/&&/Network is unreachable/
+ignore = /named\[/&&/recvfrom:/
+ignore = /named\[/&&/Malformed response/
+ignore = /named\[/&&/Cleaned cache/
+ignore = /named\[/&&/USAGE/
+ignore = /named\[/&&/(N|X)STATS/
 
-/sendmail/&&/(from|to|message-id)=/		ignore
-/sendmail/					echo
-/fetchmail/&&/flushed/				ignore
-/fetchmail/&&/reading/				ignore
-/fetchmail/&&/status=2/				ignore
-/fetchmail/&&/name server error/		ignore
+ignore = /icmpinfo/&&/(started|ICMP_Dest_Unreachable)/
+ignore = /icmpinfo/&&/asked for/&&/got type "CNAME"/
+ignore = /icmpinfo/&&/asked for/&&/danfarmer/
+
+ignore = /sendmail/&&/(from|to|message-id)=/
+watchfor = /sendmail/
+	echo
+ignore = /fetchmail/&&/flushed/
+ignore = /fetchmail/&&/reading/
+ignore = /fetchmail/&&/status=2/
+ignore = /fetchmail/&&/name server error/
 #/fetchmail/&&/\d+\smessages*\sat/		ignore
 
-/identd\[/&&/localhost/				ignore
+ignore = /in.identd\[/&&/started/
 
-/(rlogind|rshd|telnetd|ftpd)/&&/(deshaw|juno).com/	ignore
-/ftpd/&&/session closed/			ignore
-/(rlogind\[|rshd\[|telnetd\[|ftpd\[)/		echo=blink
+ignore = /(rlogind|rshd|telnetd|ftpd)/&&/(deshaw|juno).com/
+ignore = /ftpd/&&/session closed/
+watchfor = /(rlogind\[|rshd\[|telnetd\[|ftpd\[)/
+	echo=blink
+
+ignore = /sshd\[/&&/Generating new/
+ignore = /sshd\[/&&/generation complete/
 
 # catch everything else
-/.*/						echo
+watchfor = /.*/
+	echo
 
 # Ignore this stuff
 #/sendmail/&&/locked$/				ignore
