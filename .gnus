@@ -98,13 +98,14 @@
 (add-hook 'message-setup-hook
 	  '(lambda ()
 	     (bbdb-define-all-aliases)
-	     (message-position-on-field "X-Spook")
-	     (insert (mapconcat
-		      '(lambda (dummy) ; fake a for loop
-			 (cookie spook-phrases-file
-				 "hi" "mom"))
-		      '(1 2 3 4 5 6)
-		      " "))))
+;	     (message-position-on-field "X-Spook")
+;	     (insert (mapconcat
+;		      '(lambda (dummy) ; fake a for loop
+;			 (cookie spook-phrases-file
+;				 "hi" "mom"))
+;		      '(1 2 3 4 5 6)
+;		      " "))
+	     ))
 
 (setq
  gnus-audio-au-player "/usr/bin/play"
