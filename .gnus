@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sun Mar 29 16:30:39 1998 by edh $
+;;;  $Modified: Sun Mar 29 19:20:31 1998 by edh $
 
 (setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 
@@ -24,9 +24,6 @@
 (bbdb-insinuate-message)
 (setq gnus-use-bbdb t)
 (setq gnus-optional-headers 'bbdb/gnus-lines-and-from)
-
-;(require 'gnus-bbdb)			; from Brian Edmond
-;(gnus-bbdb-insinuate-summary-buffer)
 
 (define-key gnus-article-mode-map "\C-h" 'gnus-article-prev-page)
 (define-key gnus-summary-mode-map "\C-h" 'gnus-summary-prev-page)
