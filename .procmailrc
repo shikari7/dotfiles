@@ -1,7 +1,7 @@
 #	$Id$	
 
 #Set on when debugging
-VERBOSE=off
+VERBOSE=on
  
 #Replace `mail' with your mail directory (Pine uses mail, Elm uses Mail)
 MAILDIR=$HOME/Mail
