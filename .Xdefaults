@@ -13,13 +13,13 @@ TkPostageDetails*geometry:	80x10
 
 Netscape*installColormap: true
 
-! XEmacs*Background:	DarkSlateGray
-XEmacs*Background:	Wheat
-XEmacs*Foreground:	Black
-XEmacs*pointerColor:	Orchid
-! XEmacs*cursorColor:	Orchid
-XEmacs*bitmapIcon:	on
-XEmacs.geometry:	80x48
+! Emacs*EmacsFrame.Background:	DarkSlateGray
+Emacs*EmacsFrame.Background:	Wheat
+Emacs*EmacsFrame.Foreground:	Black
+Emacs*EmacsFrame.pointerColor:	Orchid
+! Emacs*EmacsFrame.cursorColor:	Orchid
+Emacs*EmacsFrame.bitmapIcon:	on
+Emacs*EmacsFrame.geometry: 80x49
 
 XEmacs*default.attributeFont:	-*-lucidatypewriter-*-r-*-*-18-*-*-*-*-*-*-*
 XEmacs*italic.attributeFont:	-adobe-courier-*-o-*-*-18-*-*-*-*-*-*-*
@@ -179,9 +179,9 @@ XTerm*loginShell:	true
 nxterm*loginShell:	true
 rxvt*loginShell:	true
 
-XTerm*utmpInhibit:	true
-nxterm*utmpInhibit:	true
-rxvt*utmpInhibit:	true
+XTerm*utmpInhibit:	false
+nxterm*utmpInhibit:	false
+rxvt*utmpInhibit:	false
 
 xterm*fullCursor:	true
 nxterm*fullCursor:	true
