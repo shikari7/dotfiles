@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Sep 27 23:46:11 1997 by edh $
+;;;  $Modified: Mon Sep 29 23:58:48 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -96,7 +96,9 @@
 ;	     (if (not (message-header-empty "To"))
 ;		 (mail-text))))
 
-(setq gnus-auto-select-first nil
+(setq gnus-audio-au-player "/usr/bin/play"
+      gnus-audio-wav-player "/usr/bin/play"
+      gnus-auto-select-first nil
       gnus-check-new-newsgroups 'ask-server
       gnus-default-article-saver 'gnus-summary-save-in-mail
       gnus-expert-user t		; *never* ask for confirmation
@@ -122,7 +124,7 @@
 (gnus-add-configuration
  '(article
    (horizontal 1.0
-	       (vertical 0.45
+	       (vertical 0.42
 			 (group 0.25)
 			 (summary 1.0 point))
 	       (vertical 1.0
@@ -158,6 +160,8 @@
 (when (string-match "XEmacs" emacs-version)
   (add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
   (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
+
+
 
 ;; for mail reading
 (setq gnus-secondary-select-methods '((nnml "private")))
