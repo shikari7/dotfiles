@@ -43,6 +43,9 @@ ignore = /chat\[/
 ignore = /ifup-ppp:/
 ignore = /kernel/&&/PPP/
 
+# NFS
+ignore = /rpc.mountd:/&&/mount request from 10\./
+
 # misc
 #/lp0 at 0x03bc, \(polling\)$/			ignore
 
@@ -73,6 +76,7 @@ ignore = /icmpinfo/&&/asked for/&&/got type "CNAME"/
 ignore = /icmpinfo/&&/asked for/&&/danfarmer/
 
 ignore = /sendmail/&&/(from|to|message-id)=/
+ignore = /sendmail/&&/Authentication-Warning/&&/set sender to/
 watchfor = /sendmail/
 	echo
 ignore = /fetchmail/&&/flushed/
