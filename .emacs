@@ -61,6 +61,7 @@
 (global-set-key [(control h)] 'help-command)
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key [backspace] 'delete-backward-char)
+(global-set-key [kp-delete] 'delete-char)
 
 ;;; automatic indentation
 
@@ -79,11 +80,11 @@
 ;	    (define-key html-mode-map "\C-j" 'newline)
 ;	    ))
 
-(add-hook 'c-mode-common-hook
-	  (lambda ()
-	    (define-key c-mode-map "\C-m" 'reindent-then-newline-and-indent)
-	    (define-key c-mode-map "\C-j" 'newline)
-	    (c-set-offset 'case-label 2))) ; default is 0
+;(add-hook 'c-mode-common-hook
+;	  (lambda ()
+;	    (define-key c-mode-map "\C-m" 'reindent-then-newline-and-indent)
+;	    (define-key c-mode-map "\C-j" 'newline)
+;	    (c-set-offset 'case-label 2))) ; default is 0
 
 (add-hook 'cperl-mode-hook
 	  '(lambda ()
@@ -125,7 +126,8 @@
 (add-hook 'text-mode-hook 'turn-on-filladapt-mode)
 
 ;; tools for mime
-(load "mime-setup")
+(require 'mime-setup)
+(setq mime-editor/split-message nil)
 
 ;; webster
 ;(autoload 'webster "webster" "look up a word in Webster's 7th edition" t)
@@ -148,7 +150,7 @@
 
 ;; efs
 ;(require 'efs)				; replaces ange-ftp
-(setq efs-use-passive-mode t)
+;(setq efs-use-passive-mode t)
 
 ;; ZenIRC
 (require 'zenirc)
@@ -191,23 +193,6 @@
   (interactive)
   (insert (emacs-version)))
 (global-set-key "\C-cv" 'insert-emacs-version) ; (insert (emacs-version))
-
-;; start an X frame
-;; Thu Aug  1 14:22:25 CDT 1996
-(defun my-start-x-frame ()
-  "My short cut to start up an X frame from within a tty XEmacs."
-  (interactive)
-  (setenv "DISPLAY" "ginseng.boston.deshaw.com:0") ; needed for netscape  :(
-  (make-frame-on-device 'x (getenv "DISPLAY"))
-  )
-(global-set-key "\C-c\C-x" 'my-start-x-frame)
-
-;; queue mail for outgoing via cron
-;; Wed Apr 16 16:55:40 EDT 1997
-(defun my-mail-outgoing ()
-  "My function for saving a message in a queue to be picked up via cron."
-  
-  )
 
 ;; Change the pointer used when the mouse is over a modeline
 (set-glyph-image modeline-pointer-glyph "leftbutton")
@@ -258,7 +243,7 @@ inserts \" characters."
 (require 'tex-site)			; should be in site-init.el?
 
 (custom-set-variables
- '(require-final-newline (quote ask))
+ '(require-final-newline t)
  '(display-time-24hr-format t)
  '(browse-url-browser-function (quote browse-url-netscape))
  '(ps-print-color-p t)
