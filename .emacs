@@ -295,6 +295,9 @@ inserts \" characters."
 (require 'tex-site)			; should be in site-init.el?
 (custom-set-variables
 
+;; for w3
+(setq w3-default-homepage (quote "http://www.cbc.umn.edu/~edh"))
+
 ;; Options Menu Settings
 ;; =====================
 (cond
