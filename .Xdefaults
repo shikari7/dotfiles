@@ -126,7 +126,7 @@ Seyon.modems: /dev/modem
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! xterm (and friends)
 
-rxvt*backgroundPixmap:	/home/edh/web-docs/images/chinese-weave.xpm
+! rxvt*backgroundPixmap:	/home/edh/web-docs/images/chinese-weave.xpm
 
 XTerm*saveLines:	1500
 nxterm*saveLines:	1500
