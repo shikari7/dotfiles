@@ -19,28 +19,18 @@ endif
 
 clear
 
-# Set up the terminal
-#eval `tset -s -Q -m ':?hp' `
-#stty erase "^H" kill "^U" intr "^C" eof "^D" susp "^Z" hupcl ixon ixoff tostop tabs	
-#set term = `qterm +real +usrtab`
-#set term = `qterm`
+# set up terminal
+#if ($?TERM && $TERM == "dtterm") then
+#  setenv TERM	vt100
+#endif
 
-# this is needed as of RedHat 4.1 anyway
-if ($?TERM == "dtterm") then
-  setenv TERM	vt100
-endif
-
-# Set up shell environment:
-set noclobber
-set history=20
-
+# mail and news stuff
 #fetchmail
-
 #trn -c
 #msgs -fpq
 #echo ""
+#countmail
+messages
+uptime
 
 #screen -ls
-messages
-#countmail
-uptime
