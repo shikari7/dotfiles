@@ -53,76 +53,76 @@ xscreensaver.programs:	\
 	xtacy -root							\n\
 	xdaliclock -root -noseconds -transparent -cycle -builtin2	\n\
 	xfishtank -c black -r 1						\n\
-	ant								\n\
-	attraction							\n\
-	blitspin							\n\
-	bouboule							\n\
-	braid								\n\
-	bsod								\n\
-	bubbles								\n\
-	coral								\n\
-	crystal								\n\
-	cynosure							\n\
-	decayscreen							\n\
-	deco								\n\
-	discrete							\n\
-	distort								\n\
-	drift								\n\
-	epicycle							\n\
-	fadeplot							\n\
-	flag								\n\
-	flame								\n\
-	flow								\n\
-	forest								\n\
-	galaxy								\n\
-	goop								\n\
-	grav								\n\
-	greynetic							\n\
-	halo								\n\
-	helix								\n\
-	hopalong							\n\
-	hypercube							\n\
-	ifs								\n\
-	imsmap								\n\
-	interference							\n\
-	jigsaw								\n\
-	julia								\n\
-	kaleidescope							\n\
-	kumppa								\n\
-	laser								\n\
-	lightning							\n\
-	lisa								\n\
-	lissie								\n\
-	lmorph								\n\
-	maze								\n\
-	moire								\n\
-	moire2								\n\
-	mountain							\n\
-	munch								\n\
-	noseguy								\n\
-	pedal								\n\
-	penrose								\n\
-	pyro								\n\
-	qix								\n\
-	rd-bomb								\n\
-	rocks								\n\
-	rorschach							\n\
-	rotor								\n\
-	sierpinski							\n\
-	slidescreen							\n\
-	slip								\n\
-	sphere								\n\
-	spiral								\n\
-	starfish							\n\
-	strange								\n\
-	swirl								\n\
-	triangle							\n\
-	truchet								\n\
-	vines								\n\
-	worm								\n\
-	xjack								\n\
-	xlyap								\n\
-	xroger								\n
+	ant -root							\n\
+	attraction -root						\n\
+	blitspin -root							\n\
+	bouboule -root							\n\
+	braid -root							\n\
+	bsod -root							\n\
+	bubbles -root							\n\
+	coral -root							\n\
+	crystal -root							\n\
+	cynosure -root							\n\
+	decayscreen -root						\n\
+	deco -root							\n\
+	discrete -root							\n\
+	distort -root							\n\
+	drift -root							\n\
+	epicycle -root							\n\
+	fadeplot -root							\n\
+	flag -root							\n\
+	flame -root							\n\
+	flow -root							\n\
+	forest -root							\n\
+	galaxy -root							\n\
+	goop -root							\n\
+	grav -root							\n\
+	greynetic -root							\n\
+	halo -root							\n\
+	helix -root							\n\
+	hopalong -root							\n\
+	hypercube -root							\n\
+	ifs -root							\n\
+	imsmap -root							\n\
+	interference -root						\n\
+	jigsaw -root							\n\
+	julia -root							\n\
+	kaleidescope -root						\n\
+	kumppa -root							\n\
+	laser -root							\n\
+	lightning -root							\n\
+	lisa -root							\n\
+	lissie -root							\n\
+	lmorph -root							\n\
+	maze -root							\n\
+	moire -root							\n\
+	moire2 -root							\n\
+	mountain -root							\n\
+	munch -root							\n\
+	noseguy -root							\n\
+	pedal -root							\n\
+	penrose -root							\n\
+	pyro -root							\n\
+	qix -root							\n\
+	rd-bomb -root							\n\
+	rocks -root							\n\
+	rorschach -root							\n\
+	rotor -root							\n\
+	sierpinski -root						\n\
+	slidescreen -root						\n\
+	slip -root							\n\
+	sphere -root							\n\
+	spiral -root							\n\
+	starfish -root							\n\
+	strange -root							\n\
+	swirl -root							\n\
+	triangle -root							\n\
+	truchet -root							\n\
+	vines -root							\n\
+	worm -root							\n\
+	xjack -root							\n\
+	xlyap -root							\n\
+	xroger -root							\n
 
 Seyon.modems: /dev/modem
 
