@@ -3,4 +3,11 @@
 
 # $Id$	
 
-alias home	edh@borodino.boston.deshaw.com
+set askcc
+set metoo
+set record=/home/edh/.carbons
+
+alt ericdh@tiac.net
+
+#alias	dad	hendrickson.d@skyler.mavd.honeywell.com
+alias	home	edh@borodino.boston.deshaw.com
