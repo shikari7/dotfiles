@@ -54,6 +54,7 @@ INCLUDERC=$PMDIR/rc.spam
 
 # mailing list rules and archives
 SPOOLDIR=$MAILDIR/mail-incoming
+DUMMY=`test -d $SPOOLDIR || mkdir -p $SPOOLDIR`
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 INCLUDERC=$PMDIR/rc.maillists
@@ -63,6 +64,7 @@ ARCHIVEDIR=$MAILDIR/archive/mail-incoming/$YEAR
 DUMMY=`test -d $ARCHIVEDIR || mkdir -p $ARCHIVEDIR`
 MONTHFOLDER=$ARCHIVEDIR/$MONTH
 :0 c
+* < 102400
 $MONTHFOLDER
 
 # send copies of some mail to my pager
