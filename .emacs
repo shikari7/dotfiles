@@ -289,11 +289,15 @@ inserts \" characters."
          (t
           tex-close-quote)))))
 
+(setq TeX-mode-hook
+      '(lambda ()
+	 (local-set-key "\"" 'TeX-insert-quote) ; use double single-quotes
+	 ))
+
 (setq text-mode-hook
       '(lambda ()
          (setq indent-tabs-mode t)      ; use real tabs in text mode
          (auto-fill-mode 1)		; auto-wrap as you type
-;        (local-set-key "\"" 'TeX-insert-quote) ; use double single-quotes
          ))
 
 ;; for auctex
