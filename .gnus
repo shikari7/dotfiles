@@ -62,10 +62,7 @@
       (concat
 ;      "Reply-To: " user-mail-address "\n"
        "Organization: The Weylani-Yutano Corporation" "\n"
-;      "X-Face: )qt4L0.NCL#1U|Vlwo`YjAM):N>!I\\b(w`1:[E5xo]dRz0\\m*5ofHq7A'fopR;J5Ey11dFh{$o*tv]\\xCB#}~M}0CfCoy8]{97T6m_e[}VMhmQff8.-eT]_,oP<C=bBH&uv\"ncEAw34D)wK2*$Se3P-]ty:Mu!w'Ep[zx-6^2H!y>lG{`G#=s*dU6Qaum5cYq[GH;\"!3fp<..E+)yM2Jd:wUOZ@+_2D|3AnNz*3Xu\\Il/dDJ.]iWVXDn\\#2c*QfanIas.[m]5!}" "\n"
        "X-URL: <a href=\"http://www.crystalcave.net/~edh/\">The Crystal Cave</a>" "\n"
-;      "X-Geek: GAT d-() s++: a- C++$ US++++$ P++(---)$ L E+(---) W+++$ N+$>++ o+ K !w--- !O M+(-) !V-- PS+ PE Y+>++ PGP>+++ t+(++)@ !5 X+ R tv+ b+>+++ DI++++ D+ G e>++ h(+) r++ y+ [GeekCode 3.1]" "\n"
-       "X-sPoOk: " "\n"
        ))
 
 (defvar spook-phrases-file (concat data-directory "spook.lines")
