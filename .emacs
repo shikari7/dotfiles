@@ -300,7 +300,7 @@ inserts \" characters."
 (require 'tex-site)			; should be in site-init.el?
 
 (custom-set-variables
- '(user-mail-address "ericdh@tiac.net" t)
+ '(user-mail-address "edh@visi.com" t)
  '(query-user-mail-address nil))
 (custom-set-faces)
 
