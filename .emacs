@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Mon Jul 20 13:54:26 1998 by edh $
+;;; $Modified: Tue Oct  6 15:30:11 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -92,8 +92,8 @@
 ;; for Sun keypads and vt100 in cursor keys mode
 (global-set-key "\eOA" 'previous-line)  ; up arrow (R8)
 (global-set-key "\eOB" 'next-line)      ; down arrow (R14)
-(global-set-key "\eOC" 'forward-line)   ; forward arrow (R12)
-(global-set-key "\eOD" 'backward-line)  ; backward arrow (R10)
+(global-set-key "\eOC" 'forward-char)   ; forward arrow (R12)
+(global-set-key "\eOD" 'backward-char)  ; backward arrow (R10)
 
 (global-unset-key "\e[")                ; allow (e.g. Sun) keypad to be bound
 
