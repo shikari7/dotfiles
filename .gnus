@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Tue Jun  2 15:37:36 1998 by edh $
+;;;  $Modified: Wed Jun  3 13:23:09 1998 by edh $
 
 (setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
 ;(setq gnus-select-method '(nntp "news"	; maybe use "news.tc.umn.edu" instead of "news"
@@ -71,12 +71,13 @@
 
 ;; Thu Apr 30 00:54:18 EDT 1998
 (defun my-signature ()
-  (cond ((string-match "^nnml" gnus-newsgroup-name)
+  (cond ((and (boundp 'gnus-newsgroup-name)
+	      (string-match "^nnml" gnus-newsgroup-name))
 	 (progn (setq message-signature-file ".signature")
 		t))
-        (t
+	(t
 	 (progn (setq message-signature-file ".signature2")
-	       t))))
+		t))))
 (setq message-signature 'my-signature)
 
 ;; Sat Aug 19 22:47:20 CDT 1995
