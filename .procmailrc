@@ -2,7 +2,8 @@
 
 # To Do:
 # o Subject: get pgp key
-# o Subject: EXEC: ISP (UP|DOWN)
+# x Subject: TOGGLE ISP (UP|DOWN)
+# o send me a given file
 
 #Set on when debugging
 VERBOSE=off
@@ -34,6 +35,16 @@ LOGFILE=$LOGDIR/$MONTH
 #:0
 #* ^Subject: page me
 #| sendpage -p XXXXXXXXXX -s %s
+
+# toggle my PPP connection UP
+:0
+* ^Subject: TOGGLE ISP UP
+| toggle-isp --device ppp1 --up
+
+# toggle my PPP connection DOWN
+:0
+* ^Subject: TOGGLE ISP DOWN
+| toggle-isp --device ppp1 --down
 
 # page me with my current IP address
 :0
