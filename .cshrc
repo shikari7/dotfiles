@@ -13,6 +13,7 @@ set path = ( \
   /usr/bin \
   /sbin \
   ~/bin \
+  /opt/kde/bin \
   /usr/X11R6/bin \
   /usr/local/Acrobat3/bin \
   /usr/bin/mh \
