@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Tue Jan 20 01:13:51 1998 by edh $
+;;;  $Modified: Tue Jan 20 21:49:29 1998 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -170,7 +170,7 @@
       '(("mail.mndod" "^\\(To\\|Cc\\):.*mndod@")
 	("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
 	("mail.sun-managers" "^To:.*sun-managers@")
-	("mail.fetchmail" "^To:.*fetchmail-friends@")
+	("mail.fetchmail" "^\\(To\\|Cc\\):.*fetchmail-friends@")
 	("mail.net-people" "^\\(To\\|Cc\\):.*net-people@")
 	("mail.gnus" "^\\(To\\|Cc\\):.*ding@")
 	("mail.gto" "^\\(To\\|Cc\\):.*gto@")
