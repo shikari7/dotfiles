@@ -20,6 +20,11 @@
 /LOGIN/						echo
 /passwd/					echo
 /ruserok/					echo
+
+# kernel messages
+/kernel:/&&/Swansea University Computer/	ignore
+/kernel:/&&/IPX Portions Copyright/		ignore
+/kernel:/&&/Appletalk/				ignore
 /kernel:/					echo=bold
 
 /pppd\[/&&/IP address/				echo=bold
