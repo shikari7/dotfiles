@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Tue Sep  9 00:59:31 1997 by edh $
+;;;  $Modified: Fri Sep 19 09:12:41 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -125,15 +125,15 @@
           (concat "mail-outgoing."
 		  (format-time-string "%Y-%m" (current-time))))))
 
-;(gnus-add-configuration
-; '(article
-;   (horizontal 1.0
-;	       (vertical 0.42
-;			 (group 0.25)
-;			 (summary 1.0 point))
-;	       (vertical 1.0
-;;			 (picons 5)
-;			 (article 1.0)))))
+(gnus-add-configuration
+ '(article
+   (horizontal 1.0
+	       (vertical 0.45
+			 (group 0.25)
+			 (summary 1.0 point))
+	       (vertical 1.0
+;			 (picons 5)
+			 (article 1.0)))))
 
 (setq gnus-uu-user-view-rules 
       (list
