@@ -4,9 +4,12 @@
 
 ;; primary methods
 (setq
-;gnus-select-method '(nntp "localhost" (nntp-port-number 1701))
+ gnus-select-method '(nntp "news.tiac.net")
  gnus-secondary-select-methods '((nnml "private"))
  )
+
+; what is this?
+(setq gnus-extra-headers nil)
 
 ;; use iso8859-1 fonts
 ;(if (string-equal (frame-type) 'x)
