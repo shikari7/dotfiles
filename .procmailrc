@@ -45,6 +45,9 @@ LOGFILE=$LOGDIR/$MONTH
 * ^Subject: send forecast
 | forecast | mail -s forecast $PAGER
 
+# try to catch spam
+INCLUDERC=$PMDIR/rc.spam
+
 # mailing list rules and archives
 SPOOLDIR=$MAILDIR/mail-incoming
 LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
