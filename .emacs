@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Fri May 15 23:31:14 1998 by edh $
+;;; $Modified: Fri May 15 23:34:16 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -20,6 +20,7 @@
 (setq lpr-command "enscript")
 (setq lpr-switches '("-G -CEric"))
 (setq track-eol t)                      ; follow end-of-line with C-n, C-p
+(setq truncate-partial-width-windows t) ; no line wrapping
 
 ;;; backups
 
