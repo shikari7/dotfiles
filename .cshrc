@@ -22,6 +22,8 @@ set path = ( \
   /usr/ucb \
   /usr/games \
   /usr/local/bin \
+  /usr/local/BerkeleyDB.4.1/bin \
+  /usr/local/BitTorrent-3.3 \
 )
 
 if ($?prompt) then		# not a shell script
@@ -91,9 +93,11 @@ if ($?prompt) then		# not a shell script
   if ( -r ~/.typos ) then
     source ~/.typos
   endif
-  if ( -r ~/.complete.tcsh ) then
-    source ~/.complete.tcsh
+  set completetcsh = `locate complete.tcsh | grep /usr/share/doc | head -1`
+  if ( -r $completetcsh ) then
+    source $completetcsh
   endif
+  unset completetcsh
 
 else
   unset history savehist
