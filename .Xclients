@@ -36,14 +36,14 @@ fi
 #moonclock -moonclock -geometry -510+5 &
 #sunclock iconified geometry is 128xXX
 #sunclock -iconic -icongeometry -310-245 &
-sunclock -iconic &
+#sunclock -iconic &
 #xdaliclock -cycle -transparent -noseconds -geometry -400-0 &
 
 # toys
 #xsnow -nowind &
-xearth -ncolors 16 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 &
-nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
-xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
+#xearth -ncolors 16 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 &
+#nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
+#xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
 
 # notify me of new mail...
 #xbiff -geometry 48x48-322-66 -volume 0 &
