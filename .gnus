@@ -62,7 +62,7 @@
       (concat
 ;      "Reply-To: " user-mail-address "\n"
        "Organization: The Weylani-Yutano Corporation" "\n"
-       "X-URL: <a href=\"http://www.crystalcave.net/~edh/\">The Crystal Cave</a>" "\n"
+;      "X-URL: <a href=\"http://www.crystalcave.net/~edh/\">The Crystal Cave</a>" "\n"
        "X-sPoOk: " "\n"
        ))
 
@@ -131,8 +131,7 @@
 (setq gnus-message-archive-group	; archive outgoing mail/news
       '((if (message-news-p)
             "news-outgoing"
-          (concat "mail-outgoing."
-		  (format-time-string "%Y-%m" (current-time))))))
+          (concat "mail-outgoing." (format-time-string "%Y-%m")))))
 
 (setq
  gnus-use-trees t
@@ -177,9 +176,12 @@
 	("mail.gnus" "^\\(To\\|Cc\\):.*ding@")
 	("mail.bugtraq" "^\\(To\\|Cc\\):.*bugtraq@")
 	("mail.gto" "^\\(To\\|Cc\\):.*gto@")
+	("mail.mn-politics" "^\\(To\\|Cc\\):.*mn-politics-")
+	("mail.mn-politics" "^\\(To\\|Cc\\):.*houseschedule@")
+	("mail.mn-politics" "^\\(To\\|Cc\\):.*sen-schedules@")
 	("mail.other" "")))
 (setq nnmail-use-procmail t
-      nnmail-procmail-directory "~/Mail/mail-incoming" ; location of procmail folders
+      nnmail-procmail-directory "~/Mail/mail-incoming" ; procmail folders
       nnmail-use-long-file-names nil	; break groups up into subdirs
       nnmail-resplit-incoming t		; resplit procmail filtered folders
       )
