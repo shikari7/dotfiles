@@ -73,17 +73,17 @@ MONTHFOLDER=$ARCHIVEDIR/$MONTH
 $MONTHFOLDER
 
 # send copies of some mail to my pager
-:0 c
+##:0 c
 # nothing from certain people
-* !^FROM_DAEMON
-* !^From.*Eric.*Hendrickson
+##* !^FROM_DAEMON
+##* !^From.*Eric.*Hendrickson
 # nothing bigger than 10000 bytes
-* < 10000
+##* < 10000
 # no mail lists
-* !^TO.*/dev/null
+##* !^TO.*/dev/null
 # try to weed out other forwards
-* !^Subject: F(W|w):
-| resend-mbox -r $PAGER -m -p
+##* !^Subject: F(W|w):
+##| resend-mbox -r $PAGER -m -p
 
 # safety net - keep backups of my last 32 messages
 :0 c
