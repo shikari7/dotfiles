@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Wed Apr 29 01:05:13 1998 by edh $
+;;; $Modified: Thu May 14 22:39:24 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -193,8 +193,9 @@
 ;(autoload 'vm-mail "vm" "Send a mail message using VM." t)
 ;(autoload 'vm-submit-bug-report "vm" "Send a bug report about VM." t)
 
-;; my status diary
-;(setq load-path (cons load-path (expand-file-name "~/elisp")))
+;; ZenIRC
+(autoload 'zenirc "/u/edh/.zenirc" "Major mode to waste time" t)
+
 ;(load "add-status")
 
 ;;;
