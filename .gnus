@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Wed Dec 31 20:38:21 1997 by edh $
+;;;  $Modified: Sun Jan 11 16:19:22 1998 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -67,6 +67,7 @@
        " D+ G e>++ h(+) r++ y+ [GeekCode 3.1]" "\n"
        "X-sPoOk: " "\n"
        ))
+(setq message-signature t)
 
 (defvar spook-phrases-file (concat data-directory "spook.lines")
    "Sensitive verbiage to distract those Spooks listening in on your e-mail.")
