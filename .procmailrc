@@ -22,10 +22,22 @@ PAGER=6123250594@mobile.att.net
 
 # catch any duplicates with a Message-ID cache (before logging)
 :0 Wh: $PMDIR/msgid.lock
-| formail -D 8192 $PMDIR/msgid.cache
+| formail -D 65536 $PMDIR/msgid.cache
 
 MONTH=`date +%m`
 YEAR=`date +%Y`
+
+# common variables for use later
+nl	 = ""
+dq	 = '"'
+bs	 = "\\"
+ws	 = "[	    ]*(\([^()]*\)[	 ]*)?"
+digit	 = "[0-9]"
+day	 = "(Mon|Tue|Wed|Thu|Fri|Sat|Sun)"
+month	 = "(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)"
+hour	 = "$digit$digit:$digit$digit(:$digit$digit)?"
+zone	 = "((UT|GMT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|([A-I]|[K-Z]))|(+|-)$digit$digit$digit$digit)"
+time	 = "$hour$ws$zone"
 
 # logging
 LOGDIR=$PMDIR/log/$YEAR
@@ -41,13 +53,28 @@ LOGFILE=$LOGDIR/$MONTH
 * ^Subject: send forecast
 | forecast | mail -s forecast $PAGER
 
-ROOT=$MAILDIR/root/$YEAR
-DUMMY=`test -d $ROOT || mkdir -p $ROOT`
+# txt me
+#:0
+#* < 1000
+#! 
 
 # archive all root mail
+ROOT=$MAILDIR/root/$YEAR
+DUMMY=`test -d $ROOT || mkdir -p $ROOT`
 :0 c
 * ^TOroot@
 $ROOT/$MONTH
+
+# archive all tcp-wrappers portmap reports
+PORTMAP=$MAILDIR/portmap/$YEAR
+DUMMY=`test -d $PORTMAP || mkdir -p $PORTMAP`
+:0 c
+* ^From:.*bin@
+* ^Subject: portmap
+$PORTMAP/$MONTH
+
+# roll our own FROM macro (from Procmail FAQ)
+FROM="(From[	]|(Old-|X-)?(Resent-)?(From|Reply-To|Sender):)(.*\<)?"
 
 # try to catch spam
 INCLUDERC=$PMDIR/rc.spam
@@ -59,12 +86,27 @@ LISTSDIR=$MAILDIR/lists/$YEAR/$MONTH
 DUMMY=`test -d $LISTSDIR || mkdir -p $LISTSDIR`
 INCLUDERC=$PMDIR/rc.maillists
 
+# filter mail from myself (but from Outlook) into my outgoing folders
+:0
+* ^From:.*edh@mr.net
+* !^TO.*edh@mr.net
+* ^X-MSMail-Priority:
+| tee -a $MAILDIR/archive/mail-outgoing/$YEAR/$MONTH /var/mail/edh
+
+MINDSPRING=$MAILDIR/mindspring/$YEAR
+DUMMY=`test -d $MINDSPRING || mkdir -p $MINDSPRING`
+# filter out my Earthlink mail (which seems to be entirely SPAM)
+:0
+* ^TOmerlinus@mindspring.com
+* !^From:.*@earthlink.net
+$MINDSPRING/$MONTH
+
 # global copies of everything not already sent somewhere (e.g. bitbucket)
 ARCHIVEDIR=$MAILDIR/archive/mail-incoming/$YEAR
 DUMMY=`test -d $ARCHIVEDIR || mkdir -p $ARCHIVEDIR`
 MONTHFOLDER=$ARCHIVEDIR/$MONTH
 :0 c
-* < 102400
+* < 204800
 $MONTHFOLDER
 
 # send copies of some mail to my pager
@@ -86,4 +128,11 @@ backup
 :0 ic
 | cd backup && rm -f dummy `ls -t msg.* | sed -e 1,32d`
 
-# else drop in my mailbox 
+# ok, now pass to ASK
+:0 fW 
+* !TO.*@.*crystalcave.net
+|/usr/bin/ask.py --procmail --loglevel=5 --logfile=$HOME/.ask.log 
+
+:0 e
+
+/dev/null
