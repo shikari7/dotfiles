@@ -61,7 +61,7 @@ nxterm -fn lucidasanstypewriter-14 -geometry 80x56+30+40 &
 nxterm -fn lucidasanstypewriter-14 -geometry 80x52+810+40 &
 
 # news IP forwarding :)
-sshrun $HOME/.ssh/cronkey nxterm -fn 8x16 -geometry 80x24+810+40 -iconic -e ssh -C -o "CompressionLevel 9" -L 1701:news.deshaw.com:119 ops1.nyc.deshaw.com &
+sshrun $HOME/.ssh/cronkey nxterm -fn 8x16 -geometry 80x24+810+40 -iconic -e ssh -C -o "CompressionLevel 9" -L 1701:news.tc.umn.edu:119 peca.cs.umn.edu &
 
 # system monitoring
 xosview -geometry +10-10 &
