@@ -76,8 +76,8 @@ $PORTMAP/$MONTH
 # roll our own FROM macro (from Procmail FAQ)
 FROM="(From[	]|(Old-|X-)?(Resent-)?(From|Reply-To|Sender):)(.*\<)?"
 
-# try to catch spam
-INCLUDERC=$PMDIR/rc.spam
+# try to catch spam (commented out now that I am using ASK)
+#INCLUDERC=$PMDIR/rc.spam
 
 # mailing list rules and archives
 SPOOLDIR=$MAILDIR/mail-incoming
