@@ -2,6 +2,7 @@
 
 # To Do:
 # o Subject: get pgp key
+# o Subject: EXEC: ISP (UP|DOWN)
 
 #Set on when debugging
 VERBOSE=off
@@ -15,6 +16,9 @@ MAILDIR=$HOME/Mail
 #Directory for storing procmail log and rc files
 PMDIR=$HOME/.procmail
      
+# mobile address
+PAGER=6123250594@mobile.att.net
+
 # catch any duplicates with a Message-ID cache (before logging)
 :0 Wh: $PMDIR/msgid.lock
 | formail -D 8192 $PMDIR/msgid.cache
@@ -26,8 +30,6 @@ YEAR=`date +%Y`
 LOGDIR=$PMDIR/log/$YEAR
 DUMMY=`test -d $LOGDIR || mkdir -p $LOGDIR`
 LOGFILE=$LOGDIR/$MONTH
-
-PAGER=6123250594@mobile.att.net
 
 #:0
 #* ^Subject: page me
