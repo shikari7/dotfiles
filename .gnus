@@ -1,18 +1,14 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Tue Sep  1 15:04:36 1998 by edh $
+;;; $Id$	
 
-(setq gnus-select-method '(nntp "news.deshaw.com"))
-;(setq gnus-select-method '(nntp "localhost" (nntp-port-number 1701)))
-;(setq gnus-select-method '(nntp "news"	; maybe use "news.tc.umn.edu" instead of "news"
-;				(nntp-address "birch.math.umn.edu")
-;				(nntp-rlogin-program "ssh -l eric")
-;				(nntp-open-connection-function nntp-open-rlogin)
-;				(nntp-end-of-line "\n")
-;				(nntp-rlogin-parameters
-;				 ("nc" "news.tc.umn.edu" "nntp"))))
+;; primary methods
+(setq
+ gnus-select-method '(nntp "news.deshaw.com")
+ gnus-secondary-select-methods '((nnml "private"))
+ )
 
-;; iso8859-1
+;; use iso8859-1 fonts
 ;(if (string-equal (frame-type) 'x)
 (cond ((console-on-window-system-p)
        (standard-display-european t))
@@ -42,10 +38,14 @@
 (add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
 
 ;; customize article buffer
+(add-hook 'gnus-article-display-hook 'gnus-article-display-x-face t)
+(add-hook 'gnus-article-display-hook 'gnus-article-emphasize)
 (add-hook 'gnus-article-display-hook 'gnus-article-highlight)
+(add-hook 'gnus-article-display-hook 'gnus-smiley-display t)
+(add-hook 'gnus-article-display-hook 'gnus-article-treat-overstrike)
 (add-hook 'gnus-article-display-hook 'gnus-article-add-buttons)
 
-(setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|NNTP-Posting-Host:\\|X-Mailer:\\|X-Newsreader:\\|X-Spook:\\|X-NSA-Fodder:\\|Path:\\|X-Geek\\|X-URL")
+(setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^NNTP-Posting-Host:\\|^X-Mailer:\\|^X-Newsreader:\\|^X-Spook:\\|^X-NSA-Fodder:\\|^Path:\\|^X-Geek\\|^X-URL\\|^Resent-From:")
 (setq gnus-sorted-header-list '("^Path:" "^Newsgroups:" "^From:" "^Subject:" "^To:" "^C[Cc]:" "^Date:" "Keywords:" "Summary:" "Organization:")) ; "^[^X]\-"))
 
 (setq message-default-headers		; add customized mail headers
@@ -94,30 +94,42 @@
   (when message-reply-headers
     (insert (mail-header-from message-reply-headers) " says: \"I'm going to Paris and taking Eric\"\n\n")))
 
+(setq
+ gnus-use-trees t
+ gnus-generate-tree-function 'gnus-generate-horizontal-tree
+ gnus-tree-minimize-window nil
+ )
+
 (add-hook 'message-setup-hook
 	  '(lambda ()
 	     (bbdb-define-all-aliases)
 	     (message-position-on-field "X-Spook")
 	     (insert (mapconcat
+			 (if gnus-use-trees '(tree 0.15))
 		      '(lambda (dummy) ; fake a for loop
 			 (cookie spook-phrases-file
 				 "hi" "mom"))
 		      '(1 2 3 4 5 6)
 		      " "))))
 
-(setq gnus-audio-au-player "/usr/bin/play"
-      gnus-audio-wav-player "/usr/bin/play"
-      gnus-auto-select-first nil
-      gnus-check-new-newsgroups 'ask-server
-      gnus-default-article-saver 'gnus-summary-save-in-mail
-      gnus-expert-user t		; *never* ask for confirmation
-      gnus-play-startup-jingle t
-      gnus-read-active-file 'some
-      gnus-save-killed-list nil
-      gnus-subscribe-hierarchical-interactive t
-      gnus-subscribe-newsgroup-method 'gnus-subscribe-hierarchically
-      gnus-use-demon t			; do stuph when idle
-      )
+(setq
+ gnus-audio-au-player "/usr/bin/play"
+ gnus-audio-wav-player "/usr/bin/play"
+ gnus-auto-center-summary t
+ gnus-auto-select-first nil
+ gnus-check-new-newsgroups 'ask-server
+ gnus-default-article-saver 'gnus-summary-save-in-mail
+ gnus-expert-user t		; *never* ask for confirmation
+ gnus-play-startup-jingle t
+ gnus-read-active-file 'some
+ gnus-save-killed-list nil
+ gnus-single-article-buffer nil		; don't use the same article buffer
+ gnus-subscribe-hierarchical-interactive t
+ gnus-subscribe-newsgroup-method 'gnus-subscribe-hierarchically
+ gnus-summary-goto-unread nil		; don't skip to next unread
+ gnus-thread-ignore-subject t		; don't start a new thread if changes
+ gnus-use-demon t			; do stuph when idle
+ )
 
 ;; scoring
 (setq gnus-decay-scores t)
@@ -172,7 +184,6 @@
   (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
 
 ;; for mail reading
-(setq gnus-secondary-select-methods '((nnml "private")))
 (setq nnmail-delete-incoming t)		; delete Incoming files after splitting
 (setq nnmail-split-methods
       '(("mail.mndod" "^\\(To\\|Cc\\):.*mndod@")
