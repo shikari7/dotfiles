@@ -7,7 +7,6 @@
 
 set path = ( \
   . \
-  /usr/local/bin \
   /bin \
   /usr/bin \
   /sbin \
@@ -21,6 +20,7 @@ set path = ( \
   /usr/bin/mh \
   /usr/sbin \
   /usr/games \
+  /usr/local/bin \
 )
 
 if ($?prompt) then			# not a shell script
@@ -43,7 +43,7 @@ if ($?prompt) then			# not a shell script
     set prompt=": $ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
     unset ppp
 
-    if ($?TERM == "xterm" || $?TERM == "dtterm") then
+    if ($?TERM && ($TERM == "xterm" || $?TERM == "dtterm")) then
       alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$HOST}""'
       cwdcmd
     endif
