@@ -6,35 +6,42 @@
 exec > $HOME/.Xsessionlog/$DISPLAY 2>&1
 set -x
 
+PATH=$PATH:/usr/games
+export PATH
+
 # debugging info
 date
 env
 xset q
 
 # initial set-up
-
-# disable the screensaver
+[ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
 xset s noblank
+xset m 3 8
 
-# swap the ctrl-capslock keys
-if [ -f $HOME/.Xmodmap ]; then
-  xmodmap $HOME/.Xmodmap
-fi
+# why is this necessary?
+xhost +localhost >/dev/null
 
-if [ -f $HOME/.nokde ]; then
-  xscreensaver-command -exit
-  blacken-cmap -loop &
-  xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
-  xdaliclock -transparent -noseconds -geometry -375-0 &
-  tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
-  xosview -geometry +10-10 &
-  rxvt -fn 6x10 -geometry 80x10-25-120 -e swatch -t /var/log/swatch &
-  perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52+20+40");' &
-  perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52-20+40");' &
-  nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
-  xset m 3 8
-  xearth -ncolors 12 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos random -nice 10 -fork
-  exec fvwm2
-else
-  exec startkde
-fi
+# preliminaries
+xscreensaver-command -exit
+blacken-cmap -loop &
+
+# monitoring stuff
+tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
+xosview -geometry +10-10 &
+rxvt -fg yellow -bg darkblue -fn 6x10 -geometry 80x10-25-120 -e swatch -t /var/log/swatch &
+
+# nntp forwarding :)
+sshrun .ssh/cronkey exec rxvt -iconic -iconic -rv -fn fixed -e ssh -C -o \"CompressionLevel 9\" -L 1701:news.visi.com:119 isis.visi.com &
+
+# initial xterms
+perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52+20+40");' &
+perl -e '$fg=rand 2**24; do { $bg = rand 2**24 } while (unpack("%32b*", pack "N", ($bg^$fg)&0xe0e0e0) < 8); ($fg, $bg) = map { sprintf "#%06x", $_ } $fg, $bg; exec("rxvt", "-fg", $fg, "-bg", $bg, "-fn", "8x16", "-geometry", "80x52-20+40");' &
+
+# fun stuff
+xdaliclock -transparent -noseconds -geometry -375-0 &
+xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
+nice -n 20 xscreensaver -install -cycle 2 -timeout 5 &
+xearth -ncolors 12 -label -labelpos +0+0 -bigstars 20 -night 15 -font lucidasans-bold-18 -pos random -nice 10 -fork
+
+exec fvwm2
