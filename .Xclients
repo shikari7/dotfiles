@@ -65,7 +65,7 @@ tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
 
 # system monitoring
 #xosview -geometry +10-10 &
-rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
+#rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
 #xload -geometry 160x80-240-0 -fg white -bg skyblue &
 
 #enlightenment
