@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Fri Sep 19 09:12:41 1997 by edh $
+;;;  $Modified: Sat Sep 27 03:04:04 1997 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -47,7 +47,7 @@
 (add-hook 'gnus-article-display-hook 'gnus-article-highlight)
 (add-hook 'gnus-article-display-hook 'gnus-article-add-buttons)
 
-;(setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|NNTP-Posting-Host:\\|X-Mailer:\\|X-Newsreader:\\|X-Spook:\\|X-NSA-Fodder:\\|Path:\\|X-Geek\\|X-URL")
+(setq gnus-visible-headers "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^Cc:\\|^Approved:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|NNTP-Posting-Host:\\|X-Mailer:\\|X-Newsreader:\\|X-Spook:\\|X-NSA-Fodder:\\|Path:\\|X-Geek\\|X-URL")
 ;(remove-hook 'gnus-article-display-hook
 ;	  '(lambda ()
 ;	     (setq gnus-visible-headers	; customize headers
@@ -106,6 +106,7 @@
 (setq gnus-auto-select-first nil
       gnus-check-new-newsgroups 'ask-server
       gnus-default-article-saver 'gnus-summary-save-in-mail
+      gnus-expert-user t		; *never* ask for confirmation
 ;     gnus-play-startup-jingle t
       gnus-read-active-file 'some
       gnus-save-killed-list nil
