@@ -6,6 +6,7 @@
 # $Id$	
 
 set path = ( \
+  . \
   /usr/local/bin \
   /bin \
   /usr/bin \
