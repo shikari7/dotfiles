@@ -50,8 +50,8 @@
 (require 'vc-hooks)
 
 ;; time and load average in the modeline
-(display-time)
-(setq display-time-24hr-format t)
+;(display-time)
+;(setq display-time-24hr-format t)
 
 ;; save minibuffer history
 (savehist-load)
@@ -144,8 +144,7 @@
 (add-hook 'text-mode-hook 'turn-on-filladapt-mode)
 
 ;; tools for mime
-;(load "mime-setup")
-;(setq mime-coding-system-alist '())
+(load "mime-setup")
 
 ;; webster
 (autoload 'webster "webster" "look up a word in Webster's 7th edition" t)
@@ -303,10 +302,12 @@ inserts \" characters."
 (custom-set-variables
  '(require-final-newline (quote ask))
  '(version-control t)
+ '(display-time-24hr-format t)
  '(delete-old-versions t)
  '(browse-url-browser-function (quote browse-url-netscape))
  '(ps-print-color-p t)
  '(toolbar-visible-p nil)
+ '(display-time-day-and-date t)
  '(user-mail-address "edh@visi.com" t)
  '(query-user-mail-address nil)
  '(font-lock-mode t nil (font-lock)))
