@@ -23,6 +23,27 @@ set path = ( \
   /usr/games \
 )
 
+if ( $uid == 0 && $?SSH_AUTHENTICATION_SOCKET ) then
+    switch ($SSH_AUTHENTICATION_SOCKET)
+        case /tmp/ssh-root/*:
+            breaksw
+        case /tmp/ssh-*:
+            if ( ! -d /tmp/ssh-root ) then
+                echo "Creating /tmp/ssh-root"
+                (umask 077;mkdir /tmp/ssh-root)
+            endif
+            set fn = `basename $SSH_AUTHENTICATION_SOCKET`
+            \rm -f /tmp/ssh-root/$fn
+            ln -s $SSH_AUTHENTICATION_SOCKET /tmp/ssh-root/$fn
+            setenv SSH_AUTHENTICATION_SOCKET /tmp/ssh-root/$fn
+            echo "Existing ssh-agent attached as /tmp/ssh-root/$fn"
+            breaksw
+        default:
+            echo "Invalid format for $SSH_AUTHENTICATION_SOCKET"
+            breaksw
+    endsw
+endif
+
   if ($?tcsh) then
 
     set host = `hostname | cut -d. -f1`
