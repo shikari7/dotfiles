@@ -182,7 +182,7 @@
   (setq smiley-regexp-alist 'smiley-nosey-regexp-alist)) ; less aggressive
 
 ;; for mail reading
-(setq mail-source-delete-incoming t)		; delete Incoming files after splitting
+(setq mail-source-delete-incoming t)	; delete Incoming files after splitting
 (setq nnmail-split-methods
       '(("mail.mndod" "^\\(To\\|Cc\\):.*mndod@")
 	("mail.mtg-strategy-l" "^To:.*mtg-strategy-l@")
