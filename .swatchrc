@@ -22,9 +22,6 @@
 /ruserok/					echo
 /kernel:/					echo=bold
 
-# personal stuff
-/prayati/					echo=bold
-
 /pppd\[/&&/IP address/				echo=bold
 /pppd\[/&&/: (Serial|Using|Connect)/		ignore
 /chat\[/					ignore
