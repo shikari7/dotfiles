@@ -4,7 +4,7 @@
 
 ;; primary methods
 (setq
- gnus-select-method '(nntp "news.tiac.net")
+ gnus-select-method '(nntp "news.visi.com")
  gnus-secondary-select-methods '((nnml "private"))
  )
 
@@ -287,7 +287,7 @@
 
 (setq bbdb-always-add-addresses t
       bbdb-canonicalize-redundant-nets-p t ; filter out redundant addresses
-      bbdb-default-area-code 617
+      bbdb-default-area-code 612
       bbdb-electric-p t			; what does this do?
       bbdb-elided-display nil		; or (e.g.) '(address phone net notes)
 ;     bbdb-new-nets-always-primary t
@@ -301,6 +301,8 @@
 ;     bbdb/news-auto-create-p t		; way too many BBDB entries!!
       bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook) ; see -ignore-
 (autoload 'bbdb/gnus-lines-and-from "bbdb-gnus")
+
+(setq bbdb-print-elide '(tex-name aka mail-alias face last-subj creation-date timestamp newsgroups notes url))
 
 (setq bbdb-ignore-some-messages-alist
       '(("From" . "mailer.daemon\\|root\\|news\\|daemon\\|usenet\\|uucp\\|ssa\\|room33\\|postmaster\\|adm\\|listserv\\|vacation")
