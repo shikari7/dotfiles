@@ -47,7 +47,7 @@ xsetroot -cursor $HOME/.icons/hobbes.icon $HOME/.icons/hobbesmask.icon &
 
 # notify me of new mail...
 #xbiff -geometry 48x48-322-66 -volume 0 &
-tkpostage -detailFont 8x16 -numberFont 10x20 -geometry +1200+1080 &
+tkpostage -detailFont 8x16 -numberFont 10x20 -geometry +1200+1100 &
 
 # windows
 nxterm -fn lucidasanstypewriter-14 -geometry 80x56+30+40 &
