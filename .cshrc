@@ -53,25 +53,6 @@ if ($?prompt) then			# not a shell script
     set prompt2="%R loop: "
     set prompt3="oops\041 %R (y|n|e)? "
 
-    set i = 0
-    set hosts = ""
-    while 1
-        set i = `expr $i + 1`
-        set hosts = ($hosts m$i.boston.juno.com x$i.boston.juno.com)
-        if ( $i == 50 ) then
-            break
-        endif
-    end
-    foreach i (a1 a2 b1 c1 db1 db2 db3 install master n1 n2 r1 r2 s1 s2 spare w1 w2)
-        set hosts = ($hosts $i.boston.juno.com)
-    end
-    foreach i (b1 db1 master m1 m2 x1)
-        set hosts = ($hosts $i.test.juno.com)
-    end
-    foreach i (master)
-        set hosts = ($hosts $i.nyc.office.juno.com)
-    end
-
     set autoexpand autolist chase_symlinks
     set correct = cmd
 #   set fignore = (.aux .cp .dvi .elc .fn .log .o .orig .pg .toc .tp .vr)
