@@ -29,7 +29,7 @@
 /kernel/&&/PPP/					ignore
 
 # weirdness
-/innd\[/&&/localhost connected 17 streaming allowed/	echo
+/innd\[/&&/connected 17 streaming allowed/	echo
 /innd\[/					ignore
 
 /xntpd/&&/synchroni(zed|sation) (to|lost)/	ignore
