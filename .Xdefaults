@@ -9,6 +9,8 @@ xosview*background:	black
 ! this is to shrink the StatusLabel for swallowing Xquote
 *StatusLabel*fontList:	-*-helvetica-bold-r-*-*-2-100-*-*-*-*-iso8859-*
 
+TkPostageDetails.geometry:	80x10
+
 ! Netscape*installColormap: true
 
 ! Emacs*Background: DarkSlateGray
