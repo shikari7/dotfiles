@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Thu Jan 22 00:23:11 1998 by edh $
+;;; $Modified: Wed Jan 28 19:40:07 1998 by edh $
 
 ;;; Emacs debugging
 ;;;
