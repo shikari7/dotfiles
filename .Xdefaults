@@ -80,7 +80,7 @@ xscreensaver.programs:	\
 	bouboule -root					\n\
 	braid -root					\n\
 	drift -root					\n\
-	fract -root					\n\
+	vines -root					\n\
 	galaxy -root					\n\
 	grav -root					\n\
 	ifs -root					\n\
@@ -99,7 +99,25 @@ xscreensaver.programs:	\
 	goop -root					\n\
 	starfish -root					\n\
 	munch -root					\n\
-	fadeplot -root					\n
+	fadeplot -root					\n\
+	rd-bomb -root					\n\
+	coral -root					\n\
+	lissie -root					\n\
+	mountain -root					\n\
+	triangle -root					\n\
+	worm -root					\n\
+	rotor -root					\n\
+	ant -root					\n\
+	xjack -root					\n\
+	puzzle -root					\n\
+	xlyap -root					\n\
+	escher -root					\n\
+	gears -root					\n\
+	pipes -root					\n\
+	sproingies -root				\n\
+	superquadrics -root				\n\
+	morph3d -root					\n\
+	rubik -root					\n
 
 Seyon.modems: /dev/modem
 
