@@ -3,6 +3,8 @@
 #
 # this file should work with tcsh or csh
 
+# $Id$	
+
 set path = ( \
   /usr/local/bin \
   /bin \

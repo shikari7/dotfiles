@@ -2,6 +2,8 @@
 # Personal Swatch configuration file
 #
 
+# $Id$	
+
 # valid actions:
 # echo[=mode]		bold, underscore, blink, inverse, normal (default)
 # bell[=N]		N bells (default 1)
