@@ -21,8 +21,8 @@ PMDIR=$HOME/.procmail
 PAGER=6123250594@mobile.att.net
 
 # catch any duplicates with a Message-ID cache (before logging)
-#:0 Wh: $PMDIR/msgid.lock
-#| formail -D 65536 $PMDIR/msgid.cache
+:0 Wh: $PMDIR/msgid.lock
+| formail -D 65536 $PMDIR/msgid.cache
 
 MONTH=`date +%m`
 YEAR=`date +%Y`
@@ -122,16 +122,29 @@ $MONTHFOLDER
 ##* !^Subject: F(W|w):
 ##| resend-mbox -r $PAGER -m -p
 
-# safety net - keep backups of my last 32 messages
+# safety net - keep backups of my last 64 messages
 :0 c
 backup
 :0 ic
-| cd backup && rm -f dummy `ls -t msg.* | sed -e 1,32d`
+| cd backup && rm -f dummy `ls -t msg.* | sed -e 1,64d`
 
 # Spam Assassin
-:0fw
-| /usr/bin/spamassassin -P -c /usr/share/spamassassin
+#* !TO.*@crystalcave.net
+#:0fw
+#* < 256000
+#| /usr/bin/spamassassin -a
 
-:0:
-* ^X-Spam-Status: Yes
-SPAM
+#:0:
+#* ^X-Spam-Status: Yes
+#SPAM
+
+:0
+* ^From:.*alerts-personals@
+! borodino
+
+:0
+* ^From:.*james-hammond@mn.rr.com
+* ^Subject:.*Bloomington, Edina, Linden Hills
+! mithras
+
+# else drop in my mailbox
