@@ -149,7 +149,7 @@
 			 (summary 1.0 point))
 	       (vertical 1.0
 ;			 (picons 5)
-			 (article 1.0)))))
+;			 (article 1.0)))))
 
 (setq gnus-uu-user-view-rules 
       (list
