@@ -20,9 +20,9 @@ endif
 clear
 
 # set up terminal
-#if ($?TERM && $TERM == "dtterm") then
-#  setenv TERM	vt100
-#endif
+if ($?TERM && $TERM == "dtterm") then
+  setenv TERM	vt100
+endif
 
 # mail and news stuff
 #fetchmail
