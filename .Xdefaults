@@ -170,6 +170,14 @@ nxterm*fullCursor:	true
 nxterm*reverseWrap:	true
 nxterm*titleBar:	false
 
+XTerm*loginShell:	false
+nxterm*loginShell:	false
+rxvt*loginShell:	false
+
+XTerm*utmpInhibit:	false
+nxterm*utmpInhibit:	false
+rxvt*utmpInhibit:	false
+
 *visualBell:		true
 *scrollTtyOutput:	False
 *scrollKey:		True
