@@ -11,7 +11,7 @@ xosview*background:	black
 
 TkPostageDetails.geometry:	80x10
 
-! Netscape*installColormap: true
+Netscape*installColormap: true
 
 ! Emacs*Background: DarkSlateGray
 Emacs*Background: Black
