@@ -1,6 +1,6 @@
 ;;; -*-emacs-lisp-*-
 ;;;
-;;;  $Modified: Sat Mar 21 11:59:48 1998 by edh $
+;;;  $Modified: Sat Mar 21 12:17:48 1998 by edh $
 
 (setq gnus-select-method '(nntp "tsp.med.umn.edu" (nntp-port-number 1701)))
 
@@ -34,8 +34,9 @@
 (bbdb-insinuate-gnus)
 (setq gnus-use-bbdb t)
 (setq gnus-optional-headers 'bbdb/gnus-lines-and-from)
+
 ;(require 'gnus-bbdb)			; from Brian Edmond
-(gnus-bbdb-insinuate-summary-buffer)
+;(gnus-bbdb-insinuate-summary-buffer)
 
 (define-key gnus-article-mode-map "\C-h" 'gnus-article-prev-page)
 (define-key gnus-summary-mode-map "\C-h" 'gnus-summary-prev-page)
