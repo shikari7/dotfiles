@@ -45,7 +45,7 @@ alias	patch	'patch -l -F6'
 #alias	prman	'troff -man -Tpost \!:1 | /usr/lib/lp/postscript/dpost | lpr'
 alias	p	/bin/ps
 alias	psa	'p ax'
-alias	psg	'p ax | grep \!:1'
+alias	psg	'p alxww | grep \!:1'
 alias	q	'quota -v'
 alias	ra	'rm a.out'
 alias	rc	'rm -f core;rm -f ~/Canc*'
