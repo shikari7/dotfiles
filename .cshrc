@@ -13,7 +13,6 @@ set path = ( \
   ~/bin \
   /opt/kde/bin \
   /usr/X11R6/bin \
-  /usr/local/Acrobat3/bin \
   /usr/bin/mh \
   /usr/X11R6/bin \
   /opt/X11/bin \
@@ -43,7 +42,7 @@ if ($?prompt) then			# not a shell script
     set prompt=": $ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
     unset ppp
 
-    if ($?TERM && ($TERM == "xterm" || $?TERM == "dtterm")) then
+    if ($?TERM && ($TERM == "xterm" || $TERM == "dtterm")) then
       alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$HOST}""'
       cwdcmd
     endif
