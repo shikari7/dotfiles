@@ -64,7 +64,7 @@ tkpostage -detailFont 8x16 -numberFont 10x20 -geometry -250-20 &
 #sshrun $HOME/.ssh/cronkey nxterm -fn 8x16 -geometry 80x24+810+40 -iconic -e ssh -C -o "CompressionLevel 9" -L 1701:news.tc.umn.edu:119 peca.cs.umn.edu &
 
 # system monitoring
-xosview -geometry +10-10 &
+#xosview -geometry +10-10 &
 rxvt -fn 6x10 -geometry 80x10-10-110 -e swatch -t /var/log/swatch &
 #xload -geometry 160x80-240-0 -fg white -bg skyblue &
 
