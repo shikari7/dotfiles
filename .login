@@ -21,7 +21,7 @@ if ($?TERM && $TERM == "dtterm") then
 endif
 
 set t=`perl -e 'print int rand(25) + 1;'`
-( sleep $t; sigsetup --pipe; fetchmail >>& /dev/null ) &
+( sleep $t; sigsetup --pipe $HOME/lib/quotes /usr/share/games/fortunes; fetchmail >>& /dev/null ) &
 unset t
 
 # ok, tell me all about it
