@@ -1,0 +1,228 @@
+# Eric's .ircrc
+# clean-up Wed Jul 13 13:03:25 CDT 1994
+/set display off
+
+#/notify illusion drs_real irq5 bustrbuny buttspasm |ill| sinmage hellstorm
+#/notify illin illz asdf invizible savgfury tstorm hellsent security roxanne
+#/notify aurora lilac keebler rep
+/notify entropi omnion nectar sugarmag viverly
+/notify wintarose wr twila sexurity cryptical tammi demitwang nels
+/notify belli pepsi jmint minty neonwiz acerak gemfire modok _trix_ cerise
+/notify cherri tamara18 jubili nectrice wpooh jenben utopia4me klojo
+/notify wulfrede sirsyko
+
+# aliases snagged from elsewhere (TStorm, illusion, etc...)
+/ALIAS INVITE /if ( [$1] ) { //invite $0 $1 } { //invite $0 $C }
+
+/load opme
+
+# load sugar's tools
+/load irctool
+# put some things back the way I want them
+/bind ^a beginning_of_line
+/bind ^b backward_character
+/bind ^d delete_character
+/eval set client_information Merlinus' frankenstein monster
+/set indent off
+/unalias stat
+
+/set auto_whowas on
+/set beep_when_away 2
+/set beep_on_msg 1
+/set beep off
+# ??
+/set continued_line
+/set hide_private_channels off
+/set highlight_char bold
+#/set input_aliases on
+/set lastlog 4096
+/set mail 0
+/set novice off
+/set send_ignore_msg off
+/set show_away_once on
+/set -status_mail
+/set status_window ~
+/set user_information "I will crush you like a bug.  Or somethin'"
+/set verbose_ctcp on
+/set warn_of_ignore on
+
+/load smileys
+# nice aliases, compatibility with irc I
+/load basical
+# timer, signons, etc.
+/load events
+/load alias
+/load finger
+/load newaway
+/load newformat
+# tcsh style completions
+/load complete
+/load compl.mods
+/load uhnotify
+# supress excessive joins/signoffs due ONLY to netsplits
+/load netsplit
+# clear up the server notices
+/load killpath
+# alii for joining channels
+/load oper
+# make cursor keys work for history
+/load cursor
+# prefix output with channel name
+/load prefix
+# emacs-like window handling
+/load window
+
+/ignore NickServ all
+
+assign WINDOWS OFF
+assign SHOWKILL OFF
+# summarily cut out server kill notices (from killpath)
+/alias kpath.svkill /^comment
+
+alias showhack {
+  if ([$1@$2]!=[<UNKNOWN>@<UNKNOWN>]) {
+    /xecho -level snote [HACK] $3 <$0!$1@$2> $4-
+  } {
+    /xecho -level snote [HACK] $3 <$0> $4-]
+  }
+}
+
+alias windows {
+  if ([$WINDOWS]==[OFF]) {
+    ^assign WINDOWS ON
+    ^window new name MsgView
+#   ^window shrink 6
+    ^window level msg
+    ^set hold_mode off
+#   //mode $N +sw
+    ^window goto 2
+#   ^window new name Other
+#   ^window level public
+#   ^set hold_mode off
+#   ^window shrink 2
+#   ^window level all
+#   ^window goto 3
+#   ^window goto 2
+    ^on ^server_notice "% % no% -- hack: *" Userhost $$5 -cmd showhack $$$$0 $$$$3 $$$$4 $$4 $$6-
+  }
+}
+
+# bind ^A self_insert
+# leave ^B bound to backward_char (as in Emacs)
+# bind ^B self_insert
+bind ^I parse_command /_last_msg $!/m !
+bind ^R clear_screen
+bind ^T quote_character
+# use ctrl-v for inverse text
+# bind ^V self_insert
+bind ^W next_window
+bind ^X switch_channels
+bind ^Z stop_irc
+# underlining
+bind ^_ self_insert
+
+#/on ^msg * {
+#	set status_user - last: $0
+#	if ([$A]!=[]) {
+#		userhost $0 -cmd /exec ircmsg "$0!$$3@$$4 $strip('"` $1-)"
+#	}
+#	echo *$0* $1- <$Z>
+#	echo *$0* $1-
+#}
+/alias p exec cat .msglog
+/alias e exec rm .msglog
+
+/on ^disconnect * /server irc.tc.umn.edu
+/on ^join "nectar *" mode $C +o nectar
+#/on ^join "guinevere *" mode $C +o guinevere
+#/on ^join "brit *" mode $C +o brit
+#/on ^join "sugarmag *" mode $C +o sugarmag
+#/on ^join "cryptical *" mode $C +o cryptical
+#/on ^join "chilly *" mode $C +o chilly
+/on ^join "modok *" mode $C +o modok
+/on ^join "Woe *" mode $C +o woe
+/on ^join "CBongo *" mode $C +o cbongo
+#/on ^join "wanker *" mode $C +o wanker
+/on ^send_msg "* *" echo -> *$0* $1- <$Z>
+/on ^notify_signon * userhost $* -cmd echo *** Signon at $Z by: $$0 [$strip(~# $$3@$$4)] detected.
+/on ^notify_signoff * echo *** Signoff at $Z by: $0
+#/on ^notify_signoff * set status_user  *** Signoff: $0
+
+# this is taken care of by /load events
+# /on ^timer *:00 /echo the time is now $0
+# /on ^timer *:30 /echo the time is now $0
+
+/on ^403 * /if "$1!$N" "/echo *** $1-"
+/on ^331 * /comm
+/on ^server_notice "* *HACK*" /^comment
+/on ^421 * /comm
+/on ^ctcp "* * FINGER" /whois $0;/echo [ctcp] Finger from $0 \($stime($TIME()))
+# /on -join * /whois $:
+
+# Some aliases to make IRC II more like the old irc
+/alias # /leave #
+/alias tz /join #twilight_zone
+/alias mux /msg $ux.acs.umn.edu $*
+/alias jtz /join #twilight_zone
+/alias ltz /leave #twilight_zone
+/alias bell /msg $0 
+/alias hello /msg $0 Hello, $0!  $1-
+/alias from /msg $,
+/alias to /msg $.
+/alias mlast /msg $0 $B
+/alias wi /whois $0 $0
+/alias look /whois $:
+/alias awayx /away this window is probably iconified, I'll be back...
+/alias chop /mode $+ +o $N
+/alias mkchop /mode $+ +o $0
+/alias op mode * +o $0
+/alias dop mode * -o $0
+/alias bold  $* 
+/alias boldrev /exec -out echo  $*  | rev
+/alias boldspool /exec -out ~/bin/ircbold.csh $*
+/alias boldspool2 /exec -out cat $* | sed 's/^//'
+/alias mbold /msg $0  $* 
+/alias mboldspool /exec -out cat $1-* | sed 's/^/\/msg $0 /'
+/alias jive /exec -out echo $* | jive
+/alias rev /exec -out echo $* | rev
+/alias kraut /exec -out echo $* | kraut
+/alias valspeak /exec -out echo $* | valspeak
+/ALIAS A /AWAY
+/ALIAS C /CHANNEL
+/ALIAS CMDCH /SET CMDCH
+#/ALIAS E /EXIT
+/ALIAS I /INVITE
+/ALIAS L /LIST
+/ALIAS Q /QUIT
+/ALIAS S /SIGNOFF
+/ALIAS T /TOPIC
+/ALIAS H /HELP
+/alias c /clear
+/alias chops /who -chops
+/alias j /join
+/alias kic /kick $+ $0
+/alias k kick * $0 $bold$1-$bold
+/alias m /msg
+/alias n /notify
+/alias no /who -host *.no
+/alias oops /msg $. Sorry, that wasn't meant for you.\\n/msg $0 $B
+/alias ops /who -operators
+/alias umn /who -host *.umn.edu
+/alias w {
+           if ([$0]) {
+              who $0-
+           } {
+              who *
+           }
+         }
+/alias x /exec
+
+/alias _last_msg /type $0 $1
+
+#/nick Merlinus
+#/join #umn
+#/mode #umn +o Merlinus
+/mode edh -i
+
+/set display on
+
