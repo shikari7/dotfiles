@@ -101,6 +101,10 @@
 (global-set-key "\e[220z" 'end-of-buffer) ; End key (R13)
 (global-set-key "\e[222z" 'scroll-up)   ; PgDn key (R15)
 
+;; Logitech scrolling middle mouse-button
+(global-set-key 'button4 'previous-line)
+(global-set-key 'button5 'next-line)
+
 (global-set-key "\e[A" 'previous-line)  ; up arrow
 (global-set-key "\e[B" 'next-line)      ; down arrow
 (global-set-key "\e[C" 'forward-char)   ; forward arrow
@@ -110,14 +114,6 @@
 (global-set-key [(control h)] 'help-command)
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key [backspace] 'delete-backward-char)
-
-;; D.E. Shaw fax-cover interface
-(autoload 'fax-cover "fax-cover"
-  "Prepare a D. E. Shaw & Co. fax cover sheet" t)
-
-;; modify.el
-;(require 'modify)
-;(setq-default update-last-edit-date t)
 
 ;; mailcrypt
 (autoload 'mc-install-write-mode "mailcrypt" nil t)
@@ -134,13 +130,6 @@
 
 ;; filladapt
 (require 'filladapt)
-;(setq-default filladapt-mode t)
-;(add-hook 'c-mode-hook 'turn-off-filladapt-mode)
-;(add-hook 'dired-mode-hook 'turn-off-filladapt-mode)
-;(add-hook 'perl-mode-hook 'turn-off-filladapt-mode)
-;(add-hook 'emacs-lisp-mode-hook 'turn-off-filladapt-mode)
-;(add-hook 'lisp-interaction-mode-hook 'turn-off-filladapt-mode)
-;(add-hook 'lisp-mode-hook 'turn-off-filladapt-mode)
 (add-hook 'text-mode-hook 'turn-on-filladapt-mode)
 
 ;; tools for mime
