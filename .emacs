@@ -8,7 +8,7 @@
 ;;;  o cleaned and split up to use with both FSFEmacs and XEmacs september 1995
 ;;;  o started fresh summer 1996, XEmacs only
 
-;;; $Modified: Wed Dec  3 20:52:55 1997 by edh $
+;;; $Modified: Fri Dec  5 00:59:51 1997 by edh $
 
 ;;; Emacs debugging
 ;;;
@@ -295,7 +295,6 @@ inserts \" characters."
 
 ;; for auctex
 (require 'tex-site)			; should be in site-init.el?
-(custom-set-variables
 
 ;; for w3
 (setq w3-default-homepage (quote "http://www.cbc.umn.edu/~edh"))
