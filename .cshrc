@@ -22,7 +22,7 @@ set path = ( \
   /usr/local/bin \
 )
 
-if ($?prompt) then			# not a shell script
+if ($?prompt) then		# not a shell script
 
 # limit coredumpsize 0
 
@@ -42,7 +42,7 @@ if ($?prompt) then			# not a shell script
     set prompt=": $ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
     unset ppp
 
-    if ($?TERM && ($TERM == "xterm" || $TERM == "rxvt")) then
+    if ($?TERM && ($TERM == "xterm" || $TERM == "screen" || $TERM == "rxvt")) then
       alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$HOST}""'
       cwdcmd
     endif
@@ -62,17 +62,18 @@ if ($?prompt) then			# not a shell script
 
 #   sched 4:00 echo "Go to BED, good grief\!"
 
-  else					# must be csh
+  else				# must be csh
     set prompt = "$user@$HOST \!% "
-  endif
-# end tcsh
+  endif				# end tcsh
 
 # begin keep these here (not .login)
-  set mail = "10 $MAIL"			# modify this and the path
+  if ($?MAIL) then
+    set mail = "10 $MAIL"	# modify this and the path
+  endif
   set history = (500 '%h\t%P\t%R\n')
   set savehist = 500
   set notify filec noclobber
-# end keep here not .login
+# end keep here (not .login)
 
   set cdpath=(~ / ~/in ~/src)
 
@@ -81,6 +82,9 @@ if ($?prompt) then			# not a shell script
   endif
   if ( -r ~/.env ) then
     source ~/.env
+    if ($?ORACLE_HOME) then
+      set path = ( $path $ORACLE_HOME )
+    endif
   endif
   if ( -r ~/.typos ) then
     source ~/.typos
@@ -93,4 +97,4 @@ else
   unset history savehist
   # NOTE: Never have noclobber set for shell scripts.
   unset noclobber
-endif		# not a shell script
+endif				# not a shell script
