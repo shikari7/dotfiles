@@ -28,7 +28,7 @@ set path = ( \
 
 if ($?prompt) then		# not a shell script
 
-# limit coredumpsize 0
+limit coredumpsize unlimited
 
   if ($?tcsh) then
 
@@ -37,13 +37,20 @@ if ($?prompt) then		# not a shell script
 
     set tperiod = 60
 
+    set red = "%{\033[31m%}"
+    set blue = "%{\033[34m%}"
+    set green = "%{\033[32m%}"
+    set lblue = "%{\033[36m%}"
+    set white = "%{\033[0m%}"
+
     if ($?WINDOW) then  # we are in screen
-      set ppp = "[$WINDOW] "
+      set ppp = " [$WINDOW] "
     else
-      set ppp = ""
+      set ppp = " "
     endif
 
-    set prompt=": $ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
+    set prompt=":$ppp%S%n@%m%s (%B%l%b) %U%~%u ;\n: [%B%w %D %@%b] %S%?%s %B%h%#%b ; "
+#   set prompt=":$ppp$red%n@%m ($green%l) %U$lblue%~%u ;\n: [$lblue%w %D %@] %S$red%?%s $lblue%h%# $blue; "
     unset ppp
 
     if ($?TERM && ($TERM == "xterm" || $TERM == "screen" || $TERM == "rxvt")) then
@@ -63,6 +70,7 @@ if ($?prompt) then		# not a shell script
     set who="%B%n%b	has %a %B%l%b	at %B%T%b from %B%m%b"
 
     unset autologout ignoreeof
+    unset red blue green lblue white
 
 #   sched 4:00 echo "Go to BED, good grief\!"
 
@@ -75,7 +83,7 @@ if ($?prompt) then		# not a shell script
     set mail = "10 $MAIL"	# modify this and the path
   endif
   set history = (500 '%h\t%P\t%R\n')
-  set savehist = 500
+  set savehist = (500 merge)
   set notify filec noclobber
 # end keep here (not .login)
 
@@ -95,7 +103,7 @@ if ($?prompt) then		# not a shell script
   endif
   set completetcsh = `locate complete.tcsh | grep /usr/share/doc | head -1`
   if ( -r "$completetcsh" ) then
-    source $completetcsh
+    source "$completetcsh"
   endif
   unset completetcsh
 
