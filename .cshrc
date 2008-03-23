@@ -83,7 +83,7 @@ limit coredumpsize unlimited
     set mail = "10 $MAIL"	# modify this and the path
   endif
   set history = (500 '%h\t%P\t%R\n')
-  set savehist = (500 merge)
+  set savehist = (50000 merge)
   set notify filec noclobber
 # end keep here (not .login)
 
