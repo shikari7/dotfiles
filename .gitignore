@@ -1,0 +1,6 @@
+.ssh/id_rsa
+.gitsecret/keys/random_seed
+!*.secret
+*~
+.*.swp
+.DS_Store
