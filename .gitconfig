@@ -1,0 +1,17 @@
+[user]
+	email = MYEMAIL
+	name = MYID
+[credential]
+	helper = cache --timeout=3600
+[push]
+	default = current
+[core]
+	editor = emacs
+	autocrlf = input
+	excludesfile = /home/MYID/.gitignore
+[alias]
+	last = log -1 HEAD
+	lol = log --oneline --graph --decorate --all
+	co = checkout
+[color]
+	ui = auto
