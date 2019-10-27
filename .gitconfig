@@ -1,6 +1,6 @@
 [user]
-	email = MYEMAIL
-	name = MYID
+	email = github@crystalcave.net
+	name = shikari7
 [credential]
 	helper = cache --timeout=3600
 [push]
@@ -8,7 +8,8 @@
 [core]
 	editor = emacs
 	autocrlf = input
-	excludesfile = /home/MYID/.gitignore
+	excludesfile = ~/.gitignore
+	pager = less -FX
 [alias]
 	last = log -1 HEAD
 	lol = log --oneline --graph --decorate --all
