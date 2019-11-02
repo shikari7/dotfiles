@@ -12,7 +12,7 @@ alias   cpdir   '(tar cf - \!:1 | (cd \!:2; tar xpf -))'
 if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	df	'df -k'
 endif
-alias	findstr	'find . -type f -exec grep \!:1 {} \; -print'
+alias	findstr	'find . -type f -exec grep -H \!:1 {} \; -print'
 alias	findstrs	'find . -type f -exec grep \!:1 {} \; -print \!:2-$'
 alias	findname	'find . -name '\!:1' -print'
 alias	findnames	'find . -name '\!:1' -print \!:2-$'
