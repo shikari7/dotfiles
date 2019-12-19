@@ -105,6 +105,9 @@ limit coredumpsize unlimited
   if ( -r "$completetcsh" ) then
     source "$completetcsh"
   endif
+  if ( -r ~/.iterm2_shell_integration.tcsh && $?OSTYPE && $OSTYPE == "bsd44") then
+    source ~/.iterm2_shell_integration.tcsh
+  endif
   unset completetcsh
 
 else
