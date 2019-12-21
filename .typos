@@ -1,0 +1,17 @@
+#alias	ci	vi
+alias	cs	cd
+alias	cxd	cd
+alias	dri	dir
+alias	how	who
+alias	hwo	who
+alias	iv	vi
+alias	lks	ls
+alias	las	ls
+alias	lsa	ls
+alias	lsd	ls
+alias	lds	ls
+alias	mdkir	mkdir
+alias	mroe	more
+alias	rid	dir
+alias	sttu	stty
+alias	tial	tail
