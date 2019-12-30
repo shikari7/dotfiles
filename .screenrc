@@ -1,10 +1,15 @@
 # Eric's iScreenRC
 # Tue Jul 28 09:37:41 CDT 1992
 
-# $Id$	
+# $Id: .screenrc,v 1.7 2004/05/10 19:23:53 edh Exp edh $	
 
 # start from home dir
 chdir
+
+# lock the screen after some idle time
+#idle 300 lockscreen
+#idle 300 blanker
+#idle 86400 select -
 
 # the invisible man
 deflogin off
@@ -24,6 +29,12 @@ bell "Bark, Bark in window %"
 
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
+#password edKZ5FJCjhK.k
+
+# zombie mode
+# don't kill window after the process died
+# zombie "^["
+#zombie kr
 
 # no annoying audible bell, please
 vbell on
@@ -37,6 +48,51 @@ startup_message off
 # emulate .logout message
 pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 
+# disable flow control to prevent screen lockup by fat fingering ctrl-s
+defflow off
+
+# I have the biggest.. buffers of them all!
+defscrollback 16384
+defobuflimit 16384
+
+# use forward and back searching like VI
+markkeys "^S=/:^R=?"
+
+# Mon Jul 25 18:20:45 CEST 2016
+# added from examples
+# https://bbs.archlinux.org/viewtopic.php?id=55618
+setenv LC_CTYPE en_US.UTF-8
+defutf8 on
+hardcopydir ~/.screen
+shelltitle "$ |bash"
+altscreen on
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+#bind c screen 1 # window numbering starts at 1, not 0
+#bind 0 select 10
+
+# for windows 10-19 (11-20)
+bind ! select 11
+bind @ select 12
+bind \# select 13
+bind $ select 14
+bind % select 15
+bind \^ select 16
+bind & select 17
+bind * select 18
+bind ( select 19
+bind ) select 10
+
+# enable prev next with Ctrl-left and Ctrl-right
+bindkey "[D" prev  # change window with ctrl-left
+bindkey "[C" next  # change window with ctrl-right
+
+# now add '%1`%% CPU' to your hardstatus string. Result is like 38.4% CPU.
+backtick 1 15 15 $HOME/bin/cpuusage
+
 # make the shell in every window a login shell
 #shell -$SHELL
 
@@ -47,11 +103,23 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 # set every new windows hardstatus line to somenthing descriptive
 # defhstatus "screen: ^En (^Et)"
 
-# I have the biggest.. buffers of them all!
-defscrollback 4096
+# status line at the bottom
+#hardstatus on
+#hardstatus alwayslastline
+#hardstatus string "%{.bW}%-w%{.rW}%f%n %t%{-}%+w %=%{..G}[%H %l] %{..Y} %m/%d %c "
+#hardstatus alwayslastline "%{bw}[ %?%-Lw%?%{wb} %n*%f %t %{bw}%?%+Lw%? ]%=%{bw}[ %C %A ] [ %l ]"
 
-# don't kill window after the process died
-# zombie "^["
+# Green text, time, and date; windows in blue:
+#hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
+
+#hardstatus alwayslastline "%{b kw}%H %{r}%1` %{w}| %{g}%c %{w}| %{y}%d.%m.%Y %{w}| %{g}%l %{w}| %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw%<"
+
+# caption always "%3n %t%? @%u%?%? [%h]%?"
+# 
+# hardstatus alwayslastline "%w"
+
+#caption always "%{= kb}[ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%= %{b}][%{B} %H %{W}%l %{b}][%{B} %d.%m.%Y %{W}%0c %{b}]"
+#sorendition +b kG
 
 ################
 #
@@ -62,26 +130,46 @@ defscrollback 4096
 # screen -t mail 1 elm
 # screen -t 40 2 rlogin faui40
 
-# caption always "%3n %t%? @%u%?%? [%h]%?"
-# hardstatus alwaysignore
-# hardstatus alwayslastline "%w"
-
 #screen -t emacs 0 gnuclient -nw
-#screen -t tantalus 1 tcsh
-#screen -t tantalus 2 tcsh
-#screen -t tantalus 3 tcsh
-#screen -t trantor 4 tcsh
-#screen -t trantor 5 tcsh
-#screen -t trantor 6 tcsh
-#screen -t trantor 7 tcsh
-#screen -t irc 8 dnalounge
-#screen -t irc 9 BitchX -c \#oit
-#screen -t "trantor logs" 10 swatch -t /var/log/syslog
-#screen -t "http logs" 11 tail -100f /var/log/httpd/access_log
-#screen -t "tantalus logs" 12 tcsh
-##screen -t "tantalus logs" 12 ssh tantalus exec swatch -t /var/log/syslog
-#screen -t "incoming mail" 13 tcsh
-##screen -t "incoming mail" 13 ssh tantalus exec tail -100f .procmail/log/current/current
+#
+screen -t irc 0 tcsh
+screen -t rodan 1 tcsh
+screen -t rodan 2 tcsh
+screen -t ghidorah 3 ssh ghidorah
+screen -t ghidorah 4 ssh ghidorah
+screen -t noskcirdneh 5 ssh noskcirdneh
+screen -t noskcirdneh 6 ssh noskcirdneh
+screen -t tyrell 7 ssh tyrell
+screen -t tyrell 8 ssh tyrell
+screen -t tyrell 9 ssh tyrell
+screen -t mtsecure 10 mtsecure
+screen -t mtswatch 11 mtswatch
+screen -t mthttp 12 mthttp
+screen -t irc 13 tcsh
+
+#screen -t aws 4 exec ssh -i .ssh/amazon-isis.pem ec2-user@ec2-54-186-82-202.us-west-2.compute.amazonaws.com
+#screen -t khamul 4 ssh khamul
+#screen -t khamul 5 ssh khamul
+#screen -t nevinyrral 6 ssh nevinyrral
+#screen -t nevinyrral 7 ssh nevinyrral
+#screen -t irc 8 ssh nevinyrral
+#screen -t irc 9 ssh nevinyrral
+#screen -t mtsecure 10 mtsecure
+#screen -t mtswatch 11 mtswatch
+#screen -t mthttp 12 mthttp
+##screen -t "incoming mail" 13 tail -100f /home/edh/.procmail/log/current/current
+
+#screen -t "trantor logs" 10 ssh trantor exec sudo swatch --use-cpan-file-tail -t /var/log/messages
+#screen -t "tantalus logs" 11 sudo swatch --use-cpan-file-tail -t /var/log/messages
+#screen -t "nevinyrral logs" 12 ssh nevinyrral sudo swatch --use-cpan-file-tail -t /var/log/messages
+#screen -t "http logs" 13 ssh nevinyrral sudo tail -100f /www/log/crystalcave.net/access_log
+#screen -t "crystalcave.net logs" 13 tcsh
+#screen -t "http logs" 14 ssh nevinyrral sudo tail -100f /www/log/erichendrickson.org/access_log
+#screen -t "erichendrickson.org logs" 14 tcsh
+#screen -t "http logs" 15 ssh nevinyrral sudo tail -100f /www/log/gallery.erichendrickson.org/access_log
+#screen -t "gallery.erichendrickson.org logs" 15 tcsh
+#screen -t "incoming mail" 16 tail -100f .procmail/log/current/current
+#screen -t "mail logs" 17 exec ssh nevinyrral sudo tail -100f /var/log/maillog
 
 # cron entry keeps these "current" symlinks up-to-date
 #screen -t swatch 1 tail -f /var/log/swatch
