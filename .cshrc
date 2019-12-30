@@ -3,7 +3,7 @@
 #
 # this file should work with tcsh or csh
 
-# $Id$	
+# $Id: .cshrc,v 1.21 2008/03/23 01:37:31 edh Exp $	
 
 set path = ( \
   . \
@@ -24,6 +24,7 @@ set path = ( \
   /usr/local/bin \
   /usr/local/BerkeleyDB.4.1/bin \
   /usr/local/BitTorrent-3.3 \
+  /opt/splunk/bin \
 )
 
 if ($?prompt) then		# not a shell script
@@ -104,9 +105,6 @@ limit coredumpsize unlimited
   set completetcsh = `locate complete.tcsh | grep /usr/share/doc | head -1`
   if ( -r "$completetcsh" ) then
     source "$completetcsh"
-  endif
-  if ( -r ~/.iterm2_shell_integration.tcsh && $?OSTYPE && $OSTYPE == "bsd44") then
-    source ~/.iterm2_shell_integration.tcsh
   endif
   unset completetcsh
 
