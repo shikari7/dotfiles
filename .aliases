@@ -1,5 +1,5 @@
 # -*-shell-script-*-
-# $Id$
+# $Id: .aliases,v 1.18 2003/04/22 17:35:10 edh Exp edh $
 alias	archie	'archie -l -t -r'
 alias	beep	'echo -n ""'
 alias	bye	'logout'
@@ -9,14 +9,27 @@ alias	cls	'clear'
 alias	co	'co -l'
 #alias	cpdir	'(find \!:1 -print| cpio -pdmv \!:2)'
 alias   cpdir   '(tar cf - \!:1 | (cd \!:2; tar xpf -))'
+alias	cvsupdate 'cvs update -dP |& egrep -v "cvs update: Updating"'
 if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	df	'df -k'
+else if ($?OSTYPE && $OSTYPE == "linux") then
+  alias	df	'df -h'
+  alias	du	'du -h'
 endif
+alias	diff	colordiff
+alias	fastping 'ping -c 100 -s.2'
 alias	findstr	'find . -type f -exec grep -H \!:1 {} \; -print'
 alias	findstrs	'find . -type f -exec grep \!:1 {} \; -print \!:2-$'
 alias	findname	'find . -name '\!:1' -print'
 alias	findnames	'find . -name '\!:1' -print \!:2-$'
-alias	ftp	'ftp -i -u'
+if ($?OSTYPE && $OSTYPE == "solaris") then
+  alias	ftp	'ftp -i -u'
+else if ($?OSTYPE && $OSTYPE == "linux") then
+  alias	ftp	'ftp -i'
+endif
+if ($?OSTYPE && $OSTYPE == "linux") then
+  alias	grep	'/bin/grep --color=auto'
+endif
 alias	grope	'(echo server \!:1; echo ls -h \!:1) | nslookup'
 #alias	gzip	'gzip --best'
 alias	H	'history -r | fgrep "\!*"'
@@ -29,6 +42,8 @@ alias	ko	'k -o'
 if (-f /usr/local/bin/ls) then          # GNU ls?
   alias	l	'/usr/local/bin/ls --color=auto'
 else if ($?OSTYPE && $OSTYPE == "solaris") then
+  alias	l	'/usr/ucb/ls'
+else if ($?TERM && $TERM == "linux") then
   alias	l	'/bin/ls'
 else
   alias	l	'/bin/ls --color=auto'
@@ -46,8 +61,10 @@ alias	mailq	'sudo mailq'
 alias	md	'mkdir -p \!:1 && cd \!:1'
 alias	mman	'nroff -man \!:* | less -e'
 alias	more	'less'
+alias	m	'more'
+alias	mount	'mount | column -t'
 #alias	mvdir	'(find \!:1 -print| cpio -pdmv \!:2); rm -rf \!:1'
-alias   mvdir   '(tar cf - \!:1 | (cd \!:2; tar xopf -)); rm -rf \!:1'
+alias   mvdir   '(tar cf - \!:1 | (cd \!:2; tar xopf -)); test -d \!:2 && rm -rf \!:1'
 alias	rnet	"netscape -remote 'openURL(\!:1)'"
 alias	ns	'(echo server deshaw.com;echo set q=any;echo \!*)|nslookup|grep \!*'
 alias	_nsn	'echo \!*|awk -F. '\''{print $4"."$3"."$2"."$1".in-addr.arpa"}'\'
@@ -82,6 +99,7 @@ alias	st	'source ~/.tcshrc'
 alias	sux	'sudo tcsh'
 alias	u	'users | nroff | cat -s'
 alias	unrot	'tr a-zA-Z n-za-mN-ZA-M <'
+alias	update	'cvs -nq update -dP |& egrep -v "cvs (server|update): (New|.swp|ignored)"'
 alias	utol	'tr A-Z a-z <'
 alias	va	'vi ~/.aliases'
 alias	vc	'vi ~/.cshrc'
@@ -90,6 +108,7 @@ alias	vm	'vi Makefile'
 alias	vo	'vi ~/.logout'
 alias	vt	'vi ~/.tcshrc'
 alias	whatos	"echo 'GET / HTTP/1.0\n' | nc \!:1 80 | egrep '^Server:'"
+alias	whatoss	"echo 'GET / HTTP/1.0\n' | nc \!:1 443 | egrep '^Server:'"
 #alias	where	'who | grep \!:1 | awk '"'"\{print \$6\}"'"''
 alias	wai	'who am i'
 #alias	whois	'fwhois \!:1@whois.networksolutions.com'
