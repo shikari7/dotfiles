@@ -1,8 +1,15 @@
+# blacklist everything as this is my home directory
 *
-.ssh/id_rsa
-.gitsecret/keys/random_seed
-!*.secret
-*~
-.*.swp
-.DS_Store
-.ssh
+
+# now for files we which to not ignore (use !)
+
+# files we would normally exclude 
+#*.[oa]
+#.ssh/id_rsa
+#.gitsecret/keys/random_seed
+#!*.secret
+#*~
+#.*.swp
+#.DS_Store
+#Thumbs.db
+#.ssh
