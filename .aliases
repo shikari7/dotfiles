@@ -13,7 +13,7 @@ alias	cvsupdate 'cvs update -dP |& egrep -v "cvs update: Updating"'
 if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	df	'df -k'
 else if ($?OSTYPE && $OSTYPE == "linux") then
-  alias	df	'df -h'
+  alias	df	'df -h -t ext3 -t ext4'
   alias	du	'du -h'
 endif
 alias	diff	colordiff
