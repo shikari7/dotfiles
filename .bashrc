@@ -68,4 +68,8 @@ if [ "$PS1" ]; then
   alias ww='whoami;hostname;pwd'
   alias scp='scp -q'
   alias ssh='ssh -q'
+
+  if [ -f ~/.profile ]; then
+    . ~/.profile
+  fi
 fi
