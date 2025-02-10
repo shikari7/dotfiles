@@ -25,6 +25,7 @@ set path = ( \
   /usr/local/BerkeleyDB.4.1/bin \
   /usr/local/BitTorrent-3.3 \
   /opt/splunk/bin \
+  /opt/homebrew/bin \
 )
 
 if ($?prompt) then		# not a shell script
