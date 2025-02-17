@@ -16,7 +16,7 @@ else if ($?OSTYPE && $OSTYPE == "linux") then
   alias	df	'df -h -x tmpfs -x devtmpfs -x squashfs -x overlay'
   alias	du	'du -h'
 endif
-if (-x /opt/homebrew/bin/colordiff)
+if (-x /opt/homebrew/bin/colordiff) then
   alias	diff	colordiff
 endif
 alias	fastping 'ping -c 100 -s.2'
