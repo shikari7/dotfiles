@@ -6,7 +6,9 @@
 
 #mesg n
 
-if ! { /usr/bin/cmp -s ~/.hushlogin /etc/motd } /usr/bin/tee ~/.hushlogin < /etc/motd
+if (-f /etc/motd) then
+  if ! { /usr/bin/cmp -s ~/.hushlogin /etc/motd } /usr/bin/tee ~/.hushlogin < /etc/motd
+endif
 
 # get lines set right
 #eval `/usr/openwin/bin/resize`
