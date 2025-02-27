@@ -12,6 +12,8 @@ alias   cpdir   '(tar cf - \!:1 | (cd \!:2; tar xpf -))'
 alias	cvsupdate 'cvs update -dP |& egrep -v "cvs update: Updating"'
 if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	df	'df -k'
+else if ($?OSTYPE && $OSTYPE == "darwin") then
+  alias	df	'df -k'
 else if ($?OSTYPE && $OSTYPE == "linux") then
   alias	df	'df -h -x tmpfs -x devtmpfs -x squashfs -x overlay'
   alias	du	'du -h'
