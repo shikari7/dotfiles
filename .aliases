@@ -41,13 +41,15 @@ alias	hid	'ls -adCF .[^.]*'
 alias	j	'jobs -l'
 alias	k	'fortune'
 alias	ko	'k -o'
-if (-f /usr/local/bin/ls) then          # GNU ls?
+if (-x /usr/local/bin/ls) then          # GNU ls?
   alias	l	'/usr/local/bin/ls --color=auto'
+else if (-x /usr/local/opt/coreutils/libexec/gnubin/ls) then          # homebrew ls
+  alias	l	'/usr/local/opt/coreutils/libexec/gnubin/ls --color=auto'
 else if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	l	'/usr/ucb/ls'
-else if ($?TERM && $TERM == "linux") then
+else if ($?OSTYPE && $OSTYPE == "darwin") then
   alias	l	'/bin/ls'
-else
+else if ($?TERM && $TERM == "linux") then
   alias	l	'/bin/ls --color=auto'
 endif
 alias	la	'l -aF'

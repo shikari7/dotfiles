@@ -26,6 +26,7 @@ set path = ( \
   /usr/local/BitTorrent-3.3 \
   /opt/splunk/bin \
   /opt/homebrew/bin \
+  /usr/local/opt/coreutils/libexec/gnubin \
 )
 
 if ($?prompt) then		# not a shell script

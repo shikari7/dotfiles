@@ -25,10 +25,7 @@ PS1="\[\033]0;\u@\h:\w\007\]: \[\033[7m\]\[\033[7m\]\u@\h\[\033[0m\] \[\033[4m\]
 # from screen-users
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:"[\033[01;34m\]\w\[\033[00m\]\$ '
 
-HISTFILESIZE=100000
-HISTSIZE=10000
-HISTTIMEFORMAT="%F %T "
-
+# functions (like aliases but with passing arguments)
 findstr () { find . -type f -exec grep "$1" {} \; -print; }
 
 genpasswd() {
@@ -42,9 +39,6 @@ genpasswd() {
 # see http://www.linuxselfhelp.com/howtos/Bash-Prompt/Bash-Prompt-HOWTO-6.html
 if [ "$PS1" ]; then
   PS1="\[\033]0;\u@\h:\w\007\]: \[\033[7m\]\[\033[7m\]\u@\h\[\033[0m\] \[\033[4m\]\w\[\033[0m\] ;\n: [\D{%b %d %I:%M%P}] \!\$ ; "
-
-# functions (like aliases but with passing arguments)
-  findstr () { find . -type f -exec grep "$1" {} \; -print; }
 
 # Umask setting per PWC compliance for service id
 # umask 027
@@ -73,3 +67,8 @@ if [ "$PS1" ]; then
     . ~/.profile
   fi
 fi
+
+# silence the warning from Apple about bash deprecation
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+#. ~/.profile
