@@ -13,6 +13,7 @@ Ensure you have the following installed
 Clone your repo (or create one), and then from that repo stow --adopt everything
 
 ```
+$ cd
 $ git clone git@github.com:shikari7/dotfiles.git
 $ cd dotfiles
 $ stow --adopt .
