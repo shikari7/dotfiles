@@ -17,3 +17,5 @@
 	co = checkout
 [color]
 	ui = auto
+[init]
+	defaultBranch = master
