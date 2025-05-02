@@ -5,7 +5,7 @@
 
 # $Id$	
 
-clear
+#clear
 echo ""
 
 # remove the sudo timestamp file
