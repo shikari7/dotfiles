@@ -22,4 +22,5 @@ test -e /opt/homebrew/bin/fortune && fortune || true
 #/usr/lib/xemacs-20.3/i386-pc-linux/yow -f /usr/lib/xemacs-20.3/etc/yow.lines
 
 sleep 1
-stty 0
+# what was this for?
+#stty 0
