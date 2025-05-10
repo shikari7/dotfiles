@@ -39,7 +39,7 @@ genpasswd() {
 }
 
 # for linuxbrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -d /home/linuxbrew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # for all config that is only needed by interactive shells
 
