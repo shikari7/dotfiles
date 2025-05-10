@@ -34,9 +34,9 @@
 # exists.
 #
 # if running bash
-if [ -n "${BASH_VERSION}" ]; then
-  if [ -f "${HOME}/.bashrc" ]; then
+#if [ -n "${BASH_VERSION}" ]; then
+# if [ -f "${HOME}/.bashrc" ]; then
 # .bashrc already loads this, use .bash_profile instead?
 #   source "${HOME}/.bashrc"
-  fi
-fi
+# fi
+#fi
