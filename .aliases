@@ -106,6 +106,9 @@ alias	slay	'(set j=`/bin/ps -ax|grep \!*|head -1`;kill -1 $j[1]) >& /dev/null'
 alias	slj	'set slj=`sysline -m -b -l -q -p -i +20`'
 alias	st	'source ~/.tcshrc'
 alias	sux	'sudo tcsh'
+if ($?OSTYPE && $OSTYPE == "darwin") then
+  alias tar	'tar --no-xattrs --exclude ".DS_Store"'
+endif
 alias	u	'users | nroff | cat -s'
 alias	unrot	'tr a-zA-Z n-za-mN-ZA-M <'
 alias	update	'cvs -nq update -dP |& egrep -v "cvs (server|update): (New|.swp|ignored)"'
