@@ -24,7 +24,7 @@
 # User dependent .profile file
 
 # Set user-defined locale
-export LANG=$(locale -uU)
+#export LANG=$(locale -uU)
 
 # Set PATH for Homebrew if it exists
 [ -d /opt/homebrew/bin ] && eval "$(/opt/homebrew/bin/brew shellenv)"
