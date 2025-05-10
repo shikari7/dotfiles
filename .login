@@ -28,10 +28,10 @@ endif
 #unset t
 
 # ok, tell me all about it
-#clear
+clear
 
 # mail and news stuff
-#messages
+messages
 uptime
 
 #test -e "${HOME}/.iterm2_shell_integration.tcsh" && source "${HOME}/.iterm2_shell_integration.tcsh" || true
