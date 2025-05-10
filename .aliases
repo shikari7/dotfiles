@@ -54,6 +54,8 @@ else if ($?OSTYPE && $OSTYPE == "darwin") then
   alias	l	'/bin/ls'
 else if ($?TERM && $TERM == "linux") then
   alias	l	'/bin/ls --color=auto'
+else
+  alias l	/bin/ls
 endif
 alias	la	'l -aF'
 #if ($?OSTYPE && $OSTYPE == "solaris") then
