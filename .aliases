@@ -107,7 +107,7 @@ alias	slj	'set slj=`sysline -m -b -l -q -p -i +20`'
 alias	st	'source ~/.tcshrc'
 alias	sux	'sudo tcsh'
 if ($?OSTYPE && $OSTYPE == "darwin") then
-  alias tar	'tar --no-xattrs --exclude ".DS_Store" -\!*'
+  alias tar	'tar --no-xattrs --exclude ".DS_Store" --exclude "._*" -\!*'
 endif
 alias	u	'users | nroff | cat -s'
 alias	unrot	'tr a-zA-Z n-za-mN-ZA-M <'
