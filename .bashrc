@@ -9,7 +9,7 @@ fi
 
 # use path-helper for bash and zsh and tcsh (with -c)
 # also can use this in real time to update $PATH when installing new software
-eval "$(/usr/libexec/path_helper -s)"
+#eval "$(/usr/libexec/path_helper -s)"
 
 # User specific environment
 PATH="$HOME/.local/bin:$HOME/bin:$PATH"
