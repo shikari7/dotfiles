@@ -27,14 +27,16 @@
 #export LANG=$(locale -uU)
 
 # Set PATH for Homebrew if it exists
-[ -d /opt/homebrew/bin ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+# this seems to hang in bash for some reason
+#[ -d /opt/homebrew/bin ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # This file is not read by bash(1) if ~/.bash_profile or ~/.bash_login
 # exists.
 #
 # if running bash
-if [ -n "${BASH_VERSION}" ]; then
-  if [ -f "${HOME}/.bashrc" ]; then
-    source "${HOME}/.bashrc"
-  fi
-fi
+#if [ -n "${BASH_VERSION}" ]; then
+# if [ -f "${HOME}/.bashrc" ]; then
+# .bashrc already loads this, use .bash_profile instead?
+#   source "${HOME}/.bashrc"
+# fi
+#fi
