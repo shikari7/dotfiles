@@ -38,10 +38,13 @@ genpasswd() {
       	tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
+# for all config that is only needed by interactive shells
+
 # for linuxbrew
 [ -d /home/linuxbrew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# for all config that is only needed by interactive shells
+# for zoxide
+[ -x /home/linuxbrew/.linuxbrew/bin/zoxide ] && eval "$(zoxide init bash)"
 
 # see http://www.linuxselfhelp.com/howtos/Bash-Prompt/Bash-Prompt-HOWTO-6.html
 if [ "$PS1" ]; then
