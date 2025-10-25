@@ -72,8 +72,6 @@ limit coredumpsize unlimited
 #   set watch = (5 any console edh any root any)
     set who="%B%n%b	has %a %B%l%b	at %B%T%b from %B%m%b"
 
-    source ~/.zoxide.tcsh
-
     unset autologout ignoreeof
     unset red blue green lblue white
 
