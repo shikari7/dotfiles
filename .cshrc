@@ -7,8 +7,10 @@
 
 set path = ( \
   . \
+  /opt/homebrew/bin \
   /bin \
   /usr/bin \
+  /opt/homebrew/sbin \
   /sbin \
   ~/bin \
   /opt/kde/bin \
@@ -24,7 +26,6 @@ set path = ( \
   /usr/local/bin \
   /usr/local/BerkeleyDB.4.1/bin \
   /usr/local/BitTorrent-3.3 \
-  /opt/homebrew/bin \
   /home/linuxbrew/.linuxbrew/bin \
 )
 
@@ -70,6 +71,8 @@ limit coredumpsize unlimited
     set promptchars = "%#"
 #   set watch = (5 any console edh any root any)
     set who="%B%n%b	has %a %B%l%b	at %B%T%b from %B%m%b"
+
+    source ~/.zoxide.tcsh
 
     unset autologout ignoreeof
     unset red blue green lblue white
