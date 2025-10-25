@@ -22,17 +22,17 @@ if ($?TERM && $TERM == "dtterm") then
   setenv TERM	vt100
 endif
 
-#set t=`perl -e 'print int rand(25) + 1;'`
-#( sleep $t; fetchmail >>& /dev/null ) &
-#fetchmail >>& /dev/null
-#unset t
-
 # ok, tell me all about it
 clear
 
 # mail and news stuff
-messages
+#messages
+#set t=`perl -e 'print int rand(25) + 1;'`
+#( sleep $t; fetchmail >>& /dev/null ) &
+#fetchmail >>& /dev/null
+#unset t
 uptime
 
+# make this test if I'm on Mac
 #test -e "${HOME}/.iterm2_shell_integration.tcsh" && source "${HOME}/.iterm2_shell_integration.tcsh" || true
 

@@ -106,6 +106,12 @@ limit coredumpsize unlimited
   if ( -r ~/.typos ) then
     source ~/.typos
   endif
+  if ( -x /home/linuxbrew/.linuxbrew/bin/zoxide ) then
+    zoxide init tcsh > ! ~/.zoxide.tcsh
+  endif
+  if ( -r ~/.zoxide.tcsh ) then
+    source ~/.zoxide.tcsh
+  endif
   set completetcsh = `locate complete.tcsh | grep /usr/share/doc | head -1`
   if ( -r "$completetcsh" ) then
     source "$completetcsh"
