@@ -15,6 +15,7 @@
 	last = log -1 HEAD
 	lol = log --oneline --graph --decorate --all
 	co = checkout
+	pr = pull --rebase
 [color]
 	ui = auto
 [init]
