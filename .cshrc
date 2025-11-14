@@ -56,6 +56,7 @@ limit coredumpsize unlimited
 #   set prompt=":$ppp$red%n@%m ($green%l) %U$lblue%~%u ;\n: [$lblue%w %D %@] %S$red%?%s $lblue%h%# $blue; "
     unset ppp
 
+# set window titlebar
     if ($?TERM && ($TERM == "xterm" || $TERM == "screen" || $TERM == "rxvt")) then
       alias cwdcmd 'echo -n "]2;"/$user@{$HOST}"$cwd]1;"{$HOST}""'
       cwdcmd
