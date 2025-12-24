@@ -55,7 +55,7 @@ else if (-x /usr/local/opt/coreutils/libexec/gnubin/ls) then          # homebrew
 else if ($?OSTYPE && $OSTYPE == "solaris") then
   alias	l	'/usr/ucb/ls'
 else if ($?OSTYPE && $OSTYPE == "darwin") then
-  alias	l	'/bin/ls'
+  alias	l	'/bin/ls -k'
 else if ($?TERM && $TERM == "linux") then
   alias	l	'/bin/ls --color=auto'
 else
