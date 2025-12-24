@@ -6,9 +6,7 @@
 
 #mesg n
 
-if (-f /etc/motd) then
-  if ! { /usr/bin/cmp -s ~/.hushlogin /etc/motd } /usr/bin/tee ~/.hushlogin < /etc/motd
-endif
+if ! { /usr/bin/cmp -s ~/.hushlogin /etc/motd } /usr/bin/tee ~/.hushlogin < /etc/motd
 
 # get lines set right
 #eval `/usr/openwin/bin/resize`
@@ -35,4 +33,3 @@ uptime
 
 # make this test if I'm on Mac
 #test -e "${HOME}/.iterm2_shell_integration.tcsh" && source "${HOME}/.iterm2_shell_integration.tcsh" || true
-
