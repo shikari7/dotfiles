@@ -27,6 +27,7 @@ set path = ( \
   /usr/local/BerkeleyDB.4.1/bin \
   /usr/local/BitTorrent-3.3 \
   /home/linuxbrew/.linuxbrew/bin \
+  ~/.local/bin \
 )
 
 if ($?prompt) then		# not a shell script
